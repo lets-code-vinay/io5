@@ -1,0 +1,4 @@
+1. Create a git repository
+2. Why do you want to be a software Engineer?
+3. Few lines about yourself
+ 
