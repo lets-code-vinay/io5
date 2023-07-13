@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Div vs span</title>
+    <style>
+      body {
+        background-color: bisque;
+        width: 50%;
+      }
+      .h1 {
+        background-color: blue;
+        display: inline-block;
+        width: 50%;
+        height: 100px;
+      }
+      .h1-1 {
+        background-color: rgb(84, 129, 13);
+        display: inline;
+        width: 50%;
+        height: 100px;
+      }
+      .h1-2 {
+        background-color: rgb(208, 29, 29);
+        display: inline-block;
+        width: 25%;
+        height: 100px;
+      }
+
+      .p {
+        background-color: red;
+        width: 20%;
+      }
+      .a {
+        background-color: green;
+        width: 200px;
+        display: inline-block;
+      }
+
+      .div-1 {
+        border: 1px solid red;
+        background-color: azure;
+      }
+
+      .span-1 {
+        border: 1px solid blue;
+        background-color: rgb(121, 205, 205);
+      }
+      /*
+      1. px - pixel  
+      */
+    </style>
+  </head>
+  <body>
+    <h1 class="h1">This is h1 tag</h1>
+    <h1 class="h1-1">This is h1 tag -2</h1>
+    <h1 class="h1-2">This is h1 tag -3</h1>
+
+    <p class="p">
+      Span is a generic inline element often used to apply styling to a portion
+      of content. An inline element does not start a new line and only takes up
+      as much space on the page as its content. Span tags are used on small
+      segments of text, <span class="span-1">links,</span> images, and other
+      HTML elements that appear inline with the surrounding content.
+    </p>
+
+    <a class="a" href="#">Click here</a>
+
+    <div class="div-1">
+      <p>This is p tag 1</p>
+      <p>This is p tag 2</p>
+      <button>Click here</button>
+    </div>
+
+    <span class="span-1">
+      <p>This is span p tag 1</p>
+      <p>This is span p tag 2</p>
+      <button>Click span</button>
+    </span>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* -- Select by tag name-- */
+      th {
+        border: 1px solid rgb(59, 59, 42);
+      }
+      td {
+        border: 1px solid rgb(59, 59, 42);
+      }
+      tr:nth-child(even) {
+        background-color: aquamarine;
+      }
+      tr:nth-child(odd) {
+        background-color: bisque;
+      }
+
+      /* -- Select by Class name --*/
+      .apple {
+        background-color: red;
+      }
+
+      .peas {
+        background-color: rgb(38, 145, 38);
+      }
+      .coco {
+        background-color: greenyellow;
+      }
+      .t {
+        color: navy;
+        border: 1px solid red;
+        width: 50%;
+        border-radius: 10px;
+      }
+
+      .hero:nth-child(odd) {
+        background-color: aqua;
+        color: blue;
+        width: 50%;
+      }
+      .hero:nth-child(even) {
+        background-color: rgb(5, 74, 74);
+        color: rgb(122, 122, 171);
+        width: 50%;
+      }
+
+      /*-- Select by ID--*/
+      #avengers {
+        background-color: black;
+        color: wheat;
+        width: 50%;
+      }
+      #indian {
+        background-color: brown;
+        color: yellow;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+        1. inline styling
+        2. internal Styling
+        3. External Styling
+
+
+        Selector:
+        1. Select by tag name
+        2. select by class name
+        3. Select by ID
+        4. select by nth child
+    -->
+    <table
+      style="
+        border: 1px solid red;
+        border-radius: 5px;
+        border-collapse: collapse;
+      "
+    >
+      <thead>
+        <tr>
+          <th>Sr. no</th>
+          <th>Car name</th>
+          <th>Brand</th>
+          <th>Model</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Sonet</td>
+          <td>Kia</td>
+          <td rowspan="2">2023</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Nexon</td>
+          <td rowspan="2">Tata</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Hexa</td>
+          <td>2018</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td colspan="2">Maruti</td>
+          <td>1997</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ol type="i">
+      <li>
+        <ol type="A">
+          Apple
+          <li class="apple">Green Apple</li>
+          <li class="coco">Kashmiri Apple</li>
+          <li class="apple">Golden Apple</li>
+        </ol>
+      </li>
+      <li class="banana">Banana</li>
+      <li class="coco" id="coconut">Coconut</li>
+      <li class="veg">
+        Vegetables
+        <ul>
+          <li class="peas">Peas</li>
+          <li>
+            <ul type="square">
+              tomato
+              <li class="t">T 1</li>
+              <li class="t">T 2</li>
+              <li class="apple">T 3</li>
+            </ul>
+          </li>
+          <li class="potatoes">Potatoes</li>
+        </ul>
+      </li>
+      <dl class="super">
+        <dt id="avengers">Avengers</dt>
+        <dd class="aveng">Hulk</dd>
+        <dd class="aveng">Thor</dd>
+        <dt id="indian">Indian Superheros</dt>
+        <dd class="hero">Shaktimaan</dd>
+        <dd class="hero">Krish</dd>
+        <dd class="hero">junior G</dd>
+        <dd class="hero">Chhota Bheem</dd>
+        <dd class="hero">Minal murali</dd>
+      </dl>
+    </ol>
+  </body>
+</html>
