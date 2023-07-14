@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>units and display properties</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 62.5%;
+        color: blue;
+        /*10px*/
+      }
+      body {
+        background-color: aqua;
+        font-size: 1rem !important;
+      }
+      main {
+        /* font-size: 62.5%; */
+      }
+      h1 {
+        background-color: red;
+        height: 50vh;
+        font-size: 2rem;
+      }
+      .para-1 {
+        border: 1px solid black;
+        width: 950px;
+      }
+      .para-2 {
+        border: 1px solid BLUE;
+        width: 100%;
+        font-size: 2rem;
+      }
+      .para-3 {
+        border: 1px solid red;
+        /* width: 100vw; view width */
+        /*vh -> view height/ viewport height*/
+        height: 50vh; /*1080 -> 1080*/
+        font-size: 2rem;
+      }
+
+      .robert {
+        /*element*/
+        /* font-size: 2em;  */
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+        unit is measurement system
+        weight -> grams, kilogram, pounds
+        data -> kb, bytes, mb, gb, tb
+        distance-> mm, cm, m, km, miles
+        liquid -> l, kl
+        development -> %, px(pixel),  rem, vh, vw,  em, 
+    -->
+  </body>
+  <header>
+    <h1>This is header tag h1</h1>
+  </header>
+  <main>
+    <p class="para-1">
+      I've long wondered how the brain fits such unexpected sounds so smoothly
+      and adroitly into dreams. The suggestion that the brain always brings
+      phenomena to awareness a split second after they actually occur—in order
+      to construct a plausible storyline for their appearance—offers a possible
+      answer. —Robert Levy
+    </p>
+
+    <p class="para-2">
+      I've long wondered how the brain fits such unexpected sounds so smoothly
+      and adroitly into dreams. The suggestion that the brain always brings
+      phenomena to awareness a split second after they actually occur—in order
+      to construct a plausible storyline for their appearance—offers a possible
+      answer. —Robert Levy
+    </p>
+
+    <p class="para-3">
+      I've long wondered how the brain fits such unexpected sounds so smoothly
+      and adroitly into dreams. The suggestion that the brain always brings
+      phenomena to awareness a split second after they actually occur—in order
+      to construct a plausible storyline for their appearance—offers a possible
+      answer. <span class="robert">—Robert Levy</span>
+    </p>
+  </main>
+</html>
