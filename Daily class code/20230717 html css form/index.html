@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up Form</title>
+
+    <!--
+        label
+            Used to describe input type
+                for: it connects with input ID to target input box
+
+        input
+            used to create forms
+            display : inline
+            self closing
+                attributes:
+                    id: it is unique in entire DOM(HTML) and helps to target input
+                    class
+                    type: Type defines what kinda of input box it is
+                        -> text
+                        -> number
+                        -> password
+                        -> email
+                        -> tel
+                        -> date
+                        -> time
+                        -> month
+                        -> radio
+                        -> checkbox
+                        -> button
+                    maxlength: Provides validation to input box's character
+                    minlength
+                    placeholder: Put indication inside the input box ex: Enter your name
+
+
+        
+
+    -->
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .form-container {
+        border: 1px solid #d1d5d7;
+        width: 50%;
+        margin: 5% auto;
+        border-radius: 10px;
+        background-color: #f8f8f8;
+      }
+      .logo-section {
+        display: flex;
+        justify-content: center;
+      }
+      .logo {
+        width: 10%;
+      }
+      .logo-end-hr {
+        height: 1px;
+        background-color: red;
+      }
+
+      .form-title-container {
+        background-color: #f7ede8;
+      }
+      .title {
+        width: 33%;
+        margin: auto;
+        padding: 2% 0;
+      }
+      .title-des {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        padding: 0% 0 3% 0;
+      }
+      .form-section {
+        width: 55%;
+        margin: auto;
+      }
+      .input-field {
+        width: 75%;
+        margin-left: 2%;
+        margin-top: 6%;
+      }
+      .btn-container {
+        width: 35%;
+        margin: 4% auto;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="form-container">
+      <div class="logo-section">
+        <img
+          class="logo"
+          src="https://www.freepnglogos.com/uploads/company-logo-png/file-mobile-apps-development-company-logo-25.png"
+          alt="company-logo-png"
+        />
+      </div>
+      <hr class="logo-end-hr" />
+      <div class="form-title-container">
+        <h3 class="title">Sign Up for Our Newsletter</h3>
+        <p class="title-des">
+          Fill out your information below to be signed up for our informative
+          newsletter.
+        </p>
+      </div>
+      <div>
+        <form class="form-section">
+          <label for="first_name">First name:</label>
+          <input
+            class="input-field"
+            id="first_name"
+            type="text"
+            placeholder="Enter your first name"
+          />
+
+          <br />
+
+          <label for="last_name">Last Name:</label>
+          <input
+            class="input-field"
+            id="last_name"
+            type="text"
+            placeholder="Enter last name in small case"
+          />
+          <br />
+
+          <label for="mob">Mobile No:</label>
+          <input
+            class="input-field"
+            id="mob"
+            type="number"
+            placeholder="Enter your phone number"
+          />
+          <br />
+
+          <label for="username">User Name:</label>
+          <input
+            class="input-field"
+            id="username"
+            type="text"
+            placeholder="Enter your user name"
+            maxlength="5"
+            minlength="3"
+          />
+          <br />
+
+          <div class="btn-container">
+            <input class="save-btn" type="button" value="Save" />
+            <input type="submit" />
+            <input type="Reset" />
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
