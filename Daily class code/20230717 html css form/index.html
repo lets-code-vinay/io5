@@ -32,6 +32,9 @@
                     maxlength: Provides validation to input box's character
                     minlength
                     placeholder: Put indication inside the input box ex: Enter your name
+                    required:
+                    disabled:
+
 
 
         
@@ -81,14 +84,63 @@
         width: 55%;
         margin: auto;
       }
-      .input-field {
-        width: 75%;
-        margin-left: 2%;
+      .input-cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         margin-top: 6%;
       }
+      .input-field {
+        width: 75%;
+
+        border: 1px solid #d2c1b8;
+        height: 30px;
+        border-radius: 4px;
+        padding: 2%;
+        color: #663939;
+      }
       .btn-container {
-        width: 35%;
+        width: 100%;
         margin: 4% auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      .radio-options {
+        width: 18%;
+      }
+      .radio-label {
+        margin-left: 6%;
+      }
+
+      .term-cont {
+        margin-left: 25%;
+      }
+
+      .reset-btn {
+        background: azure;
+        width: 30%;
+        border: 1px solid #be593b;
+        border-radius: 5px;
+        height: 25px;
+        color: #be593b;
+      }
+
+      .save-btn {
+        background: #6e159f;
+        width: 30%;
+        border: 1px solid #e3dad8;
+        border-radius: 5px;
+        height: 25px;
+        color: #e3dad8;
+      }
+
+      .submit-btn {
+        background: #be593b;
+        width: 30%;
+        border: 1px solid #d6b9b1;
+        border-radius: 5px;
+        height: 25px;
+        color: #d6b9b1;
       }
     </style>
   </head>
@@ -111,49 +163,206 @@
       </div>
       <div>
         <form class="form-section">
-          <label for="first_name">First name:</label>
-          <input
-            class="input-field"
-            id="first_name"
-            type="text"
-            placeholder="Enter your first name"
-          />
+          <div class="input-cont">
+            <label for="first_name">First name:</label>
+            <input
+              class="input-field"
+              id="first_name"
+              type="text"
+              placeholder="Enter your first name"
+            />
+          </div>
 
-          <br />
+          <div class="input-cont">
+            <label for="last_name">Last Name:</label>
+            <input
+              class="input-field"
+              id="last_name"
+              type="text"
+              placeholder="Enter last name in small case"
+            />
+          </div>
 
-          <label for="last_name">Last Name:</label>
-          <input
-            class="input-field"
-            id="last_name"
-            type="text"
-            placeholder="Enter last name in small case"
-          />
-          <br />
+          <div class="input-cont">
+            <label for="mob">Mobile No:</label>
+            <input
+              class="input-field"
+              id="mob"
+              type="number"
+              placeholder="Enter your phone number"
+            />
+          </div>
 
-          <label for="mob">Mobile No:</label>
-          <input
-            class="input-field"
-            id="mob"
-            type="number"
-            placeholder="Enter your phone number"
-          />
-          <br />
+          <div class="input-cont">
+            <label for="username">User Name:</label>
+            <input
+              class="input-field"
+              id="username"
+              type="text"
+              placeholder="Enter your user name"
+              maxlength="10"
+              minlength="5"
+            />
+          </div>
 
-          <label for="username">User Name:</label>
-          <input
-            class="input-field"
-            id="username"
-            type="text"
-            placeholder="Enter your user name"
-            maxlength="5"
-            minlength="3"
-          />
-          <br />
+          <div class="input-cont">
+            <label for="password-field">Password:</label>
+            <input
+              id="password-field"
+              class="input-field"
+              type="password"
+              minlength="5"
+              placeholder="Enter your strong password"
+            />
+          </div>
+
+          <div class="input-cont">
+            <label for="email-feild">Email:</label>
+            <input
+              id="email-feild"
+              class="input-field"
+              type="email"
+              minlength="5"
+              placeholder="Enter your valid email"
+            />
+          </div>
+
+          <div class="input-cont">
+            <label for="date-feild">Date:</label>
+            <input
+              id="date-feild"
+              class="input-field"
+              type="date"
+              value=""
+              min="2023-04-15"
+              max="2023-10-15"
+            />
+          </div>
+
+          <div class="input-cont">
+            <label for="date-time">Birthday:</label>
+            <input
+              id="date-time"
+              class="input-field"
+              type="datetime-local"
+              value=""
+              min="2023-04-15T21:20"
+              max="2023-10-15T15:10"
+            />
+          </div>
+
+          <div class="input-cont">
+            <label for="time">Time:</label>
+            <input
+              id="time"
+              class="input-field"
+              type="time"
+              value=""
+              min="09:00"
+              max="20:30"
+            />
+          </div>
+
+          <div class="input-cont">
+            <label for="website">Website:</label>
+            <input
+              id="website"
+              class="input-field"
+              type="url"
+              value=""
+              placeholder="https://yourwebsite.com"
+            />
+          </div>
+
+          <div class="input-cont">
+            <label for="uplaod-file">Upload:</label>
+            <input id="uplaod-file" class="input-field" type="file" value="" />
+          </div>
+
+          <div class="input-cont">
+            <label for="uplaod-image">Picture:</label>
+            <input
+              id="uplaod-image"
+              class=""
+              type="image"
+              value=""
+              src="https://static.vecteezy.com/system/resources/thumbnails/016/746/979/small/freelancer-software-developer-programmer-coder-illustrator-vector.jpg"
+              alt="form image"
+              height="100px"
+            />
+          </div>
+
+          <!-- Radio buttons-->
+          <div class="input-cont">
+            <label>Gender:</label>
+            <div class="radio-options">
+              <input type="radio" id="male" value="" /><label
+                class="radio-label"
+                for="male"
+                >Male</label
+              >
+            </div>
+            <div class="radio-options">
+              <input type="radio" id="female" value="" /><label
+                class="radio-label"
+                for="female"
+                >Female</label
+              >
+            </div>
+            <div class="radio-options">
+              <input type="radio" id="other" value="" /><label
+                class="radio-label"
+                for="other"
+                >Other</label
+              >
+            </div>
+          </div>
+
+          <!-- Check box options-->
+          <div class="input-cont">
+            <label>Language:</label>
+            <div>
+              <label for="html">HTML</label>
+              <input id="html" class="" type="checkbox" />
+            </div>
+
+            <div>
+              <label for="css">CSS</label>
+              <input id="css" class="" type="checkbox" />
+            </div>
+
+            <div>
+              <label for="js">Javascript</label>
+              <input id="js" class="" type="checkbox" />
+            </div>
+          </div>
+
+          <div class="input-cont">
+            <label for="color">Color:</label>
+            <input
+              id="color"
+              class="input-field"
+              type="color"
+              value="#abc456"
+            />
+          </div>
+
+          <div class="input-cont">
+            <div class="term-cont">
+              <input id="terms" class="" type="checkbox" value="" />
+              <label for="terms">Terms & Conditions</label>
+            </div>
+          </div>
 
           <div class="btn-container">
-            <input class="save-btn" type="button" value="Save" />
-            <input type="submit" />
-            <input type="Reset" />
+            <input
+              class="save-btn"
+              type="button"
+              value="Save"
+              class="save-btn"
+            />
+            <input type="submit" class="submit-btn" />
+            <input type="Reset" class="reset-btn" />
           </div>
         </form>
       </div>
