@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up Form</title>
+
+    <!--
+        label
+            Used to describe input type
+                for: it connects with input ID to target input box
+
+        input
+            used to create forms
+            display : inline
+            self closing
+                attributes:
+                    id: it is unique in entire DOM(HTML) and helps to target input
+                    class
+                    type: Type defines what kinda of input box it is
+                        -> text
+                        -> number
+                        -> password
+                        -> email
+                        -> tel
+                        -> date
+                        -> time
+                        -> month
+                        -> radio
+                        -> checkbox
+                        -> button
+                    maxlength: Provides validation to input box's character
+                    minlength
+                    placeholder: Put indication inside the input box ex: Enter your name
+                    required:
+                    disabled:
+
+
+
+        
+
+    -->
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .form-container {
+        border: 1px solid #d1d5d7;
+        width: 50%;
+        margin: 5% auto;
+        border-radius: 10px;
+        background-color: #f8f8f8;
+      }
+      .logo-section {
+        display: flex;
+        justify-content: center;
+      }
+      .logo {
+        width: 10%;
+      }
+      .logo-end-hr {
+        height: 1px;
+        background-color: red;
+      }
+
+      .form-title-container {
+        background-color: #f7ede8;
+      }
+      .title {
+        width: 33%;
+        margin: auto;
+        padding: 2% 0;
+      }
+      .title-des {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        padding: 0% 0 3% 0;
+      }
+      .form-section {
+        width: 55%;
+        margin: auto;
+      }
+      .input-cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 6%;
+      }
+      .input-field {
+        width: 75%;
+
+        border: 1px solid #d2c1b8;
+        height: 30px;
+        border-radius: 4px;
+        padding: 2%;
+        color: #663939;
+      }
+
+      .text-area {
+        width: 75%;
+
+        border: 1px solid #d2c1b8;
+        border-radius: 4px;
+        padding: 2%;
+        color: #663939;
+      }
+      .btn-container {
+        width: 100%;
+        margin: 4% auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      .radio-options {
+        width: 18%;
+      }
+      .radio-label {
+        margin-left: 6%;
+      }
+
+      .term-cont {
+        margin-left: 25%;
+      }
+
+      .reset-btn {
+        background: azure;
+        width: 30%;
+        border: 1px solid #be593b;
+        border-radius: 5px;
+        height: 25px;
+        color: #be593b;
+      }
+
+      .save-btn {
+        background: #6e159f;
+        width: 30%;
+        border: 1px solid #e3dad8;
+        border-radius: 5px;
+        height: 25px;
+        color: #e3dad8;
+      }
+
+      .submit-btn {
+        background: #be593b;
+        width: 30%;
+        border: 1px solid #d6b9b1;
+        border-radius: 5px;
+        height: 25px;
+        color: #d6b9b1;
+      }
+      fieldset {
+        padding: 2%;
+        border: 1px solid #d6c6be;
+      }
+      legend {
+        color: #d6c6be;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="form-container">
+      <div class="logo-section">
+        <img
+          class="logo"
+          src="https://www.freepnglogos.com/uploads/company-logo-png/file-mobile-apps-development-company-logo-25.png"
+          alt="company-logo-png"
+        />
+      </div>
+      <hr class="logo-end-hr" />
+      <div class="form-title-container">
+        <h3 class="title">Sign Up for Our Newsletter</h3>
+        <p class="title-des">
+          Fill out your information below to be signed up for our informative
+          newsletter.
+        </p>
+      </div>
+      <div>
+        <form
+          class="form-section"
+          method="post"
+          target="_self"
+          autocomplete="on"
+        >
+          <fieldset>
+            <legend>Bio</legend>
+            <div class="input-cont">
+              <label for="first_name">First name:</label>
+              <input
+                class="input-field"
+                id="first_name"
+                type="text"
+                placeholder="Enter your first name"
+              />
+            </div>
+
+            <div class="input-cont">
+              <label for="last_name">Last Name:</label>
+              <input
+                class="input-field"
+                id="last_name"
+                type="text"
+                placeholder="Enter last name in small case"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Credentials</legend>
+            <div class="input-cont">
+              <label for="username">User Name:</label>
+              <input
+                class="input-field"
+                id="username"
+                type="text"
+                placeholder="Enter your user name"
+                maxlength="10"
+                minlength="5"
+              />
+            </div>
+
+            <div class="input-cont">
+              <label for="password-field">Password:</label>
+              <input
+                id="password-field"
+                class="input-field"
+                type="password"
+                minlength="5"
+                placeholder="Enter your strong password"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Contact</legend>
+            <div class="input-cont">
+              <label for="mob">Mobile No:</label>
+              <input
+                class="input-field"
+                id="mob"
+                type="number"
+                placeholder="Enter your phone number"
+              />
+            </div>
+
+            <div class="input-cont">
+              <label for="email-feild">Email:</label>
+              <input
+                id="email-feild"
+                class="input-field"
+                type="email"
+                minlength="5"
+                placeholder="Enter your valid email"
+              />
+            </div>
+
+            <div class="input-cont">
+              <label for="website">Website:</label>
+              <input
+                id="website"
+                class="input-field"
+                type="url"
+                value=""
+                placeholder="https://yourwebsite.com"
+                disabled
+              />
+            </div>
+            <div class="input-cont">
+              <label for="textarea">Address:</label>
+              <textarea
+                id="textarea"
+                class="text-area"
+                rows="4"
+                cols="35"
+              ></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Birth details</legend>
+            <div class="input-cont">
+              <label for="date-feild">Date:</label>
+              <input
+                id="date-feild"
+                class="input-field"
+                type="date"
+                value=""
+                min="2023-04-15"
+                max="2023-10-15"
+              />
+            </div>
+
+            <div class="input-cont">
+              <label for="date-time">Birthday:</label>
+              <input
+                id="date-time"
+                class="input-field"
+                type="datetime-local"
+                value=""
+                min="2023-04-15T21:20"
+                max="2023-10-15T15:10"
+              />
+            </div>
+
+            <div class="input-cont">
+              <label for="time">Time:</label>
+              <input
+                id="time"
+                class="input-field"
+                type="time"
+                value=""
+                min="09:00"
+                max="20:30"
+              />
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Profile</legend>
+            <div class="input-cont">
+              <label for="uplaod-file">Upload:</label>
+              <input
+                id="uplaod-file"
+                class="input-field"
+                type="file"
+                value=""
+                disabled
+              />
+            </div>
+
+            <div class="input-cont">
+              <label for="uplaod-image">Picture:</label>
+              <input
+                id="uplaod-image"
+                class=""
+                type="image"
+                value=""
+                src="https://static.vecteezy.com/system/resources/thumbnails/016/746/979/small/freelancer-software-developer-programmer-coder-illustrator-vector.jpg"
+                alt="form image"
+                height="100px"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Personal Detail</legend>
+            <!-- Radio buttons-->
+            <div class="input-cont">
+              <label>Gender:</label>
+              <div class="radio-options">
+                <input type="radio" id="male" value="" /><label
+                  class="radio-label"
+                  for="male"
+                  >Male</label
+                >
+              </div>
+              <div class="radio-options">
+                <input type="radio" id="female" value="" /><label
+                  class="radio-label"
+                  for="female"
+                  >Female</label
+                >
+              </div>
+              <div class="radio-options">
+                <input type="radio" id="other" value="" disabled /><label
+                  class="radio-label"
+                  for="other"
+                  >Other</label
+                >
+              </div>
+            </div>
+
+            <!-- Check box options-->
+            <div class="input-cont">
+              <label>Language:</label>
+              <div>
+                <label for="html">HTML</label>
+                <input id="html" class="" type="checkbox" />
+              </div>
+
+              <div>
+                <label for="css">CSS</label>
+                <input id="css" class="" type="checkbox" />
+              </div>
+
+              <div>
+                <label for="js">Javascript</label>
+                <input id="js" class="" type="checkbox" />
+              </div>
+            </div>
+
+            <div class="input-cont">
+              <label for="color">Color:</label>
+              <input
+                id="color"
+                class="input-field"
+                type="color"
+                value="#abc456"
+              />
+            </div>
+
+            <div class="input-cont">
+              <label for="range">Age:</label>
+              <input
+                id="range"
+                class="input-field"
+                type="range"
+                value="70"
+                min="50"
+                max="90"
+              />
+            </div>
+          </fieldset>
+
+          <div class="input-cont">
+            <div class="term-cont">
+              <input id="terms" class="" type="checkbox" value="" />
+              <label for="terms">Terms & Conditions</label>
+            </div>
+          </div>
+
+          <div class="btn-container">
+            <input
+              class="save-btn"
+              type="button"
+              value="Save"
+              class="save-btn"
+            />
+            <input type="submit" class="submit-btn" />
+            <input type="Reset" class="reset-btn" />
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

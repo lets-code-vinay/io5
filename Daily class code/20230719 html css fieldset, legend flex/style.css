@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(228, 228, 239);
+}
+
+.parent {
+  border: 1px solid rgb(55, 24, 24);
+  margin: 2% auto;
+  height: 500px;
+  width: 50%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* flex-grow */
+/* flex-shrink */
+.display {
+  border: 1px solid red;
+  margin: 1%;
+  width: 100px;
+  height: 100px;
+  color: white;
+}
+
+.divs-1 {
+  background-color: rgb(182, 87, 87);
+  flex-shrink: 1;
+}
+
+.divs-2 {
+  background-color: rgb(123, 88, 88);
+  flex-shrink: 1;
+}
+
+.divs-3 {
+  background-color: rgb(67, 168, 46);
+  flex-shrink: 1;
+}
+
+.divs-4 {
+  background-color: rgb(179, 17, 101);
+  flex-shrink: 1;
+}
+
+.divs-5 {
+  background-color: rgb(47, 95, 226);
+  flex-shrink: 4;
+}
+
+.divs-6 {
+  background-color: rgb(72, 100, 177);
+  flex-shrink: 1;
+}
+
+.divs-7 {
+  background-color: rgb(127, 74, 102);
+  flex-shrink: 1;
+}
+
+.divs-8 {
+  background-color: rgb(29, 44, 84);
+  flex-shrink: 1;
+}
+
+.divs-9 {
+  background-color: rgb(50, 56, 71);
+  flex-shrink: 1;
+}

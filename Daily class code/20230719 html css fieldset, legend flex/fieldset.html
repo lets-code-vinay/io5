@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fieldset</title>
+    <style>
+      .main {
+        background-color: aqua;
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 30%;
+        margin: 5% auto;
+        padding: 2%;
+      }
+      .input-cont {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <fieldset>
+        <legend>Sign up</legend>
+        <div class="input-cont">
+          <label for="email-address"> Email:</label>
+          <input
+            id="email-address"
+            type="email"
+            value=""
+            placeholder="Enter you email address"
+          />
+        </div>
+
+        <div class="input-cont">
+          <label for="password-input">Password:</label>
+          <input
+            id="password-input"
+            type="password"
+            value=""
+            placeholder="Enter you password"
+          />
+        </div>
+        <div class="">
+          <input type="submit" />
+          <button>Save</button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>My story</legend>
+        <p>
+          "I'm not the best at expressing my feelings, but... I hope you can
+          love me the way I love you." [Kaidou Shun x Male! Reader] (This story
+          doesn't necessarily fo...
+        </p>
+      </fieldset>
+    </main>
+  </body>
+</html>
