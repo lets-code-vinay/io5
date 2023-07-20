@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main-section {
+  border: 1px solid red;
+  padding: 2px;
+  width: 50%;
+  margin: 2% auto;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.animals {
+  border: 1px dotted black;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  color: white;
+}
+
+.Cat {
+  background-color: aqua;
+}
+.Dog {
+  background-color: rgb(54, 103, 103);
+  flex-grow: 2;
+}
+.Rat {
+  background-color: rgb(51, 29, 195);
+}
+.Cow {
+  background-color: rgb(26, 200, 17);
+}
+.Pig {
+  background-color: rgb(202, 28, 28);
+  flex-grow: 2;
+}
+.Boar {
+  background-color: rgb(181, 116, 63);
+}
+.Horse {
+  background-color: rgb(67, 86, 194);
+}
+.Ox {
+  background-color: rgb(9, 56, 56);
+  flex-shrink: 2;
+}
+.Tiger {
+  background-color: rgb(71, 48, 7);
+  flex-grow: 2;
+}
+.Lion {
+  background-color: rgb(182, 12, 105);
+}
+
+#second-section {
+  border: 1px solid black;
+  padding: 2px;
+  width: 70%;
+  height: 700px;
+  margin: 2% auto;
+
+  display: flex;
+  flex-direction: row;
+  /*row
+              column
+            */
+  flex-wrap: wrap;
+  /*wrap
+              no-wrap
+            */
+  justify-content: space-between;
+  /*
+      center 
+
+      start
+      left
+      flex-start
+
+      end
+      right
+      flex-end
+
+      space-between --> provide space in between children, there is not gap on left and right
+      space-around --> provide space in between children, there is gap on left and right, 
+                left right gaps are half as compare to children gap
+              space-evenly --> provide space in between children, there is equal gap on left, right, and in between children
+            */
+  align-items: center;
+  /*
+                center : put all children at center of parent
+                
+                start : put all children at top of parent
+                left : : put all children at top of parent
+                flex-start : : put all children at top of parent
+          
+                end : : put all children at end of parent
+                right : : put all children at end of parent
+                flex-end : : put all children at end of parent
+          
+                stretch --> increase or stretch the height of children till parent's height, 
+                            It will not work if children have their own height
+       */
+}
+
+.days {
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+  color: white;
+  text-align: center;
+}
+
+.Sun {
+  background-color: red;
+}
+.Mon {
+  background-color: rgb(74, 27, 186);
+}
+
+.Tues {
+  background-color: brown;
+}
+
+.Wed {
+  background-color: yellowgreen;
+}

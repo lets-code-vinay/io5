@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #121821;
+  height: 70px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.header-section {
+  width: fit-content;
+  padding: 1%;
+}
+
+.logo-cont {
+  width: 20%;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.empty-div {
+  flex-grow: 3;
+}

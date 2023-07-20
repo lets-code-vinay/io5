@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select/Datalist</title>
+    <style>
+      select {
+        width: 50%;
+      }
+      datalist {
+        width: 50%;
+      }
+      option {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Select Month</h1>
+
+        <select>
+          <option>Jan</option>
+          <option>Feb</option>
+          <option>Mar</option>
+          <option>Apr</option>
+          <option>May</option>
+          <option>Jun</option>
+          <option>Jul</option>
+          <option>Aug</option>
+          <option>Sep</option>
+          <option>Oct</option>
+          <option>Nov</option>
+          <option>Dec</option>
+        </select>
+      </section>
+
+      <section>
+        <h1>Select and enter Month</h1>
+
+        <label for="months">Months</label>
+        <input list="months-data" id="months" name="months" />
+        <datalist id="months-data">
+          <option value="Jan"></option>
+          <option value="Feb"></option>
+          <option value="Mar"></option>
+          <option value="Apr"></option>
+          <option value="May"></option>
+          <option value="Jun"></option>
+          <option value="Jul"></option>
+          <option value="Aug"></option>
+          <option value="Sep"></option>
+          <option value="Oct"></option>
+          <option value="Nov"></option>
+          <option value="Dec"></option>
+        </datalist>
+      </section>
+    </main>
+  </body>
+</html>
