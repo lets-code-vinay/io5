@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>background properties</title>
+    <!--
+        1. background-repeat : To repeat any background
+            /* background-repeat: no-repeat; */ . If you don't want to repeat background images
+            /* background-repeat-x: no-repeat; */ if you don't want repeat BG image on x-axis
+            /* background-repeat-y: no-repeat; */ if you don't want repeat BG image on y-axis
+            /* background-size: cover; */ if you want to fill entire width of image to parent
+            /* background-repeat: round; */ is used to adjust images to entire parent
+            background-repeat: space; is used to fill parent with actual size of image whether it is leaving some space
+    
+    
+        2. background-position: use it without background repeat property
+                background-position: center; */   to position your image at center of parent
+                /* background-position: bottom; */ to position your image at bottom-center of parent
+                /* background-position: left; */  to position your image at left of parent
+                /* background-position: right; */  to position your image at right of parent
+                background-position: top;  to position your image at top-center of parent
+
+        3. background-position-x: to position any image at top  x axis, 
+                background-position-x: center;; // center at top
+                background-position-x: left;; // left at top
+                background-position-x: right;; // right at top
+
+        4. background-position-y: to position images according to vertical adjustment
+                background-position-y: top; // images will start form top edge
+                background-position-y: center; // images will start form center, images could be trimmed from top/bottom
+                background-position-y: bottom; // images will start form bottom, images could be trimmed from top
+                background-position-y: 20%;  // main image line will go down, if we provide %age
+
+        5. background-size - to provide size of given image
+                background-size: cover;  : cover will add single image according to width and height of parent
+                /* background-size: contain;  images will be added according to size of parent. 
+                background-size: 6%;  by using this we can adjust the size of background image
+                /* background-size: 200px 100px; This is used to provide height and width of background image
+
+        6. Filters
+            1. blur
+                filter: blur(10px); it will blur the image
+            2. 
+        -->
+    <style>
+      .robin-story {
+        width: 60%;
+        border: 1px solid red;
+        padding: 1%;
+        margin: 1% auto;
+      }
+      .robin {
+        float: right;
+        margin-left: 1%;
+      }
+      .image-cont {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .figure {
+        border: 1px solid red;
+        width: 20%;
+        border-radius: 10px;
+        padding: 1%;
+      }
+
+      .robin-2 {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .figcaption {
+        text-align: center;
+        color: brown;
+      }
+
+      .img-section {
+        border: 1px solid red;
+        width: 100%;
+        height: 1000px;
+
+        background-image: url(https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg);
+      }
+
+      .img-section-2 {
+        border: 1px solid red;
+        width: 100%;
+        height: 1000px;
+
+        background-image: url(robinhood.png);
+      }
+
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background: red;
+        background: url(robin-hood64.png);
+      }
+      .img-section-3 {
+        border: 1px solid red;
+        width: 30%;
+        height: 58vh;
+        background-image: url(../mount.jpg);
+        background-size: cover;
+        border-radius: 20px;
+      }
+
+      .blur {
+        filter: blur(10px);
+      }
+      .brightness {
+        /* filter: brightness(2); to increase brightness */
+        /* filter: brightness(0.2); to increase brightness
+ */
+        filter: brightness(0.2);
+      }
+
+      .invert {
+        filter: invert(90%);
+      }
+      .opacity {
+        filter: opacity(0.7);
+        /* opacity: 0.5; */
+      }
+      .saturate {
+        filter: saturate(10%);
+      }
+      .sepia {
+        filter: sepia(90%);
+      }
+      .contrast {
+        filter: contrast(200%);
+      }
+      .grayscale {
+        filter: grayscale(100%);
+      }
+      .hue {
+        filter: hue-rotate(244deg);
+      }
+
+      .drop {
+        /*            X   Y   Spread  color   */
+        filter: drop-shadow(20px 10px 20px rgb(235, 10, 10));
+      }
+      .short {
+        filter: blur(5px) contrast(200%) grayscale(70%) invert(100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p class="robin-story">
+        <img
+          class="robin"
+          src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+          alt="robin hood movie poster"
+          width="10%"
+        />
+        Robin Hood is a legendary heroic outlaw originally depicted in English
+        folklore and subsequently featured in literature and film. According to
+        legend, he was a highly skilled archer and swordsman.
+        <br />
+        Through retellings, additions, and variations, a body of familiar
+        characters associated with Robin Hood has been created. These include
+        his lover, Maid Marian; his band of outlaws, the Merry Men; and his
+        chief opponent, the Sheriff of Nottingham. The Sheriff is often depicted
+        as assisting Prince John in usurping the rightful but absent King
+        Richard, to whom Robin Hood remains loyal. His partisanship of the
+        common people and his hostility to the Sheriff of Nottingham are early
+        recorded features of the legend, but his interest in the rightfulness of
+        the king is not, and neither is his setting in the reign of Richard I.
+        He became a popular folk figure in the Late Middle Ages. The earliest
+        known ballads featuring him are from the 15th century.
+      </p>
+
+      <div class="image-cont">
+        <figure class="figure">
+          <img
+            class="robin-2"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+          <figcaption class="figcaption">
+            Robin hood: Godlike creature
+          </figcaption>
+        </figure>
+      </div>
+      <div class="img-section">
+        <!-- <img src="robinhood.png" alt="robin hood art" /> -->
+        <h2>The great Robin hood</h2>
+      </div>
+
+      <div class="img-section-2">
+        <h2>The great Robin hood -2</h2>
+      </div>
+
+      <div class="filters">
+        <div class="">
+          <h1>Blur</h1>
+          <img
+            class="blur"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+        </div>
+
+        <div class="">
+          <h1>Brightness</h1>
+          <img
+            class="brightness"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+        </div>
+
+        <div class="">
+          <h1>Invert</h1>
+          <img
+            class="invert"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+        </div>
+
+        <div class="">
+          <h1>Opacity</h1>
+          <img
+            class="opacity"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+        </div>
+
+        <div class="">
+          <h1>Saturate</h1>
+          <img
+            class="saturate"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+        </div>
+
+        <div class="">
+          <h1>Sepia</h1>
+          <img
+            class="sepia"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+        </div>
+
+        <div class="">
+          <h1>Contrast</h1>
+          <img
+            class="contrast"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+        </div>
+
+        <div class="">
+          <h1>Grayscale</h1>
+          <img
+            class="grayscale"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+        </div>
+
+        <div class="">
+          <h1>Hue rotate</h1>
+          <img
+            class="hue"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+        </div>
+
+        <div class="">
+          <h1>Drop shadow</h1>
+          <img
+            class="drop"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+        </div>
+
+        <div class="">
+          <h1>Short hand</h1>
+          <img
+            class="short"
+            src="https://m.media-amazon.com/images/M/MV5BNTRhODA2M2QtNTgwNi00ZWUyLTlhMDQtN2M2OGEwNTU3NGRjXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+            alt="robin hood movie poster"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
