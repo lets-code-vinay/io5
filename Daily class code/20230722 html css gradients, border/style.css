@@ -1,0 +1,133 @@
+body {
+  background-image: url(https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);
+  background-position-y: 21%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+ul {
+  color: aliceblue;
+  list-style-image: url(icon.svg);
+}
+
+.grdient-class {
+  background-image: url(https://images.pexels.com/photos/62627/niagara-cases-water-waterfall-62627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grad {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  margin: 1%;
+}
+
+.grad-1 {
+  background-image: linear-gradient(red, blue, yellow, black, green);
+}
+
+.grad-1-1 {
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(red, blue, yellow, black, green);
+}
+
+.grad-2 {
+  background-image: linear-gradient(to right, red, blue, yellow, black, green);
+}
+
+.grad-3 {
+  background-image: linear-gradient(to top, red, blue, yellow, black, green);
+}
+
+.grad-4 {
+  background-image: linear-gradient(
+    to top,
+    red 10%,
+    blue 20%,
+    yellow 20%,
+    black 40%,
+    green 10%
+  );
+}
+
+.grad-5 {
+  background-image: linear-gradient(138deg, blue, green, purple);
+}
+
+.grad-6 {
+  background-image: radial-gradient(white, green, purple);
+}
+
+.grad-7 {
+  width: 150px;
+  background-image: radial-gradient(white, green, purple);
+}
+
+.grad-8 {
+  width: 150px;
+  background-image: radial-gradient(circle, white, green, purple);
+}
+
+.grad-9 {
+  background-image: radial-gradient(ellipse at top, white, green, purple);
+}
+
+.grad-10 {
+  background-image: radial-gradient(ellipse at right, white, green, purple);
+}
+
+.grad-11 {
+  background-image: radial-gradient(ellipse at left, white, green, purple);
+}
+
+.grad-12 {
+  background-image: radial-gradient(ellipse at bottom, white, green, purple);
+}
+
+.grad-13 {
+  background-image: radial-gradient(ellipse at 30% 30%, white, green, purple);
+}
+
+.grad-14 {
+  width: 150px;
+  background-image: radial-gradient(circle at 70% 30%, white, green, purple);
+}
+
+.grad-15 {
+  width: 150px;
+  background-image: radial-gradient(circle at top, white, green, purple);
+}
+
+.grad-16 {
+  width: 150px;
+  background-image: radial-gradient(circle at bottom, white, green, purple);
+}
+
+.grad-17 {
+  width: 150px;
+  background-image: radial-gradient(circle at left, white, green, purple);
+}
+
+.grad-18 {
+  width: 150px;
+  background-image: radial-gradient(circle at right, white, green, purple);
+}
+
+.grad-19 {
+  background-image: radial-gradient(
+    circle at right,
+    transparent 39%,
+    green 60%,
+    purple 83%
+  );
+}
+
+.grad-20 {
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background-image: radial-gradient(circle, red 19%, green 41%, purple 83%);
+}
