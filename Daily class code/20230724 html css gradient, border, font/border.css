@@ -1,0 +1,216 @@
+body {
+}
+
+.parent-border {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.border {
+  width: 100px;
+  height: 100px;
+  padding: 1%;
+  margin: 1%;
+  color: blue;
+}
+
+.border-1 {
+  /* border-style: solid; */
+  /* border-style: dotted; */
+  /* border-style: dashed; */
+  /* border-style: groove; */
+  /* border-style: ridge; */
+  /* border-style: double; */
+  /* border-style: inset; */
+  /* border-style: outset; */
+  /* border-style: hidden; */
+  /* border-style: none; */
+  border-style: solid groove double dashed;
+  border-width: 5px;
+}
+
+.border-2 {
+  border-style: solid;
+  border-width: thin;
+}
+
+.border-3 {
+  border-style: solid;
+  border-width: medium;
+}
+
+.border-4 {
+  border-style: solid;
+  border-width: thick;
+}
+
+.border-5 {
+  border-style: solid;
+  /* border-width: 2px; */
+  border-width: 10px;
+  background-color: red;
+}
+
+.border-6 {
+  border-width: 2px;
+  border-style: double;
+  border-color: blue;
+}
+/* Shorthand */
+.border-7 {
+  /* border-width: 2px;
+  border-style: double;
+  border-color: blue; */
+
+  border: 2px double brown;
+}
+
+.border-8 {
+  border: 2px solid brown;
+  border-radius: 10px;
+}
+
+.border-9 {
+  border: 2px solid brown;
+  border-radius: 10%;
+}
+
+.border-10 {
+  border: 2px solid brown;
+  border-radius: 60px;
+}
+
+.border-11 {
+  border: 2px solid yellowgreen;
+  border-radius: 50%;
+}
+
+.border-12 {
+  width: 200px;
+  border: 2px solid yellowgreen;
+  border-radius: 50%;
+}
+.border-13 {
+  width: 200px;
+  border: 2px solid yellowgreen;
+  border-radius: 60px;
+}
+
+.border-14 {
+  width: 200px;
+  border: 20px solid yellowgreen;
+  border-image: url(robin-hood.png) space;
+  border-radius: 60px;
+}
+
+.border-15 {
+  width: 200px;
+  border: 20px solid yellowgreen;
+  border-image: url(border.png) 30 round;
+  border-radius: 60px;
+}
+
+.border-16 {
+  width: 200px;
+  border: 20px solid yellowgreen;
+  border-image: url(border.png) 30 stretch;
+  border-radius: 60px;
+}
+
+.border-17 {
+  border-inline: 2px solid red;
+}
+
+.border-18 {
+  border-inline: 2px double red;
+  border-radius: 10%;
+}
+
+.border-19 {
+  border-inline-end: 2px double rgb(42, 5, 115);
+  border-radius: 10%;
+}
+
+.border-20 {
+  border-inline-start: 2px double rgb(42, 5, 115);
+  border-radius: 10%;
+}
+
+.border-21 {
+  border-top: 2px solid rgb(42, 5, 115);
+}
+
+.border-22 {
+  border-bottom: 2px solid rgb(42, 5, 115);
+}
+
+.border-23 {
+  border-right: 2px solid rgb(42, 5, 115);
+}
+
+.border-24 {
+  border-left: 2px solid rgb(59, 36, 2);
+}
+
+.border-25 {
+  border: 2px solid red;
+  border-top-right-radius: 20px;
+}
+
+.border-26 {
+  border: 2px solid red;
+  border-top-left-radius: 30px;
+}
+
+.border-27 {
+  border: 2px solid red;
+  border-bottom-left-radius: 30px;
+}
+
+.border-28 {
+  border: 2px solid red;
+  border-bottom-right-radius: 30px;
+}
+
+.border-28 {
+  width: 150px;
+  border: 2px solid red;
+  border-bottom-right-radius: 70px;
+  border-top-left-radius: 70px;
+}
+
+.border-29 {
+  width: 150px;
+  border: 2px solid red;
+  border-bottom-left-radius: 70px;
+  border-top-right-radius: 70px;
+}
+
+.border-30 {
+  width: 150px;
+  border: 2px solid red;
+  border-top-right-radius: 70px;
+  border-top-left-radius: 70px;
+}
+
+.border-31 {
+  border: 2px solid red;
+  border-top-right-radius: 70px;
+  border-top-left-radius: 70px;
+  border-bottom-left-radius: 70px;
+}
+
+.border-32 {
+  width: 150px;
+  border-top: 5px solid red;
+  border-bottom: 5px solid red;
+
+  border-top-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+
+  border-top-right-radius: 7px;
+  border-bottom-left-radius: 7 px;
+}
