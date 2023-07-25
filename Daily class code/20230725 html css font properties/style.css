@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Borel&family=Lugrasimo&family=Pacifico&display=swap");
+
+/* Select any google fon as per requirement */
+/*
+
+font-family: 'Borel', cursive;
+font-family: 'Lugrasimo', cursive;
+font-family: 'Pacifico', cursive;
+*/
+.text-1 {
+  color: darkblue;
+  font-size: smaller;
+  font-family: "Borel", cursive;
+}
+
+.text-2 {
+  color: darkblue;
+  font-size: small;
+}
+
+.text-3 {
+  color: darkblue;
+  font-size: x-small;
+}
+
+.text-4 {
+  color: darkblue;
+  font-size: xx-small;
+}
+
+.text-5 {
+  color: darkblue;
+  font-size: medium;
+}
+
+.text-6 {
+  color: darkblue;
+  font-size: large;
+}
+
+.text-7 {
+  color: darkblue;
+  font-size: larger;
+}
+
+.text-8 {
+  color: darkblue;
+  font-size: x-large;
+}
+
+.text-9 {
+  color: darkblue;
+  font-size: xx-large;
+}
+
+.text-10 {
+  color: darkblue;
+  font-size: xxx-large;
+}
+
+.text-11 {
+  color: darkblue;
+  font-size: 10px;
+}
+
+.text-12 {
+  color: darkblue;
+  font-size: 2rem;
+}
+
+.text-13 {
+  color: darkblue;
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.text-14 {
+  color: darkblue;
+  font-size: 4rem;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.text-15 {
+  color: darkblue;
+  font-size: 4rem;
+  font-family: "Borel", cursive;
+}
+
+.text-16 {
+  color: darkblue;
+  font-size: 4rem;
+  font-family: "Lugrasimo", cursive;
+}
+
+.text-17 {
+  color: darkblue;
+  font-size: 4rem;
+  font-family: "Pacifico", cursive;
+  word-spacing: 17px;
+}
+
+.text-18 {
+  color: darkblue;
+  font-size: 4rem;
+  font-family: "Pacifico", cursive;
+  /* word-spacing: 17px; */
+  line-height: 66px;
+}
+
+.text-19 {
+  color: darkblue;
+  font-size: 4rem;
+  font-family: "Pacifico", cursive;
+  /* word-spacing: 17px; */
+  /* line-height: 66px; */
+}

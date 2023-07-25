@@ -214,3 +214,8 @@ body {
   border-top-right-radius: 7px;
   border-bottom-left-radius: 7 px;
 }
+
+.border-33 {
+  border: 2px solid blue;
+  border-radius: 60px 60px 60px 0px;
+}
