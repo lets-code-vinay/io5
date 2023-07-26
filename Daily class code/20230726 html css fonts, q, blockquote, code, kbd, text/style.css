@@ -1,0 +1,111 @@
+body {
+  background-color: red;
+}
+a {
+  text-decoration: none;
+}
+
+p.heading {
+  font-size: 30px;
+  color: white;
+}
+
+.abbre:hover {
+  background-color: blue;
+}
+
+p.rev {
+  direction: rtl;
+}
+
+p.uni {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+p.uni-2 {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+p.text,
+h2.text {
+  color: antiquewhite;
+  /* text-align: center; */
+  /* text-align: left; */
+  /* text-align: right; */
+  text-align: justify;
+}
+
+p.abc {
+  text-align: justify;
+}
+
+h2.deco {
+  text-decoration-line: underline;
+}
+
+h2.deco-2 {
+  text-decoration-line: overline;
+}
+
+h2.deco-3 {
+  text-decoration-line: line-through;
+}
+
+h2.deco-4 {
+  text-decoration-line: overline underline;
+}
+
+h2.deco-5 {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+
+h2.deco-6 {
+  text-decoration-line: overline;
+  text-decoration-style: dashed;
+}
+
+h2.deco-7 {
+  text-decoration-line: line-through;
+  text-decoration-style: wavy;
+}
+
+h2.deco-8 {
+  text-decoration-line: overline underline;
+  text-decoration-style: double;
+}
+
+h2.deco-9 {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 5px;
+}
+
+h2.deco-10 {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 10%;
+}
+
+h2.deco-11 {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgb(97, 200, 7);
+  text-decoration-thickness: 5%;
+}
+
+/* shorthand */
+/* text-decoration: line-type style color thickness */
+h2.deco-12 {
+  text-decoration: overline dashed blue 5px;
+}
+
+h2.deco-13 {
+  text-decoration: line-through wavy gold 2px;
+}
+
+h2.deco-14 {
+  text-decoration: none;
+}
