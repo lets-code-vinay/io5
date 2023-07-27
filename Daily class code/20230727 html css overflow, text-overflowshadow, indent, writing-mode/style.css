@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.overflow-prop {
+  width: 500px;
+  height: 300px;
+  border: 1px double black;
+  overflow: auto;
+}
+.overflow-prop-2 {
+  width: 500px;
+  height: 300px;
+  padding: 1%;
+  border: 1px double black;
+  overflow: scroll;
+}
+
+.overflow-prop-3 {
+  width: 500px;
+  height: 300px;
+  padding: 1%;
+  border: 1px double black;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.overflow-prop-4 {
+  width: 500px;
+  height: 300px;
+  padding: 1%;
+  border: 1px double black;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.overflow-prop-5 {
+  width: 500px;
+  height: 300px;
+  padding: 1%;
+  border: 1px double black;
+  overflow: auto;
+  overflow-wrap: break-word;
+}
+
+.text-over {
+  width: 500px;
+  height: 100px;
+  padding: 1%;
+  border: 1px double black;
+  border-radius: 5px;
+
+  /* box-shadow: x y spread blur color; */
+  box-shadow: 2px 3px 3px 3px blue;
+}
+
+.text-over-p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  text-shadow: 2px 2px 3px blue;
+}
+
+.transformation-1 {
+  border: 1px dotted blue;
+  padding: 1%;
+  text-transform: uppercase;
+  text-indent: 30px;
+}
+
+.transformation-2 {
+  border: 1px dotted red;
+  padding: 1%;
+  text-transform: lowercase;
+  text-indent: 5%;
+}
+
+.transformation-3 {
+  border: 1px dotted blue;
+  padding: 1%;
+  text-transform: capitalize;
+}
+
+.wm-1 {
+  border: 1px dotted blue;
+  padding: 1%;
+  writing-mode: vertical-lr;
+}
+
+.wm-2 {
+  border: 1px dotted blue;
+  padding: 1%;
+  writing-mode: vertical-rl;
+}
