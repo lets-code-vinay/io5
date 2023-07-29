@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>font awesome</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- --CDN-- -->
+    <!-- Content Delivery network -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css"
+      integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <!--
+    How to add Font-awesome
+        1. copy paste CDN from given link inside head section
+        2. Go to font-awesome website and search icon
+        3. copy the <i> tag of icon and paste it in your html 
+
+    Colors:
+            combination of 7 color of light
+            5 types of color system in CSS
+                1. By name
+                2. by RGB
+                3. by Hex
+                4. by CMYK
+                5. by HSL    
+         
+            RGB
+                    Red, green, blue
+                        start from 0-255
+                        Black 0,0,0
+                        white 255,255,255
+                        rgba(155,78,130)        
+
+                to Add opacity
+                    rgba(155,78,130,0.6)   
+                    
+            Hex
+                Hexadecimal
+                    starts from 0-F (0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f)
+                    example -- #ff67ba  -- ff(red) 67(green) ba(blue)
+                        #000000 -- black
+                        #ffffff -- white
+                to Add opacity
+                    #ff6778 -- #ff6778ff 
+            -->
+  <body>
+    <h1>Sidebar</h1>
+    <ul class="side-bar">
+      <li class="side-bar-list">
+        <i class="fa-solid fa-inbox red-icon"></i>
+        <p>Inbox</p>
+      </li>
+
+      <li class="side-bar-list">
+        <i class="fa-regular fa-star green-icon"></i>
+        <p>Starred</p>
+      </li>
+
+      <li class="side-bar-list">
+        <i class="fa-regular fa-clock red-icon"></i>
+        <p>Snoozed</p>
+      </li>
+
+      <li class="side-bar-list">
+        <i class="fa-regular fa-paper-plane green-icon"></i>
+        <p>Sent</p>
+      </li>
+
+      <li class="side-bar-list">
+        <i class="fa-regular fa-file green-icon"></i>
+        <p>Draft</p>
+      </li>
+
+      <li class="side-bar-list">
+        <i class="fa-solid fa-chevron-down brown-icon"></i>
+        <p>More</p>
+      </li>
+    </ul>
+
+    <div class="parent">
+      <div class="child child-1">Solid child-1</div>
+      <div class="child child-2">RGB child-2</div>
+      <div class="child child-3">RGBA child-3</div>
+      <div class="child child-4">child-4</div>
+      <div class="child child-5">child-5</div>
+    </div>
+  </body>
+</html>

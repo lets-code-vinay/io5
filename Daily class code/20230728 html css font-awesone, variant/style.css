@@ -1,0 +1,69 @@
+body {
+}
+
+.side-bar {
+  width: 6%;
+}
+
+.side-bar-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.red-icon {
+  color: red;
+}
+
+.green-icon {
+  color: green;
+}
+
+.brown-icon {
+  color: brown;
+}
+
+.parent {
+  display: flex;
+  border: 1px solid black;
+  padding: 2%;
+  background-image: url(../mount.jpg);
+  background-position: center;
+}
+.child {
+  width: 200px;
+  height: 200px;
+  border: 1px solid red;
+}
+
+.child-1 {
+  background-color: brown;
+  opacity: 0.5;
+}
+
+.child-2 {
+  background-color: rgb(255, 126, 255);
+}
+
+.child-3 {
+  background-color: rgba(255, 126, 255, 0.6);
+}
+
+.child-4 {
+  background-color: #4d0c06a8;
+}
+
+/* 
+16
+
+0 - low
+8 - center
+f - high
+
+
+*/
+
+.child-5 {
+  background-color: #ab67fa8f;
+}
