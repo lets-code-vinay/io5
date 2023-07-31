@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.fist-para {
+  width: 30%;
+  margin: auto;
+}
+.sticky {
+  color: red;
+  background-color: black;
+  border-radius: 5px;
+  text-align: center;
+  position: sticky;
+  top: 5%;
+  z-index: 4;
+}
+.sticky-div {
+  border: 1px dashed blue;
+  width: 50%;
+  margin: auto;
+  padding: 1%;
+}
+.second-para {
+  margin: auto;
+}
+
+.private-jet {
+  background-color: goldenrod;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+
+  position: sticky;
+  top: 5%;
+  z-index: 4;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  color: blueviolet;
+  z-index: 5;
+}
