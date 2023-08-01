@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relative-absolute</title>
+    <style>
+      .parent {
+        border: 1px solid red;
+        height: 450px;
+        margin: auto;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .child {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        text-align: center;
+        color: rgb(31, 21, 3);
+      }
+      .child-1 {
+        background-color: aqua;
+      }
+      .child-2 {
+        background-color: blue;
+      }
+      .child-3 {
+        background-color: greenyellow;
+        /* position: relative; */
+        top: 10%;
+        left: 10%;
+      }
+
+      .child-4 {
+        background-color: goldenrod;
+      }
+      .child-5 {
+        background-color: khaki;
+      }
+
+      .grand-child {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        text-align: center;
+        color: rgb(31, 21, 3);
+      }
+      .grand-child-1 {
+        background-color: red;
+
+        position: relative;
+        top: 10%;
+        left: 10%;
+        z-index: 2;
+      }
+      .grand-child-2 {
+        background-color: rgb(54, 5, 5);
+
+        position: relative;
+        z-index: 1;
+      }
+
+      .grand-child-3 {
+        background-color: rgb(157, 36, 36);
+        position: absolute;
+        top: 0%;
+        left: 0%;
+      }
+      .grand-child-4 {
+        background-color: rgb(26, 10, 117);
+        color: wheat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child child-1">child-1</div>
+      <div class="child child-2">child-2</div>
+      <div class="child child-3">
+        <div class="grand-child grand-child-1">Grand-child-1</div>
+        <div class="grand-child grand-child-2">Grand-child-2</div>
+      </div>
+      <div class="child child-4">
+        <div class="grand-child grand-child-3">Grand-child-3</div>
+        <div class="grand-child grand-child-4">Grand-child-4</div>
+      </div>
+      <div class="child child-5">child-5</div>
+    </div>
+  </body>
+</html>
