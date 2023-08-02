@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parent {
+  width: 80%;
+  height: 300px;
+  margin: auto;
+  border: 1px solid green;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.child {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border: 1px solid green;
+}
+
+.grand-child {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  border: 1px solid green;
+}
+
+.child-1 {
+  background-color: aqua;
+  position: absolute;
+  top: 2%;
+}
+
+.child-2 {
+  background-color: floralwhite;
+  position: relative;
+  top: 20%;
+  left: 50px;
+}
+.child-3 {
+  background-color: yellow;
+}
+
+.child-4 {
+  background-color: aquamarine;
+}
+
+.child-5 {
+  background-color: honeydew;
+}
+
+.grand-child-1 {
+  background-color: honeydew;
+  position: absolute;
+  top: 2%;
+}
+
+.grand-child-2 {
+  background-color: hotpink;
+}
+
+.grand-child-3 {
+  background-color: palegreen;
+}
+
+.grand-child-4 {
+  background-color: indianred;
+}
+
+/* ---- notification bar --- */
+.header {
+  background-color: blueviolet;
+  display: flex;
+  height: 50px;
+  padding: 1%;
+}
+
+.search-div {
+  width: 50%;
+  position: relative;
+}
+.search-bar {
+  width: 80%;
+  height: 25px;
+  border-radius: 50px;
+  border: none;
+  padding: 2%;
+  padding-left: 4%;
+}
+.search-icon {
+  position: absolute;
+  left: 1%;
+  top: 20%;
+  color: #757373;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+  color: white;
+}
+
+.icons {
+}
+.social-icon {
+  position: relative;
+  margin: 2%;
+}
+
+span {
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  background: red;
+  font-size: 7px;
+  width: 15px;
+  height: 13px;
+  text-align: center;
+  padding-top: 3px;
+  border-radius: 3px;
+}
+
+.main-cont {
+  background-color: beige;
+  position: relative;
+  height: 92vh;
+}
+
+.strt-bar {
+  background-color: rgb(69, 19, 116);
+  height: 56px;
+  width: 45%;
+  border-radius: 60px;
+
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  z-index: 5;
+
+  transform: rotate(45deg);
+}
+
+.strt-bar-1 {
+  background-color: rgb(21, 182, 16);
+  height: 56px;
+  width: 45%;
+  border-radius: 60px;
+
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  z-index: 5;
+
+  transform: rotate(30deg);
+}
