@@ -40,6 +40,66 @@ body {
   left: 50%;
 }
 
+.left-eye-ball,
+.right-eye-ball {
+  position: absolute;
+  top: 15%;
+  border-radius: 50%;
+  width: 70%;
+  height: 70%;
+  background: #fefefc;
+}
+
+.left-eye-ball {
+  left: 15%;
+}
+.right-eye-ball {
+  right: 15%;
+}
+
+.pupil {
+  position: absolute;
+  border-radius: 50%;
+  top: 20%;
+  left: 20%;
+  height: 60%;
+  width: 60%;
+  background: #22400b;
+}
+
+.lips {
+  position: absolute;
+  top: 48%;
+  left: 10%;
+  height: 8%;
+  border-radius: 36px;
+  background-color: #477a29;
+  z-index: 5;
+  height: 8%;
+  width: 80%;
+}
+
+.chin {
+  position: absolute;
+  top: 48%;
+  left: 17%;
+  width: 65%;
+  height: 49%;
+  border-radius: 0 0 3000px 3000px;
+  background: #c3d31a;
+}
+
+.tongue {
+  position: absolute;
+  top: 10%;
+  border-radius: 42px;
+  left: -25%;
+  transform: rotate(41deg);
+  background: #e87c76;
+  height: 8%;
+  width: 90%;
+}
+
 .body {
   background-color: #8fbb02;
 
@@ -132,4 +192,40 @@ body {
   height: 69%;
   right: 13%;
   border-radius: 0 103% 0 0;
+}
+
+.fly-box {
+  position: absolute;
+  left: -7%;
+  top: -4%;
+  width: 15%;
+  height: 12%;
+  z-index: 6;
+}
+
+.wing {
+  position: absolute;
+  height: 40%;
+  width: 40%;
+  border-radius: 50%;
+  background: #9b9fa2;
+}
+
+.wing-1 {
+  left: 0;
+  bottom: 0%;
+}
+.wing-2 {
+  right: 0;
+  top: 0%;
+}
+
+.fly-body {
+  position: absolute;
+  height: 60%;
+  width: 60%;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  background: #030203;
 }
