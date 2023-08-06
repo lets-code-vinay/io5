@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo class</title>
+  </head>
+
+  <!--
+
+    PSEUDO CLASS
+    className:visted
+    className:link
+    className:hover
+    className:active
+
+    className::before
+    className::after
+  -->
+
+  <style>
+    .click {
+      background-color: aliceblue;
+      border: 1px solid black;
+      color: brown;
+      text-decoration: none;
+      border-radius: 5px;
+      padding: 1%;
+    }
+
+    .mail:link {
+      background-color: aliceblue;
+      color: brown;
+    }
+
+    .mail:hover {
+      background-color: red;
+      color: white;
+    }
+
+    .mail:active {
+      background-color: black;
+      color: red;
+    }
+
+    .mail:visited {
+      background-color: brown;
+      color: yellow;
+    }
+
+    .mail3:link {
+      background-color: rgb(26, 111, 185);
+      color: brown;
+    }
+
+    .mail3:hover {
+      background-color: red;
+      color: white;
+    }
+
+    .mail3:active {
+      background-color: black;
+      color: red;
+    }
+
+    .mail3:visited {
+      background-color: rgb(57, 11, 175);
+      color: yellow;
+    }
+  </style>
+  <body>
+    <main>
+      <a href="#" class="click">click here</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail">Mail me</a>
+      <a href="#" class="mail2">Mail me</a>
+      <a href="#" class="mail3">Mail me</a>
+
+      <p>This is para</p>
+    </main>
+  </body>
+</html>

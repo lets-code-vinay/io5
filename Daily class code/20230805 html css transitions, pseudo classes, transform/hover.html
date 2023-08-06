@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hover</title>
+  </head>
+  <!--
+    Transition
+        use to transit(changing one state to another state) 
+        transition-property
+            target any css property on which you want to apply transition(animation)
+                transition-property: width;
+        transition-duration
+            timing of animation(transition)
+        transition-timing-function
+                speed of transition
+            linear: transit in same speed
+            ease-in: fast start- slow end
+            ease-out: slow start-fast end
+            ease-in-out: slow fast slow
+        transition-delay: 2s
+            to put any delay to start transition
+  -->
+  <style>
+    img.mount {
+      transition-property: border-radius;
+      transition-duration: 2s;
+      transition-delay: 1s;
+    }
+    img.mount:hover {
+      border-radius: 50%;
+      border: 2px dashed brown;
+      cursor: pointer;
+    }
+
+    .red,
+    .yellow,
+    .blue,
+    .green {
+      width: 10%;
+      height: 20px;
+      transition-property: width;
+      transition-duration: 5s;
+    }
+    .red {
+      transition-timing-function: linear;
+      background-color: red;
+      transition-delay: 1s;
+    }
+    .blue {
+      transition-timing-function: ease-in;
+      background-color: blue;
+      transition-delay: 2s;
+    }
+
+    .green {
+      transition-timing-function: ease-out;
+      background-color: green;
+    }
+
+    .yellow {
+      transition-timing-function: ease-in-out;
+      background-color: yellow;
+    }
+
+    .red:hover,
+    .blue:hover,
+    .green:hover,
+    .yellow:hover {
+      width: 80%;
+    }
+
+    .pink {
+      width: 10%;
+      height: 20px;
+      background-color: pink;
+      /* transition: transition-property transition-duration transition-timing-function transition-delay; */
+      transition: width 2s, background-color 2s, border 1s;
+    }
+
+    .pink:hover {
+      width: 80%;
+      background-color: brown;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <img
+      class="mount"
+      src="../mount.jpg"
+      alt="mount"
+      width="100px"
+      height="100px"
+    />
+    <!-- 
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png?20170517184425"
+      alt="mount"
+      width="100px"
+      height="100px"
+      class="html"
+    /> -->
+
+    <div class="red"></div>
+    <div class="blue"></div>
+    <div class="green"></div>
+    <div class="yellow"></div>
+    <div class="pink"></div>
+  </body>
+</html>
