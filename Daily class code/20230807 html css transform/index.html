@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform</title>
+  </head>
+  <!--
+    transform property
+    
+    rotate: to rotate any element at specific direction
+            transform:rotate(angle)
+            transform: rotate(45deg)
+    translateX: to move any element from it's place to x-axis
+            transform: translateX(10%)
+            transform: translateX(10px)
+    translateY: to move any element from it's place to Y-axis
+            transform: translateY(10%)
+            transform: translateY(10px)
+    translate: to move any element from it's place to Y-axis and x-axis
+            transform: translate(x, y)
+            transform: translate(10px, 10%)
+    scale: to increase or decrease size of any element
+            transform: scale(2)  :: 2x
+            transform: scale(0.5)  :: half
+
+    
+            
+  -->
+  <style>
+    .parent {
+      display: flex;
+      width: 80%;
+      margin: 2% auto;
+      flex-wrap: wrap;
+    }
+    .children {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+    }
+    .children-0 {
+      background-color: rgb(28, 4, 4);
+      transition-property: width;
+      transition-duration: 2s;
+    }
+    .children-0:hover {
+      background-color: rgb(108, 108, 94);
+      width: 80%;
+    }
+    .children-1 {
+      background-color: red;
+      transition-property: width;
+      transition-duration: 2s;
+      transition-timing-function: linear;
+    }
+    .children-1:hover {
+      background-color: yellow;
+      width: 80%;
+    }
+
+    .children-1 {
+      background-color: red;
+      transition-property: width;
+      transition-duration: 2s;
+      transition-timing-function: linear;
+    }
+    .children-1:hover {
+      background-color: yellow;
+      width: 80%;
+    }
+
+    .children-2 {
+      background-color: rgb(47, 14, 182);
+      transition-property: width;
+      transition-duration: 2s;
+      transition-timing-function: ease-in;
+    }
+    .children-2:hover {
+      background-color: rgb(82, 82, 11);
+      width: 80%;
+    }
+
+    .children-3 {
+      background-color: rgb(24, 95, 66);
+      transition-property: width;
+      transition-duration: 2s;
+      transition-timing-function: ease-out;
+    }
+    .children-3:hover {
+      background-color: rgb(136, 136, 9);
+      width: 80%;
+    }
+    .children-4 {
+      background-color: rgb(56, 87, 11);
+      transition-property: width;
+      transition-duration: 2s;
+      transition-timing-function: ease-in-out;
+    }
+    .children-4:hover {
+      background-color: yellow;
+      width: 80%;
+    }
+    .children-5 {
+      background-color: rgb(141, 112, 112);
+      transition-property: border-radius;
+      transition-duration: 2s;
+      transition-timing-function: ease;
+    }
+    .children-5:hover {
+      background-color: rgb(44, 44, 3);
+      width: 80%;
+      border-radius: 50%;
+    }
+    .children-6 {
+      background-color: rgb(188, 12, 12);
+      /* transition-property: width;
+      transition-duration: 2s;
+      transition-timing-function: ease;
+      transition-delay: 1s; */
+      transition: width 2s ease-in, background-color 2s ease-out,
+        border-radius 2s ease-in-out;
+    }
+    .children-6:hover {
+      background-color: rgb(168, 168, 23);
+      width: 80%;
+      border-radius: 50%;
+    }
+
+    .children-7 {
+      background-color: rgb(82, 10, 10);
+      transition: background-color 5s ease-out, transform 5s;
+      border-radius: 0 0 0 10px;
+    }
+    .children-7:hover {
+      background-color: rgb(215, 215, 22);
+      transform: rotate(-360deg);
+    }
+
+    .children-8 {
+      background-color: rgb(176, 24, 24);
+      transition: background-color 5s ease-out, transform 2s;
+      border-radius: 0 0 0 10px;
+    }
+    .children-8:hover {
+      background-color: rgb(76, 76, 65);
+      transform: translateX(100px);
+    }
+    .children-9 {
+      background-color: rgb(157, 139, 139);
+      transition: background-color 5s ease-out, transform 2s;
+      border-radius: 0 0 0 10px;
+    }
+    .children-9:hover {
+      background-color: rgb(72, 72, 3);
+      transform: translateY(100%);
+    }
+
+    .children-10 {
+      background-color: rgb(18, 24, 172);
+      transition: background-color 5s ease-out, transform 2s;
+      border-radius: 0 0 0 10px;
+    }
+    .children-10:hover {
+      background-color: rgb(66, 66, 17);
+      transform: translate(-100%, 50%);
+    }
+
+    .children-11 {
+      background-color: rgb(80, 81, 131);
+      transition: background-color 5s ease-out, transform 2s;
+      border-radius: 0 0 0 10px;
+    }
+    .children-11:hover {
+      background-color: rgb(177, 18, 18);
+      transform: scale(2);
+    }
+    .children-12 {
+      background-color: rgb(20, 22, 142);
+      transition: background-color 5s ease-out, transform 2s;
+      border-radius: 0 0 0 10px;
+    }
+    .children-12:hover {
+      background-color: rgb(155, 181, 191);
+      transform: scale(0.5);
+    }
+
+    .children-13 {
+      background-color: rgb(124, 193, 14);
+      transition: background-color 5s ease-out, transform 2s;
+      border-radius: 0 0 0 10px;
+    }
+    .children-13:hover {
+      background-color: rgb(53, 139, 173);
+      transform: skewX(-45deg);
+    }
+
+    .children-14 {
+      background-color: rgb(180, 213, 126);
+      transition: background-color 5s ease-out, transform 2s;
+      border-radius: 0 0 0 10px;
+    }
+    .children-14:hover {
+      background-color: rgb(166, 173, 176);
+      transform: skewZ(-45deg);
+    }
+    button {
+      transform: rotate(45deg);
+    }
+    button:hover {
+      transform: scale(1.2);
+    }
+  </style>
+  <body>
+    <div class="parent">
+      <div class="children children-0"></div>
+
+      <div class="children children-1"></div>
+      <div class="children children-2"></div>
+      <div class="children children-3"></div>
+      <div class="children children-4"></div>
+      <div class="children children-5"></div>
+      <div class="children children-6"></div>
+      <div class="children children-7"></div>
+      <div class="children children-8"></div>
+      <div class="children children-9"></div>
+      <div class="children children-10"></div>
+      <div class="children children-11"></div>
+      <div class="children children-12"></div>
+      <div class="children children-13"></div>
+      <div class="children children-14"></div>
+    </div>
+
+    <button>Click me</button>
+  </body>
+</html>
