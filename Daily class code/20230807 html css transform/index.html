@@ -210,6 +210,22 @@
     button:hover {
       transform: scale(1.2);
     }
+    .sm {
+      display: flex;
+      font-size: 1rem;
+      position: absolute;
+      z-index: 38;
+      left: -6%;
+      background: red;
+      padding: 0.5%;
+      width: 9%;
+      justify-content: space-between;
+      transition: left 1s;
+    }
+    .sm:hover {
+      /* flex-direction: row-reverse; */
+      left: 0%;
+    }
   </style>
   <body>
     <div class="parent">
@@ -229,6 +245,13 @@
       <div class="children children-12"></div>
       <div class="children children-13"></div>
       <div class="children children-14"></div>
+    </div>
+
+    <div class="sm">
+      <p>Testing</p>
+      <img
+        src="../20230731 html css position, visibility, opacity, multiple images, favicon/jet.png"
+      />
     </div>
 
     <button>Click me</button>
