@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relative-absolute</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../20230801 html css position relative, absolute, fixed/chat.png"
+    />
+
+    <!--CDN for font awesome- start-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
+      integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--CDN for font awesome: end-->
+  </head>
+  <!--
+    animation:
+      animation-name-> name-of-your-animation
+        animation-name: progress-bar
+      animation-duration-> how many seconds you want to run your animation
+        animation-duration: 5s;
+      animation-delay: after how many sconds you want to start animation
+        animation-delay:1s;
+      animation-timing-function-> How do you want transition flow
+        animation-timing-function:linear;
+        animation-timing-function:ease;
+        animation-timing-function:ease-in;
+        animation-timing-function:ease-out;
+        animation-timing-function:ease-in-out;
+      animation-direction -> how do you want your animation
+        animation-direction: normal;
+        animation-direction: reverse;
+        animation-direction: alternate;
+        animation-direction: alternate-reverse;
+
+
+
+
+      @keyframes animation-name
+          2 methods are used 
+              1. from/to
+              2. percentage
+  -->
+  <body>
+    <div class="parent">
+      <div class="parent-2">
+        <div class="child child-1"></div>
+      </div>
+      <div class="child child-2"></div>
+      <!-- <div class="child child-2">child-2</div>
+      -->
+      <div class="child child-3">
+        <div class="child child-4"></div>
+      </div>
+
+      <div class="child child-5">
+        <div class="child child-6"></div>
+      </div>
+
+      <div class="child child-7">
+        <div class="child child-8"></div>
+      </div>
+
+      <div class="child child-9">
+        <div class="child child-10"></div>
+      </div>
+
+      <img src="car.png" alt="car" id="car" />
+
+      <div class="spiderman-world">
+        <img
+          class="spider"
+          src="spider.png"
+          alt="spider"
+          width="50px"
+          height="50px"
+        />
+      </div>
+    </div>
+  </body>
+</html>

@@ -98,6 +98,7 @@ body {
   background: #e87c76;
   height: 8%;
   width: 90%;
+  animation: tongue-ani 2s ease-in infinite;
 }
 
 .body {

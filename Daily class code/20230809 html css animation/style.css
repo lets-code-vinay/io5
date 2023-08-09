@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parent {
+  border: 1px solid red;
+  background-color: aqua;
+  width: 100%;
+  position: relative;
+}
+
+.parent-2 {
+  background-color: rgb(14, 165, 165);
+  width: 510px;
+  height: 55px;
+  border-radius: 30px;
+}
+
+.child {
+  background-color: rgb(38, 46, 46);
+  width: 50px;
+  height: 50px;
+}
+
+.child-1 {
+  animation-name: box-animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  border-radius: 30px;
+}
+
+@keyframes box-animation {
+  from {
+    width: 50px;
+  }
+  to {
+    width: 500px;
+    background-color: blue;
+  }
+}
+
+.child-2 {
+  animation-name: circle-animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  border-radius: 0 50%;
+  position: relative;
+
+  top: 10%;
+  left: 50%;
+}
+
+@keyframes circle-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*-------------------------rotation-1 start----------------------------*/
+.child-3 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  border: 2px dashed black;
+  position: relative;
+  top: 20%;
+  left: 50%;
+
+  animation-name: rotate-div;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: normal;
+}
+
+.child-4 {
+  border-radius: 50%;
+  background-color: rgb(82, 51, 9);
+  border: 2px solid black;
+  position: absolute;
+}
+
+@keyframes rotate-div {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+/*-------------------------rotation-1 end----------------------------*/
+
+/*-------------------------rotation-2 start----------------------------*/
+.child-5 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  border: 2px solid black;
+  position: relative;
+  top: 20%;
+  left: 30%;
+
+  animation-name: rotate-div;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: reverse;
+}
+
+.child-6 {
+  border-radius: 50%;
+  background-color: rgb(160, 5, 5);
+  border: 2px solid black;
+  position: absolute;
+}
+
+@keyframes rotate-div {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+/*-------------------------rotation-2 end----------------------------*/
+
+/*-------------------------rotation-3 start----------------------------*/
+
+.child-7 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  border: 2px solid black;
+  position: relative;
+  top: 0%;
+  left: 70%;
+
+  animation-name: rotate-div;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+.child-8 {
+  border-radius: 50%;
+  background-color: rgb(18, 26, 179);
+  border: 2px solid black;
+  position: absolute;
+
+  animation: planet 2s ease infinite alternate;
+}
+
+@keyframes rotate-div {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes planet {
+  from {
+    background-color: blue;
+    transform: scale(0.5);
+  }
+  to {
+    background-color: rgb(186, 59, 9);
+    transform: scale(2);
+  }
+}
+/*-------------------------rotation-3 end----------------------------*/
+
+/*-------------------------rotation-4 start----------------------------*/
+.child-9 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  border: 2px solid black;
+  position: relative;
+  top: 0%;
+  left: 70%;
+
+  animation-name: rotate-div;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+}
+
+.child-10 {
+  border-radius: 50%;
+  background-color: rgb(90, 150, 6);
+  border: 2px solid black;
+  position: absolute;
+}
+
+@keyframes rotate-div {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+/*-------------------------rotation-4 end----------------------------*/
+
+/*-------------------------car-1 start----------------------------*/
+#car {
+  position: absolute;
+  right: 0;
+  animation: car 5s ease infinite normal;
+  overflow: hidden;
+}
+
+@keyframes car {
+  from {
+    right: -10%;
+    overflow: hidden;
+  }
+  to {
+    right: 100%;
+  }
+}
+/*-------------------------car-1 start----------------------------*/
+
+/*-------------------------spiderman-1 start----------------------------*/
+
+.spiderman-world {
+  width: 30%;
+  height: 200px;
+  border: 1px solid black;
+  position: absolute;
+  top: 57%;
+  left: 14%;
+}
+
+.spider {
+  animation: spider-man 5s ease-in-out infinite normal;
+  position: absolute;
+}
+
+@keyframes spider-man {
+  0% {
+    top: 0%;
+    left: 0%;
+  }
+
+  25% {
+    top: 75%;
+    left: 0%;
+    transform: rotate(180deg);
+  }
+  50% {
+    top: 75%;
+    left: 90%;
+    transform: rotate(270deg);
+  }
+  75% {
+    top: 0%;
+    left: 90%;
+    transform: rotate(360deg);
+  }
+  100% {
+    top: 0%;
+    left: 0%;
+  }
+}
+
+/*-------------------------spiderman-1 end----------------------------*/
