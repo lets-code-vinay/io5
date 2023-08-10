@@ -58,7 +58,7 @@ body {
   width: 70%;
   height: 70%;
   z-index: 10;
-  animation: lid 2s ease-in-out infinite;
+  animation: lid 1s ease infinite alternate;
   /* background-image: linear-gradient(to bottom, transparent 90%, green 90%); */
 }
 .left-eye-lid {
@@ -70,13 +70,13 @@ body {
 
 @keyframes lid {
   /* from {
-    background-image: linear-gradient(to bottom, transparent 100%, green 100%);
+    background-image: linear-gradient(to top, transparent 100%, green 100%);
   }
   to {
-    background-image: linear-gradient(to bottom, transparent 0%, green 0%);
+    background-image: linear-gradient(to top, transparent 0%, green 0%);
   } */
   0% {
-    background-image: linear-gradient(to top, transparent 100%, green 100%);
+    background-image: linear-gradient(to top, transparent 90%, green 90%);
   }
   20% {
     background-image: linear-gradient(to top, transparent 80%, green 80%);
@@ -91,7 +91,7 @@ body {
     background-image: linear-gradient(to top, transparent 20%, green 20%);
   }
   100% {
-    background-image: linear-gradient(to top, transparent 0%, green 0%);
+    background-image: linear-gradient(to top, transparent 10%, green 10%);
   }
 }
 
@@ -132,7 +132,7 @@ body {
   height: 49%;
   border-radius: 0 0 3000px 3000px;
   background: #c3d31a;
-  animation: chin 2s ease-out infinite;
+  animation: chin 1s ease-out infinite alternate;
 }
 @keyframes chin {
   from {
@@ -273,12 +273,12 @@ body {
 .wing-1 {
   left: 0;
   bottom: 0%;
-  animation: wing_1 2s ease-in-out infinite;
+  animation: wing_1 0.3s ease-in-out infinite alternate;
 }
 .wing-2 {
   right: 0;
   top: 0%;
-  animation: wing_2 2s ease-in-out infinite;
+  animation: wing_2 0.3s ease-in-out infinite alternate;
 }
 @keyframes wing_1 {
   from {
