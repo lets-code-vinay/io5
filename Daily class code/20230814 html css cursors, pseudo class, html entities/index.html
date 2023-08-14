@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursor</title>
+  </head>
+  <!--
+        Pseudo class
+                Whenever we use single colon with any class/id, this is pseudo class
+                :hover, :first-child, :visited, :link, :active
+        Pseudo Elements
+            When we have double colons (::) with any class/id/ selector, is known as pseudo elements
+                ::first-letter, ::first-line, ::marker, ::selection, :: after, ::before
+    -->
+  <style>
+    .cursor {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .pointer {
+      background-color: rgb(120, 89, 89);
+      cursor: pointer;
+    }
+    .alias {
+      background-color: rgb(100, 152, 195);
+      cursor: alias;
+    }
+    .default {
+      background-color: rgb(98, 187, 84);
+      cursor: default;
+    }
+    .row-resize {
+      background-color: rgb(98, 187, 84);
+      cursor: row-resize;
+    }
+
+    .col-resize {
+      background-color: rgb(119, 172, 223);
+      cursor: col-resize;
+    }
+
+    .none {
+      background-color: rgb(119, 172, 223);
+      cursor: none;
+    }
+    .zoomin {
+      background-color: rgb(29, 67, 103);
+      cursor: zoom-in;
+    }
+    .zoomout {
+      background-color: rgb(47, 188, 207);
+      cursor: zoom-out;
+    }
+
+    .crosshair {
+      background-color: rgb(120, 89, 89);
+      cursor: crosshair;
+    }
+    .grab {
+      background-color: rgb(100, 152, 195);
+      cursor: grab;
+    }
+    .grabbing {
+      background-color: rgb(98, 187, 84);
+      cursor: grabbing;
+    }
+    .help {
+      background-color: rgb(98, 187, 84);
+      cursor: help;
+    }
+
+    .no-drop {
+      background-color: rgb(119, 172, 223);
+      cursor: no-drop;
+    }
+
+    .progress {
+      background-color: rgb(119, 172, 223);
+      cursor: progress;
+    }
+    .not-allowed {
+      background-color: rgb(29, 67, 103);
+      cursor: not-allowed;
+    }
+    .text {
+      background-color: rgb(47, 188, 207);
+      cursor: text;
+    }
+    .wait {
+      background-color: rgb(100, 152, 195);
+      cursor: wait;
+    }
+    .url {
+      background-color: rgb(98, 187, 84);
+      cursor: url;
+    }
+    .cell {
+      background-color: rgb(98, 187, 84);
+      cursor: cell;
+    }
+
+    .pointer:hover {
+      background-color: rgb(208, 29, 29);
+      cursor: pointer;
+    }
+
+    p:first-child {
+      background-color: rgb(11, 8, 50);
+      cursor: pointer;
+      color: aliceblue;
+    }
+
+    .random-para {
+      border: 1px solid red;
+      width: 60%;
+      padding: 1%;
+      text-indent: 20px;
+    }
+    .random-para::first-letter {
+      background-color: red;
+      font-size: xx-large;
+      font-weight: 900;
+      border-radius: 50%;
+    }
+
+    .random-para-2::first-line {
+      background-color: red;
+      font-size: xx-large;
+      font-weight: 900;
+      color: aqua;
+    }
+
+    .random-para::selection {
+      background-color: red;
+      color: bisque;
+    }
+
+    ::marker {
+      color: red;
+      font-size: 30px;
+    }
+
+    ul {
+      list-style-type: square;
+    }
+  </style>
+  <body>
+    <div class="cursor pointer">Pointer</div>
+    <div class="cursor alias">alias</div>
+    <div class="cursor default">Default</div>
+    <div class="cursor row-resize">row-resize</div>
+    <div class="cursor col-resize">col resize</div>
+    <div class="cursor none">none</div>
+    <div class="cursor zoomin">zoomin</div>
+    <div class="cursor zoomout">zoomout</div>
+    <div class="cursor crosshair">crosshair</div>
+    <div class="cursor grab">grab</div>
+    <div class="cursor grabbing">grabbing</div>
+    <div class="cursor help">help</div>
+    <div class="cursor no-drop">no-drop</div>
+    <div class="cursor progress">progress</div>
+    <div class="cursor not-allowed">not-allowed</div>
+    <div class="cursor text">text</div>
+    <div class="cursor wait">wait</div>
+    <div class="cursor url">url</div>
+    <div class="cursor cell">cell</div>
+
+    <div class="cursor firstchild">
+      <p>
+        This is my &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; paragraph with html entity
+        name
+      </p>
+      <p>&copy; copyright 2023 infoxygen</p>
+
+      <p>&copy; copyright 2024 infoxygen</p>
+    </div>
+
+    <!----Html entities-->
+    <br />
+
+    &copy; copyright 2023 infoxygen
+    <br />
+    &reg; -- Register
+    <br />
+    &trade; -- Register
+    <br />
+    &yen; Yen
+    <br />
+    &euro; -- Euro
+    <br />
+    &#8377; -- INR
+    <br />
+    &nbsp; -- for space -- non braking space
+    <p>
+      This is my &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; paragraph with html entity name
+    </p>
+    <p>
+      This is my &#160; &#160;&#160;&#160;&#160; paragraph with html entity code
+    </p>
+
+    <p>&amp; -> ampersand</p>
+    <p>&lt; -> less than</p>
+    <p>&gt; -> greater than</p>
+    <p>&isin; -> sin</p>
+    <p>&pi; -> Pi</p>
+
+    <p>&#65505;</p>
+
+    <p>&#9824; king spade &spades;</p>
+    <p>&#9827; king Clubs &clubs;</p>
+    <p>&#9829; king heart &hearts;</p>
+    <p>&#9830; king diamond &diams;</p>
+
+    <p>&larr; Left arrow &#8592;</p>
+    <p>&rarr; Right arrow &#8594;</p>
+    <p>&uarr; Upper arrow &#8593;</p>
+    <p>&darr; Down arrow &#8595;</p>
+
+    <p>&#128512;</p>
+
+    <!---------------------------->
+    <p class="random-para">
+      Generating random paragraphs can be an excellent way for writers to get
+      their creative flow going at the beginning of the day. The writer has no
+      idea what topic the random paragraph will be about when it appears. This
+      forces the writer to use creativity to complete one of three common
+      writing challenges. The writer can use the paragraph as the first one of a
+      short story and build upon it. A second option is to use the random
+      paragraph somewhere in a short story they create. The third option is to
+      have the random paragraph be the ending paragraph in a short story. No
+      matter which of these challenges is undertaken, the writer is forced to
+      use creativity to incorporate the paragraph into their writing.
+    </p>
+
+    <p class="random-para random-para-2">
+      Generating random paragraphs can be an excellent way for writers to get
+      their creative flow going at the beginning of the day. The writer has no
+      idea what topic the random paragraph will be about when it appears. This
+      forces the writer to use creativity to complete one of three common
+      writing challenges. The writer can use the paragraph as the first one of a
+      short story and build upon it. A second option is to use the random
+      paragraph somewhere in a short story they create. The third option is to
+      have the random paragraph be the ending paragraph in a short story. No
+      matter which of these challenges is undertaken, the writer is forced to
+      use creativity to incorporate the paragraph into their writing.
+    </p>
+
+    <ul>
+      <li>Spiderman</li>
+      <li>Batman</li>
+      <li>Ironman</li>
+      <li>Thor</li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .avenger_assemble {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .avengers {
+        border: 1px solid red;
+        width: 200px;
+        height: fit-content;
+        padding: 1%;
+      }
+      .Hulk:hover {
+        transform: rotate(45deg);
+      }
+
+      .Thor::first-letter {
+        color: brown;
+        font-size: xx-large;
+        font-weight: 900;
+        background-color: bisque;
+      }
+      .styled_first_letter::first-letter {
+        color: brown;
+        font-size: xx-large;
+        font-weight: 900;
+        background-color: bisque;
+      }
+
+      /* .styled_first_line::first-line {
+        color: aqua;
+        background-color: bisque;
+        font-size: x-large;
+        font-weight: 800;
+      } */
+
+      .Ironman::first-line {
+        color: aqua;
+        background-color: bisque;
+        font-size: x-large;
+        font-weight: 800;
+      }
+
+      ol li::marker {
+        color: red;
+      }
+
+      .assemble::before {
+        content: "Before";
+        font-size: x-small;
+        color: red;
+        font-weight: 500;
+      }
+      .assemble::after {
+        content: "After";
+        color: blue;
+        font-weight: 900;
+        font-size: xx-large;
+      }
+
+      .bullets li {
+        list-style: none;
+        text-align: center;
+      }
+      .bullets li::before {
+        content: "→";
+        color: rgb(91, 146, 15);
+        margin-right: 10px;
+      }
+
+      .bullets li::after {
+        content: "♣";
+        color: red;
+        margin-left: 10px;
+      }
+
+      .spiderman {
+        width: fit-content;
+        color: greenyellow;
+        position: relative;
+      }
+      .spiderman::before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        left: 1%;
+        width: 80%;
+        height: 5px;
+        background-image: linear-gradient(90deg, red 50%, rgba(0, 0, 0) 50%);
+      }
+      .spiderman::after {
+        content: "";
+        position: absolute;
+        bottom: -10%;
+        left: 1%;
+        width: 80%;
+        height: 5px;
+        background-image: linear-gradient(90deg, red 50%, rgba(0, 0, 0) 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="avenger_assemble">
+      <div class="avengers Thor">
+        Thor is a 2011 American superhero film based on the Marvel Comics
+        character of the same name. Produced by Marvel Studios and distributed
+        by Paramount Pictures,[a] it is the fourth film in the Marvel Cinematic
+        Universe (MCU). It was directed by Kenneth Branagh, written by the
+        writing team of
+        <p class="styled_first_letter">Ashley Edward Miller</p>
+        and Zack Stentz along with Don Payne, and stars Chris Hemsworth as the
+        title character alongside Natalie Portman, T
+      </div>
+      <div class="avengers Ironman styled_first_letter">
+        Ironman is a superhero appearing in American comic books published by
+        Marvel Comics. The character was co-created by writer and editor Stan
+        Lee, developed by scripter Larry Lieber, and designed by artists Don
+        Heck and Jack Kirby. The character made his first appearance in Tales of
+        Suspense #39 (cover dated March 1963), and received his own title in
+        Iron Man #1 (May 1968). In 1963, the character founded the Avengers
+        superhero team with Thor, Ant-Man, Wasp and the Hulk.
+      </div>
+      <div class="avengers Spiderman">Spiderman</div>
+      <div class="avengers Hulk">Hulk</div>
+      <div class="avengers Antman">Antman</div>
+
+      <ol>
+        <li>Doctor Strange</li>
+        <li>Black Widow</li>
+        <li>Hawkeye</li>
+        <li>Vision</li>
+      </ol>
+    </div>
+    <span class="assemble">Avengers Assemble</span>
+
+    <ol class="bullets">
+      <li>Thanos</li>
+      <li>Rocket</li>
+      <li>Groot</li>
+      <li>Wanda</li>
+    </ol>
+
+    <h1 class="spiderman">Spider Man</h1>
+  </body>
+</html>
