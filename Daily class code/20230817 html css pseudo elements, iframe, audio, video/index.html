@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iframe</title>
+    <style>
+      .before-ele {
+        display: inline-block;
+        background-color: red;
+        color: azure;
+      }
+      .before-ele::before {
+        content: "before";
+        background-color: blue;
+        color: yellow;
+      }
+      .before-ele::after {
+        content: "after";
+        background-color: blue;
+        color: yellow;
+      }
+
+      ul li {
+        list-style-type: none;
+      }
+      ul li::before {
+        content: "😆";
+        color: red;
+        font-size: 5px;
+      }
+      ul li::after {
+        content: "🚀";
+        color: red;
+        font-size: 5px;
+      }
+      details {
+        width: 50%;
+        margin: auto;
+        box-shadow: 0px 0px 10px 1px black;
+        background-color: none !important;
+      }
+      details summary {
+        border-radius: 5px;
+        background-color: red;
+        list-style-type: none;
+      }
+      details summary:hover {
+        background-color: blue;
+        color: white;
+      }
+      details summary::before {
+        content: "🚀";
+      }
+      details summary::after {
+        content: "➕";
+        position: relative;
+        left: 67%;
+      }
+      .accordion {
+        border-radius: 5px;
+
+        width: 100%;
+        background-color: yellowgreen;
+      }
+
+      .accordion p {
+        margin: 0;
+        text-align: center;
+      }
+      .accordion p:hover {
+        background-color: yellow;
+      }
+      .accordion p::first-letter {
+        background-color: rgb(38, 12, 188);
+      }
+      .tooltip-container {
+        background-color: red;
+        display: inline-block;
+        position: relative;
+        width: 20%;
+      }
+
+      .tooltip-container .tooltip-text {
+        text-align: center;
+      }
+
+      .tooltip-container .tooltip {
+        background-color: aqua;
+        padding: 2px;
+        border-radius: 5px;
+        position: absolute;
+        top: 70%;
+        left: 30%;
+        visibility: hidden;
+      }
+
+      .tooltip-container:hover .tooltip {
+        visibility: visible;
+      }
+
+      .btn-con {
+        background-color: yellow;
+        /* width: calc(15% + 10px); */
+        /* width: 20%; */
+        width: fit-content;
+        position: relative;
+      }
+
+      .btn-con .tooltip {
+        position: absolute;
+        top: 90%;
+        width: 150px;
+        left: 0%;
+
+        z-index: 5;
+        background-color: rgb(180, 149, 149);
+        border: 1px solid rgb(182, 165, 165);
+        border-radius: 5px;
+        margin: 0;
+        display: none;
+      }
+      .btn-con:hover .tooltip {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn-con">
+      <button class="btn">Sign up</button>
+      <p class="tooltip">Sign up to learn more</p>
+    </div>
+    <details>
+      <summary>Hidden message</summary>
+      <div class="accordion">
+        <p>Hello you are beautiful, You are strong like mountains</p>
+        <img src="../mount.jpg" alt="mountains" width="100%" />
+      </div>
+    </details>
+
+    <div class="tooltip-container">
+      <p class="tooltip-text">Tooltip</p>
+      <span class="tooltip">This is tooltip</span>
+    </div>
+
+    <p class="before-ele">This is for before/after...</p>
+
+    <ul>
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Cherry</li>
+      <li>Fig</li>
+    </ul>
+
+    <audio controls loop muted preload="none">
+      <source src="./birds.mp3" type="audio/mp3" />
+    </audio>
+
+    <video
+      controls
+      width="400"
+      height="280"
+      muted
+      preload="auto"
+      poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKFqJAIpuTencjJY4wrdhq3wTv0WEQmN4JBNJ7DFBK&s"
+    >
+      <source src="./bye.mp4" type="video/mp4" />
+    </video>
+
+    <iframe
+      src="https://www.bing.com/"
+      width="500px"
+      height="300px"
+      title="w3school"
+    ></iframe>
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/TD9BF3CyYDg"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/t8BbGNDgNwU"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </body>
+</html>

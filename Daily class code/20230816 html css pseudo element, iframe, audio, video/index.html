@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo elements</title>
+    <style>
+      .pseudo {
+        background: red;
+        width: auto;
+        display: inline-block;
+      }
+      .pseudo::before {
+        content: "before";
+        background-color: aqua;
+      }
+      .pseudo::after {
+        background-color: aqua;
+
+        content: "after";
+      }
+
+      .pseudo-1,
+      .pseudo-2 {
+        color: blue;
+      }
+
+      .pseudo-1::before {
+        content: "🚀";
+        color: red;
+      }
+
+      .pseudo-2::after {
+        content: "©";
+        color: red;
+      }
+      .pseudo-3::before {
+        content: "";
+        background-image: url("https://icons.iconarchive.com/icons/iconarchive/fish-illustration/256/Small-1-Young-Fish-icon.png");
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 10px;
+        z-index: 1;
+      }
+      ul li::before {
+        content: "👨‍💻";
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="pseudo">This is pseudo element</p>
+    <p class="pseudo-1">This is pseudo element</p>
+    <p class="pseudo-2">This is pseudo element</p>
+    <p class="pseudo-3">This is pseudo element</p>
+
+    <ul>
+      <li>Thor</li>
+      <li>Hulk</li>
+      <li>spider man</li>
+    </ul>
+  </body>
+</html>
