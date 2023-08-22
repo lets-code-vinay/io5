@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS-Selectors</title>
+  </head>
+  <!--
+    1. universal selector
+    2. by tag name
+    3. by class name
+    4. by id
+    5. group selection
+    6. combination selection
+        child basis
+        sibling
+-->
+
+  <style>
+    /* .div-1,
+    .para-2,
+    h2,
+    #click {
+      background-color: red;
+      height: 50px;
+      display: inline-block;
+    }
+
+    h2 {
+      height: 30px;
+    } */
+
+    /* span.para-10 {
+      background-color: blue;
+      color: white;
+    } */
+
+    /* p:first-child {
+      background-color: yellow;
+    } */
+
+    /* .para:last-child {
+      background-color: lavender;
+    }
+
+    .para:nth-child(6) {
+      background-color: khaki;
+    } */
+    /* 
+    ul li:nth-child(even) {
+      background-color: rgb(9, 112, 9);
+    }
+
+    ul li:nth-child(odd) {
+      background-color: violet;
+    } */
+
+    /* ul li ol li.hd {
+      background-color: rgb(163, 61, 61);
+    } */
+
+    /* .para-7 b em {
+      background-color: teal;
+    } */
+
+    /* div > p {
+      background-color: rebeccapurple;
+    } */
+
+    div > a {
+      background-color: lawngreen;
+    }
+
+    /* div + p {
+      background-color: rebeccapurple;
+    } */
+
+    /* [target] {
+      background-color: grey;
+    } */
+
+    /* [target="self"] {
+      background-color: grey;
+    } */
+    a[target="self"] {
+      background-color: grey;
+    }
+
+    /* input[type] {
+      background-color: rgb(60, 41, 7);
+    } */
+
+    input[type="text"] {
+      background-color: rgb(60, 41, 7);
+    }
+    input[type="number"] {
+      background-color: blue;
+    }
+
+    input[placeholder="Enter your email"] {
+      background-color: black;
+      color: white;
+      border: 1px solid yellow;
+      border-radius: 5px;
+    }
+  </style>
+  <body>
+    <div class="div-0"><p class="para para-6">this is para-6</p></div>
+
+    <div class="div-1">This is div-1</div>
+
+    <div class="parent-class">
+      <p class="para para-1">this is para-1</p>
+      <p class="para para-2">this is para-2</p>
+      <p class="para para-3">this is para-3</p>
+      <p class="para para-4">this is para-4</p>
+      <p class="para para-5">this is para-5</p>
+      <p class="para para-7">
+        this is <b><em>para-7</em></b>
+      </p>
+      <p class="para para-8">this is para-8</p>
+      <p class="para para-9">this is para-9</p>
+      <p class="para para-10">this is para-10</p>
+      <a href="#" class="para para-10">this is para-10</a>
+    </div>
+    <p class="para para-16">this is para-16</p>
+
+    <span class="para para-10">This is span tag</span>
+    <h2>Hi!! i'm heading tag</h2>
+    <a href="#" id="click" target="_blank">Click me</a>
+    <span>
+      <p class="para para-11">this is para-11</p>
+      <p class="para para-12">this is para-12</p>
+      <p class="para para-13">this is para-13</p>
+      <p class="para para-14">
+        <b>this</b> is <b><em>para-14</em></b
+        >.. <em>i'm bold</em>
+      </p>
+      <p class="para para-15">this is para-15</p>
+    </span>
+
+    <hr />
+
+    <h3>
+      This is h3 tag .. <b><em>para-14</em></b>
+    </h3>
+
+    <p class="para para-17">this is para-17</p>
+    <p class="para para-18">this is para-18</p>
+
+    <ul>
+      <li>RAM</li>
+      <li>ROM</li>
+      <li>Mouse</li>
+      <li>Keyboard</li>
+      <li>Scanner</li>
+      <li>Printer</li>
+      <li>
+        <ol>
+          <li>SSD</li>
+          <li class="hd">Hard disk</li>
+          <li>Floppy</li>
+          <li class="hd">CD drive</li>
+        </ol>
+      </li>
+    </ul>
+
+    <a href="#" target="self">Sign up</a>
+
+    <input type="text" placeholder="Enter your name" />
+    <input type="number" placeholder="Enter your Number" />
+    <input type="email" placeholder="Enter your email" />
+    <input type="text" placeholder="Enter your class" />
+  </body>
+</html>

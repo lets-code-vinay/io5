@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      height: 600px;
+
+      background-color: aqua;
+      display: grid;
+      grid-template-columns: 0.5fr repeat(2, 1fr);
+      grid-template-rows: 0.2fr 2fr repeat(2, 1fr) 0.2fr;
+
+      text-align: center;
+
+      justify-items: center;
+      place-items: center;
+    }
+
+    .item {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(11, 64, 64);
+      border: 1px solid red;
+    }
+    .item:nth-child(odd) {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(43, 130, 130);
+      border: 1px solid red;
+    }
+
+    .item-1,
+    .item-10 {
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+
+    .item-2 {
+      /* grid-row-start: 2;
+      grid-row-end: 5; */
+
+      grid-row: 2 / span 3;
+    }
+
+    .item-5,
+    .item-6 {
+      grid-column: 2 / span 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="item item-1">Header Section</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">
+        <div class="item item-22">item-22</div>
+        <div class="item item-33">item-33</div>
+        <div class="item item-44">item-44</div>
+      </div>
+      <div class="item item-6">
+        <div class="item item-22">item-22</div>
+        <div class="item item-33">item-33</div>
+        <div class="item item-44">item-44</div>
+      </div>
+
+      <div class="item item-10">item-10</div>
+    </div>
+  </body>
+</html>

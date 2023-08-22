@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+  </head>
+  <style>
+    .container {
+      background-color: aquamarine;
+      width: 80%;
+      height: 600px;
+      display: grid;
+      /* 1. first method */
+      /* grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px 100px; */
+
+      /* 2. Second method---> fr
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr; */
+
+      /* 3. Third method---> fr */
+      grid-template-columns: 0.4fr repeat(1, 1fr) 0.3fr;
+      grid-template-rows: 0.2fr repeat(3, 1fr) 0.2fr;
+
+      row-gap: 5px;
+      column-gap: 5px;
+
+      /* justify-items: center;
+      place-items: center; */
+    }
+    .item {
+      width: 100%;
+      height: 100%;
+      background-color: bisque;
+    }
+
+    .item:nth-child(even) {
+      background-color: rgb(98, 61, 5);
+    }
+
+    .item-2 {
+      width: 100%;
+      height: 100%;
+
+      grid-row-start: 2;
+      grid-row-end: 5;
+    }
+
+    .item-3 {
+      width: 100%;
+      height: 100%;
+    }
+    .item-1 {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      width: 100%;
+      height: 100%;
+      place-self: center;
+    }
+    .item-10 {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      width: 100%;
+      height: 100%;
+      place-self: center;
+    }
+    .item-5 {
+      justify-self: center;
+      place-self: center;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-10">item-10</div>
+    </div>
+  </body>
+</html>

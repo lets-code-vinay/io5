@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap"
+      rel="stylesheet"
+    />
+    <title>Progress, meter, responsive images, css selectors</title>
+    <style>
+      /* order
+            universal Selector < tag < class < id < inline styling
+      */
+
+      /*
+         1. universal selector 
+            It applies css to all elements
+            Use it for those properties which you want to use in entire project
+
+        2. Select by tag name
+            Whenever you use tag for styling it applies on all tags
+        
+        3. select by class name
+            class can be multiple
+        
+        4. select by ID
+            Id must be unique
+            Id has the most priority 
+        */
+
+      * {
+        font-family: "Barriecito", cursive;
+      }
+
+      /* select by tag name*/
+      label {
+        background-color: red;
+      }
+
+      /* select by class name*/
+      /* .para-4 {
+        background-color: bisque;
+      }
+      .para {
+        background-color: rgb(198, 82, 82);
+      }
+
+      .para-4 {
+        background-color: rgb(18, 69, 136);
+      }
+
+      .para-3 {
+        background-color: magenta;
+      }
+
+      /* Select by ID */
+      #para-id-3 {
+        background-color: yellowgreen;
+      }
+
+      .para-3 {
+        background-color: magenta;
+      }
+
+      /* select by groups*/
+      .para-5,
+      .para-6,
+      .para-7 {
+        background-color: yellow;
+      }
+
+      p.para-11 {
+        background-color: rgb(20, 16, 102);
+      }
+      p:first-child {
+        background-color: black;
+        color: yellow;
+        border: 2px solid yellow;
+      }
+
+      p:last-child {
+        background-color: rgb(115, 10, 10);
+        color: yellow;
+        border: 2px solid yellow;
+      }
+
+      p:nth-child(2) {
+        background-color: rgb(72, 9, 231);
+        color: rgb(243, 241, 246);
+        border: 2px solid yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress">
+      <label for="progress">Downloading</label>
+      <progress id="progress" max="100" min="10">10%</progress>
+
+      <label for="gadar">Download Gadar2</label>
+      <progress id="gadar" max="100" min="10" value="20"></progress>
+    </div>
+
+    <div>
+      <label for="meter">C Drive</label>
+      <meter id="meter" value="0.25" class="meter">10%</meter>
+    </div>
+
+    <hr />
+    <!-- Types of css selectors -->
+    <div class="para abc">Para</div>
+    <p class="para-1">Hello this is para-1</p>
+    <p class="para para-2">Hello this is para-2</p>
+    <p class="para-3" id="para-id-3" style="background-color: red">
+      Hello this is para-3
+    </p>
+    <p class="para para-4">Hello this is para-4</p>
+    <p class="para para-8">Hello this is para-8</p>
+    <p class="para para-5">Hello this is para-5</p>
+    <p class="para para-6">Hello this is para-6</p>
+    <p class="para para-7">Hello this is para-7</p>
+
+    <div>
+      <p class="para1 para-9">Hello this is First chi;ld</p>
+      <p class="para1 para-10">Hello this is seconda chil;d</p>
+      <p class="para1 para-11">Hello this is para-11</p>
+      <p class="para1 para-12">Hello this is para-12</p>
+      <p class="para1 para-13">Hello this is last child</p>
+    </div>
+
+    <div>
+      <p class="para1 para-14">Hello this is para-14 first child</p>
+      <p class="para1 para-15">Hello this is para-15 second</p>
+      <p class="para1 para-16">Hello this is para-16</p>
+      <p class="para1 para-17">Hello this is para-17</p>
+      <p class="para1 para-18">Hello this is para-18 last child</p>
+    </div>
+    <span class="para1 para-11">Hello this is span-11</span>
+
+    <picture>
+      <source
+        media="(max-width:465px)"
+        srcset="
+          https://w0.peakpx.com/wallpaper/836/976/HD-wallpaper-spiderman-poster-spiderman-movie.jpg
+        "
+      />
+      <source
+        media="(max-width:650px)"
+        srcset="https://wallpaperaccess.com/full/35386.jpg"
+      />
+
+      <source
+        media="(max-width:920px)"
+        srcset="
+          https://c4.wallpaperflare.com/wallpaper/1000/316/848/spider-man-2018-game-wallpaper-preview.jpg
+        "
+      />
+
+      <img src="../mount.jpg" alt="mountain" width="100%" />
+    </picture>
+  </body>
+</html>
