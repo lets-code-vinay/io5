@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid layout</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-color: bisque;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 0.3fr 2fr repeat(2, 1.5fr) 1fr 0.3fr;
+
+      /* --- to center all child to the grid */
+      /* justify-items: center;
+      place-items: center; */
+
+      row-gap: 5px;
+      column-gap: 5px;
+
+      grid-template-areas:
+        "nav nav nav"
+        "info info info"
+        "cont-1 cont-2 cont-3"
+        "detail-1 detail-2 detail-3"
+        "sitemap sitemap sitemap"
+        "footer footer footer";
+    }
+    .item {
+      width: 100%;
+      height: 100%;
+      background-color: aqua;
+      border: 1px solid black;
+    }
+
+    /* // to place single element on center */
+    .item-2 {
+      /* justify-self: center;
+      place-self: center; */
+    }
+
+    .item-1 {
+      /* grid-column-start: 1;
+      grid-column-end: 4; */
+
+      grid-area: nav;
+    }
+
+    .item-3 {
+      grid-area: info;
+    }
+    .item-4 {
+      grid-area: cont-1;
+    }
+    .item-5 {
+      grid-area: cont-2;
+    }
+    .item-6 {
+      grid-area: cont-3;
+    }
+    .item-7 {
+      grid-area: detail-1;
+    }
+
+    .item-8 {
+      grid-area: detail-2;
+    }
+    .item-9 {
+      grid-area: detail-3;
+    }
+    .item-10 {
+      grid-area: sitemap;
+    }
+
+    .item-11 {
+      /* grid-column: 1 / span 3; */
+      grid-area: footer;
+    }
+
+    @media only screen and (max-width: 640px) {
+      .container {
+        height: 100vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 2.5fr repeat(3, 1.5fr) 1fr 0.5fr;
+        grid-template-areas:
+          "nav nav"
+          "info info"
+          "cont-1 detail-1"
+          "cont-2 detail-2"
+          "cont-3 detail-3"
+          "sitemap sitemap"
+          "footer footer";
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-9">item-9</div>
+
+      <div class="item item-10">item-10</div>
+      <div class="item item-11">item-11</div>
+    </div>
+  </body>
+</html>
