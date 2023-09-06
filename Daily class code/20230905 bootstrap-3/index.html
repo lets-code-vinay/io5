@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grid sys</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .row-grid-red {
+      height: 300px;
+    }
+    .testing {
+      background-color: aqua;
+      height: 100%;
+    }
+  </style>
+  <body>
+    <div class="parent border w-100 h-100 text-center container">
+      <div class="row-grid border row">
+        <div class="col-grid border border-primary col-1">child-1</div>
+        <div class="col-grid border border-info col-1">child-1</div>
+        <div class="col-grid border border-warning col-1">child-1</div>
+        <div class="col-grid border border-success col-1">child-1</div>
+        <div class="col-grid border border-primary col-1">child-1</div>
+        <div class="col-grid border border-warning col-1">child-1</div>
+        <div class="col-grid border border-primary col-1">child-1</div>
+        <div class="col-grid border border-info col-1">child-1</div>
+        <div class="col-grid border border-warning col-1">child-1</div>
+        <div class="col-grid border border-success col-1">child-1</div>
+        <div class="col-grid border border-primary col-1">child-1</div>
+        <div class="col-grid border border-warning col-1">child-1</div>
+      </div>
+      <div class="row-grid border row">
+        <div class="col-grid border border-primary col">child</div>
+        <div class="col-grid border border-info col">child</div>
+        <div class="col-grid border border-warning col">child</div>
+        <div class="col-grid border border-success col">child</div>
+        <div class="col-grid border border-primary col">child</div>
+        <div class="col-grid border border-warning col">child</div>
+      </div>
+
+      <div class="row-grid border row">
+        <div class="col-grid border border-primary col-2">child-2</div>
+        <div class="col-grid border border-info col-2">child-2</div>
+        <div class="col-grid border border-warning col-2">child-2</div>
+        <div class="col-grid border border-success col-2">child-2</div>
+        <div class="col-grid border border-primary col-2">child-2</div>
+        <div class="col-grid border border-warning col-2">child-2</div>
+      </div>
+
+      <div class="row-grid border row">
+        <div class="col-grid border border-primary col-sm-12 col-md-6 col-lg">
+          child-3 r
+        </div>
+        <div class="col-grid border border-warning col-sm-12 col-md-6 col-lg">
+          child-3 r
+        </div>
+        <div class="col-grid border border-info col-sm-12 col-md-6 col-lg">
+          child-3 r
+        </div>
+        <div class="col-grid border border-success col-sm-12 col-md-6 col-lg">
+          child-3 r
+        </div>
+      </div>
+
+      <div class="row-grid border border-secondary row">
+        <div class="col-grid border border-primary col-4">child-4</div>
+        <div class="col-grid border border-warning col-4">child-4</div>
+        <div class="col-grid border border-info col-4">child-4</div>
+      </div>
+
+      <div class="row-grid-red border border-secondary row">
+        <div class="col-grid border border-primary col-sm-12 col-md-6 col-lg">
+          child-6 T
+        </div>
+        <div class="col-grid border border-warning col-sm-12 col-md-6 col-lg">
+          <div class="container">
+            <div class="row testing">
+              <div class="col">
+                <img src="../mount.jpg" width="100%" height="300px" />
+              </div>
+              <div class="col">col-2</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-grid border border-secondary row">
+        <div class="col-grid border border-primary col">child</div>
+        <div class="col-grid border border-warning col">child</div>
+      </div>
+
+      <div class="row-grid border border-secondary row">
+        <div class="col-grid border border-primary text-center col-12">
+          child-12
+        </div>
+      </div>
+
+      <div class="row-grid border border-secondary row">
+        <div class="col-grid border border-primary col-1">child-1</div>
+        <div class="col-grid border border-warning col-11">child-11</div>
+      </div>
+      <div class="row-grid border border-secondary row">
+        <div class="col-grid border border-primary col-10">child-10</div>
+        <div class="col-grid border border-warning col-2">child-2</div>
+      </div>
+
+      <div class="row-grid border border-secondary row">
+        <div class="col-grid border border-primary col-7">child-7</div>
+        <div class="col-grid border border-warning col-5">child-5</div>
+      </div>
+
+      <div class="row-grid border border-secondary row">
+        <div class="col-grid border border-primary col-2">child-2</div>
+        <div class="col-grid border border-warning col-5">child-5</div>
+        <div class="col-grid border border-warning col-5">child-5</div>
+      </div>
+
+      <div class="row-grid border border-secondary row">
+        <div class="col-grid border border-primary col-2">child-2</div>
+        <div class="col-grid border border-warning col-7">child-7</div>
+        <div class="col-grid border border-warning col-3">child-3</div>
+      </div>
+
+      <div class="row-grid border border-secondary row">
+        <div class="col-grid border border-primary col-2">child-2</div>
+        <div class="col-grid border border-warning col-5">child-5</div>
+        <div class="col-grid border border-warning col-1">child-1</div>
+        <div class="col-grid border border-warning col-3">child-3</div>
+        <div class="col-grid border border-warning col-1">child-1</div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

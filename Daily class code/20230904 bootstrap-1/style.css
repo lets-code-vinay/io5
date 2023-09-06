@@ -1,0 +1,26 @@
+/* 
+font-family: 'Barriecito', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Noto Serif', serif; 
+*/
+
+html{
+  /* 1 rem == 10px */
+  /* font-size: 62.5%;    */
+}
+
+body {
+  font-family: "Dancing Script", cursive;
+}
+.logo {
+  width: 30px;
+  vertical-align: baseline;
+/* 10px */
+  font-size: 1rem ;
+}
+
+.c-img {
+  width: 100%;
+  height: 100vh;
+}
