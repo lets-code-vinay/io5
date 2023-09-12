@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Travellock:Rukne ka nhi</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Font awesome start-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css"
+      integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font awesome end-->
+
+    <!--Google fonts start-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barriecito&family=Bitter:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Dancing+Script:wght@400;500;600;700&family=Indie+Flower&family=Kalam:wght@300;400;700&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <!--Google fonts end-->
+  </head>
+  <body>
+    <main class="main">
+      <!--Header start-->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand text-white d-flex justify-content-between align-items-center"
+            href="#"
+          >
+            <img
+              src="./assets/icons/travel-lock-2.png"
+              width="50"
+              height="50"
+            />
+            <p class="logo-title">TravelLock</p>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-white"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Trips</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-white"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Destination
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item text-black-50 font1-8rem d-flex justify-content-start"
+                      href="#"
+                    >
+                      <i class="fa-solid fa-umbrella-beach"></i>
+                      <p class="ms-4">Goa</p>
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+
+                  <li>
+                    <a
+                      class="dropdown-item text-black-50 font1-8rem d-flex justify-content-start"
+                      href="#"
+                      ><i class="fa-solid fa-gopuram"></i>
+                      <p class="ms-4">Kedarnath</p></a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a
+                      class="dropdown-item text-black-50 font1-8rem d-flex justify-content-start"
+                      href="#"
+                      ><i class="fa-solid fa-mountain"></i>
+                      <p class="ms-4">Srinagar</p></a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Hotels</a>
+              </li>
+              <li class="nav-item text-white">
+                <a class="nav-link position-relative" aria-disabled="false"
+                  ><span
+                    data-bs-toggle="collapse"
+                    href="#collapseExample"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                    class="text-white"
+                  >
+                    Notifications
+                  </span>
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    id="badgeNoti"
+                    >5</span
+                  >
+                </a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+
+              <button
+                class="btn btn-outline-success text-white border border-white"
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- Header End-->
+
+      <!-- -- Carousel -- > Sliding images --- -->
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./assets/images/goa.jpg"
+              class="d-block w-100 sliding-photos"
+              alt="This is beautiful landscape"
+              class="banner-image"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="Slide-titles">Gorgeous Goa</h5>
+              <p class="slide-text">
+                Fascinating and attractive Location. To fall in Love with this
+                place.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./assets/images/kedarnath.jpg"
+              class="d-block w-100 sliding-photos"
+              alt="This is beautiful landscape"
+              class="banner-image"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="Slide-titles">Amazing Kedarnath</h5>
+              <p class="slide-text">
+                One of the most beautiful place of inner peace
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./assets/images/kerala.jpg"
+              class="d-block w-100 sliding-photos"
+              alt="This is beautiful landscape"
+              class="banner-image"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="Slide-titles">Kerala</h5>
+              <p class="slide-text">
+                The aura of Kerala will change your Aura.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- -- Carousel- End -- > Sliding images --- -->
+
+      <!-- Record section start-->
+      <section class="records">
+        <div class="container">
+          <div class="row">
+            <div class="col py-5">
+              <p class="record-title text-center">Total Hotel bookings</p>
+              <p class="record-desc text-center">5255</p>
+            </div>
+            <div class="col py-5">
+              <p class="record-title text-center">Total Visited Guests</p>
+              <p class="record-desc text-center">15425</p>
+            </div>
+            <div class="col py-5">
+              <p class="record-title text-center">Destination Weddings</p>
+              <p class="record-desc text-center">454</p>
+            </div>
+            <div class="col py-5">
+              <p class="record-title text-center">Total Travels</p>
+              <p class="record-desc text-center">6700</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Record section end-->
+
+      <!-- highlighted Locations --start -->
+      <section class="highlighted-locations">
+        <div class="container">
+          <h4 class="title my-5">Where you can travel?</h4>
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 26rem">
+                <img
+                  class="card-img-top"
+                  src="./assets/images/kerala.jpg"
+                  alt="Kerala image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Kerala</h5>
+                  <p class="card-text">
+                    Kerala is known for its palm-lined beaches and backwaters, a
+                    network of canals. Inland are the Western Ghats, mountains
+                    whose slopes support tea, coffee and spice plantations as
+                    well as wildlife. National parks like Eravikulam and
+                    Periyar, plus Wayanad and other sanctuaries, are home to
+                    elephants, langur monkeys and tigers.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go Kerala</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 26rem">
+                <img
+                  class="card-img-top"
+                  src="./assets/images/goa.jpg"
+                  alt="Goa image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Goa</h5>
+                  <p class="card-text">
+                    The state of Goa, in India, is famous for its beaches and
+                    places of worship. Tourism is its primary industry, and is
+                    generally focused on the coastal areas of Goa, with
+                    decreased tourist activity inland.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go Goa</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 26rem">
+                <img
+                  class="card-img-top"
+                  src="./assets/images/kedarnath.jpg"
+                  alt="Kedarnath image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Kedarnath</h5>
+                  <p class="card-text">
+                    Devotees believe Lord Shiva himself worship himself here.
+                    Unlike other lingams that are made of stone or metal, people
+                    believe it to be a natural rock formation in the shape of a
+                    lingam. The lingam at Kedarnath Temple stands at an
+                    impressive height of around 3.6 meters and has a
+                    circumference of 5.7 meters.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go Kedarnath</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 26rem">
+                <img
+                  class="card-img-top"
+                  src="./assets/images/jaisalmer.jpg"
+                  alt="Jaisalmer image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Jaisalmer</h5>
+                  <p class="card-text">
+                    The city was founded in the 12th Century by Maharaj Rawal
+                    Jaisal who later established his kingdom in the same place.
+                    Jaisalmer is named after Maharaj Rawal Jaisal. Later, he
+                    built the Jaisalmer Fort on the Trikuta Hill which has now
+                    become one of the most popular heritage sites.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go Jaisalmer</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- highlighted Locations --end -->
+
+      <!-- Parallax effect - start-- -->
+      <section class="parallax-effect">
+        <div class="container-fluid parallax-effect">
+          <div class="row parallax-effect-row">
+            <div class="col-9 parallax-title">
+              Let explore this world with us!!
+            </div>
+            <div class="col-3 parallax-button">
+              <button type="button" class="btn btn-primary border-0 explore">
+                Explore
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Parallax effect - end-- -->
+
+      <!-- Pricing section - start-- -->
+      <section class="pricing">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 26rem">
+                <h5
+                  class="card-title text-center py-3 border border-bottom-0 rounded-top"
+                >
+                  Solo
+                </h5>
+
+                <img
+                  class="card-img-top"
+                  src="https://lp-cms-production.imgix.net/2021-12/GettyImages-1311033137.jpg"
+                  alt="solo image cap"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    solo travel means the tourist going somewhere else alone and
+                    during their trip, they choose and decide everything such as
+                    services, activities, places… based on their individual
+                    needs. Solo travelers give the choice and decision by
+                    themselves.
+                  </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    Solo Travel Improves Your Self-Confidence
+                  </li>
+                  <li class="list-group-item">
+                    You'll Learn More About Yourself.
+                  </li>
+                  <li class="list-group-item">
+                    You'll Become More Self-Sufficient.
+                  </li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Go Solo</a>
+                  <a href="#" class="card-link">Watch Trips</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 26rem">
+                <h5
+                  class="card-title text-center py-3 border border-bottom-0 rounded-top"
+                >
+                  Friends
+                </h5>
+                <img
+                  class="card-img-top"
+                  src="https://in.musafir.com/uploads/How_to_convince_your_parents_to_let_you_travel_with_your_friends_360e2c99e7.png"
+                  alt="friend image cap"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    “Good company on a journey makes the way seem shorter.” “You
+                    can pack for every occasion but a good friend will always be
+                    the best thing you would bring!”
+                  </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    Travel with others it can be safer
+                  </li>
+                  <li class="list-group-item">
+                    It is cheaper to travel with friends.
+                  </li>
+                  <li class="list-group-item">
+                    Travel with friends is a lot of fun.
+                  </li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Go With Friends</a>
+                  <a href="#" class="card-link">Watch Trip</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 26rem">
+                <h5
+                  class="card-title text-center py-3 border border-bottom-0 rounded-top"
+                >
+                  Family
+                </h5>
+                <img
+                  class="card-img-top"
+                  src="https://www.bellybelly.com.au/wp-content/uploads/2014/06/Holidays-with-kids-scaled.jpg"
+                  alt="family image cap"
+                />
+                <div class="card-body">
+                  <p
+                    class="card-text"
+                    title="Family bonding is an important part of everyone’s life and
+                  can have a huge impact on personal development. There are
+                  many ways to strengthen your bond with your family, such as
+                  traveling with them. You can have a lot of fun with your
+                  family when you travel, and you can also help strengthen
+                  relationships by doing things together that you wouldn’t
+                  normally do at home."
+                  >
+                    Family bonding is an important part of everyone’s life and
+                    can have a huge impact on personal development. There are
+                    many ways to strengthen your bond with your family, such as
+                    traveling with them. You can have a lot of fun with your
+                    family when you travel, and you can also help strengthen
+                    relationships by doing things together that you wouldn’t
+                    normally do at home.
+                  </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Promotes global education.</li>
+                  <li class="list-group-item">Promotes family bonding.</li>
+                  <li class="list-group-item">
+                    Teaches kids compassion and value of money.
+                  </li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Go With Family</a>
+                  <a href="#" class="card-link">Watch Trips</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 26rem">
+                <h5
+                  class="card-title text-center py-3 border border-bottom-0 rounded-top"
+                >
+                  Couples
+                </h5>
+                <img
+                  class="card-img-top"
+                  src="https://cdn.insuremytrip.com/resources/3012/travel-insurance-for-couples.jpg"
+                  alt="solo image cap"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    Couples often express their love with flowers and
+                    chocolates. But, they appreciate something more — taking
+                    trips together. A US Travel Association survey reveals that
+                    couples who travel together have more satisfying
+                    relationships than those who do not. It showed that couples
+                    who go on trips have healthier and happier relationships
+                    overall*.
+                  </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    Couples often express their love with flowers and
+                    chocolates.
+                  </li>
+                  <li class="list-group-item">
+                    Travel ignites romance and intimacy
+                  </li>
+                  <li class="list-group-item">
+                    Travel creates memories that last a lifetime
+                  </li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Go Solo</a>
+                  <a href="#" class="card-link">Watch Solos</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Pricing section - end-- -->
+
+      <!-- sitemap section - end-- -->
+      <section class="sitemap mt-5 pt-5 pb-2">
+        <div class="container">
+          <div class="row sitemap">
+            <div class="col">
+              <a
+                class="navbar-brand text-white d-flex justify-content-start align-items-center"
+                href="#"
+              >
+                <img
+                  src="./assets/icons/travel-lock-2.png"
+                  width="50"
+                  height="50"
+                />
+                <p class="logo-title">TravelLock</p>
+              </a>
+            </div>
+            <div class="col">
+              <h2 class="title">Who we are?</h2>
+              <p class="list-group-item">
+                We are here to serve you for dream visits and destinations. We
+                also help you to decide to roam in incredible world.
+              </p>
+            </div>
+            <div class="col">
+              <h2 class="title">Our Services</h2>
+              <ul class="service-ul list-group">
+                <li class="list-group-item border-0 px-0 py-1">
+                  <a href="#"> Hotel Booking </a>
+                </li>
+                <li class="list-group-item border-0 px-0 py-1">
+                  <a href="#">Visa</a>
+                </li>
+                <li class="list-group-item border-0 px-0 py-1">
+                  <a href="#">Passport</a>
+                </li>
+                <li class="list-group-item border-0 px-0 py-1">
+                  <a href="#"> Destination Weddings</a>
+                </li>
+                <li class="list-group-item border-0 px-0 py-1">
+                  <a href="#"> Travel packages</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col">
+              <h2 class="title">About</h2>
+              <ul class="avout-ul list-group">
+                <li class="list-group-item border-0 px-0 py-1">
+                  <a href="#"> Travel Insurance</a>
+                </li>
+                <li class="list-group-item border-0 px-0 py-1">
+                  <a href="#"> Hotel Booking</a>
+                </li>
+                <li class="list-group-item border-0 px-0 py-1">
+                  <a href="#"> Travel packages</a>
+                </li>
+                <li class="list-group-item border-0 px-0 py-1">
+                  <a href="#"> Destination Weddings</a>
+                </li>
+                <li class="list-group-item border-0 px-0 py-1">
+                  <a href="#">Visa</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col social-media">
+              <a
+                href="https://www.facebook.com/vinay.shermauryan"
+                target="_blank"
+                ><i class="fa-brands fa-square-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/vinay_shermauryan"
+                target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.youtube.com/lets-code-vinay" target="_blank"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="https://www.linkedin.com/lets-code-vinay" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://www.github.com/lets-code-vinay" target="_blank"
+                ><i class="fa-brands fa-square-github"></i
+              ></a>
+              <a href="http://www.vinaymaurya.in" target="_blank"
+                ><i class="fa-solid fa-globe"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- sitemap section - end-- -->
+
+      <!-- Footer section - end-- -->
+      <footer class="pt-4">
+        <div class="container">
+          <div class="row">
+            <div class="col"><p>All rights are reserved</p></div>
+            <div class="col"><p>&copy; infoxygen</p></div>
+
+            <div class="col">
+              <p>This website is designed by IO-team with &hearts;</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Footer section - end-- -->
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
