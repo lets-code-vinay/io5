@@ -37,6 +37,15 @@ html {
 .main .navbar .form-control {
   font-size: 2rem;
 }
+.main .navbar .logo-title,
+.main .nav-link span,
+.main .nav-item a {
+  color: var(--font-secondary) !important;
+}
+
+.main .nav-item .disabled {
+  color: rgb(74, 6, 6) !important;
+}
 .font2rem {
   font-size: 2rem;
 }
@@ -47,6 +56,16 @@ html {
 .main .navbar .btn {
   font-size: 2rem;
   width: 40%;
+}
+
+.main .dropdown-menu li a p,
+.main .dropdown-menu li a i {
+  color: var(--primary-clr) !important;
+}
+
+.navbar .navbar-toggler,
+.navbar-toggler-icon {
+  background-color: var(--font-secondary) !important;
 }
 
 .carousel-item,
@@ -129,6 +148,8 @@ html {
   border: 1px solid #d2d2d2;
   width: calc(99% + 5px);
   margin-left: -1px;
+  font-family: "Indie Flower", cursive;
+  font-size: 2.5rem;
 }
 
 .pricing .card-text {
@@ -138,8 +159,8 @@ html {
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
-  font-size: 1.2rem;
+  -webkit-line-clamp: 4;
+  font-size: 1.5rem;
 }
 
 .pricing .list-group-item {
@@ -147,7 +168,21 @@ html {
   white-space: nowrap;
   text-overflow: ellipsis;
 
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+}
+
+.pricing .card-body {
+  font-size: 1.3rem;
+}
+
+.pricing .card-body a:hover {
+  font-size: 1.3rem;
+  border: 1px solid var(--primary-clr);
+  background-color: var(--primary-clr-hover);
+  border-radius: 5px;
+  padding: 1% 2%;
+  color: var(--font-secondary);
+  text-decoration: none;
 }
 
 /*
@@ -268,4 +303,159 @@ footer {
   font-size: 2rem;
   font-family: "Indie Flower", cursive;
   border-top: 1px solid var(--font-secondary);
+  z-index: 10;
+}
+
+@media only screen and (max-width: 480px) {
+  .main .navbar {
+    background-color: blue !important;
+  }
+  .main .carousel .carousel-inner .carousel-item,
+  .main .carousel .carousel-inner .carousel-item img {
+    height: 30vh !important;
+  }
+  .records .record-title {
+    font-size: 1.5rem;
+  }
+  .records .record-desc {
+    font-size: 1.2rem;
+  }
+
+  .records .col-sm-6 {
+    width: 45%;
+  }
+
+  .highlighted-locations .title {
+    font-size: 2.5rem;
+    color: var(--primary-clr);
+    text-align: center;
+  }
+  .highlighted-locations .row .card {
+    margin: 2% auto;
+  }
+  .highlighted-locations .card-title {
+    font-size: 2rem;
+    font-family: "Kalam", cursive;
+    color: var(--primary-clr);
+  }
+  .highlighted-locations .card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 90px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    font-size: 1.2rem;
+  }
+  .highlighted-locations .btn {
+    font-size: 1.2rem;
+    background-color: var(--primary-clr);
+    border: none;
+  }
+
+  .parallax-title {
+    font-size: 2.5rem;
+  }
+
+  .parallax-button .explore {
+    background-color: var(--primary-clr);
+    color: var(--font-secondary);
+    font-size: 1.5rem;
+  }
+
+  .parallax-button .explore:hover {
+    background-color: var(--primary-clr-hover);
+    color: var(--font-secondary);
+    font-size: 1.5rem;
+    box-shadow: 0px 0px 5px 5px rgb(71, 60, 60);
+  }
+
+  .parallax-button .explore:active {
+    color: var(--primary-clr);
+    background-color: var(--font-secondary);
+    font-size: 1.5rem;
+  }
+
+  .parallax-effect-row {
+    height: 33vh;
+    width: 90%;
+    margin: auto;
+    padding: 10% 0;
+  }
+
+  .pricing .row .card {
+    margin: 2% auto;
+  }
+  .pricing .card-title {
+    font-size: 2rem;
+    font-family: "Kalam", cursive;
+    color: var(--font-secondary);
+  }
+  .pricing .card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 90px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    font-size: 1.2rem;
+  }
+
+  .sitemap .title {
+    font-size: 2rem;
+  }
+  .sitemap .list-group-item {
+    background-color: var(--primary-clr);
+    color: var(--font-secondary);
+    font-size: 1.2rem;
+  }
+  .sitemap .list-group-item a {
+    color: var(--font-secondary);
+    font-size: 1.2rem;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+  }
+  .logo-title {
+    font-size: 2rem;
+    text-shadow: 0px 0px 5px black;
+    color: var(--white);
+    font-family: "Permanent Marker", cursive;
+    margin-top: 8px;
+    margin-bottom: 1rem;
+  }
+
+  footer .row p {
+    font-size: 1.4rem !important;
+    text-align: center;
+    margin-bottom: 0.4rem;
+  }
+  footer {
+    position: static !important;
+  }
+
+  footer .infoxygen {
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    background-color: var(--primary-clr);
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .main .navbar {
+  }
+  .main .carousel .carousel-inner .carousel-item,
+  .main .carousel .carousel-inner .carousel-item img {
+    height: 30vh !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1120px) {
+  .main .navbar {
+  }
+  .main .carousel .carousel-inner .carousel-item,
+  .main .carousel .carousel-inner .carousel-item img {
+    height: 68vh !important;
+  }
 }
