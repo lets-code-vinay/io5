@@ -25,6 +25,8 @@ In Javascript there is 8 type of data type ---
 to check data type in JS we use typeof() function ---
 */
 
+let avatar = "";
+console.log("avatar", avatar);
 // Variable declaration --
 /*  variable store the data in memory --
 variable declare keyword
@@ -32,11 +34,17 @@ variable declare keyword
 2. let  (function scope/ local scope, redeclare but by using another variable name)
 3. const (local scope, not redeclare)
 */
+
+// hoisting in js ----
+console.log(" a is access before initialization", a);
 var a = 20; // var is the keyword , a is variable name and 20 is value
 var a = 40;
 a = 50;
 console.log("var variable declare", a);
+// var x = 444;
+// console.log("x valyue", x);
 let x = 10;
+// let x = 20
 console.log("variable declare by using let keyword 1", x);
 
 function fun() {
@@ -57,3 +65,4 @@ console.log("variable declare by using const", b);
 
 // let z = x * y;
 // console.log("The multiplication value of C is", z);
+console.log("x", x);
