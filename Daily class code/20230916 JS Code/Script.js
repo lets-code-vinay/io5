@@ -3,9 +3,15 @@ var aVariable = 20;
 console.log("aVariable", aVariable);
 // to check data type in js we use typeof function
 let checkUndefined;
+
+let value;
+value = 50;
+console.log("value", value);
+
 console.log("check undefined", checkUndefined);
 let car = "Maruti";
 console.log("data type ->", typeof car);
+console.log("car variable value", car);
 
 const nDataType = 50;
 console.log("number data type ->", typeof nDataType);
@@ -19,9 +25,9 @@ console.log("big int ", BigInt(bigIntDataType));
 
 let ab = null;
 ab = 20;
-ab = {
-  name: "test",
-};
+// ab = {
+//   name: "test",
+// };
 console.log("a", typeof ab);
 
 var aVariable = 50;
@@ -101,18 +107,26 @@ greet();
 
 // function call with single parameter value---
 function Greeting(value) {
-  console.log(`Hello,> ${value}`);
-  console.log("Hello, >", value);
+    console.log(`Hello,> ${value}`);
+    //   console.log("Hello, >", value);
+    let val = 5
+    return val;
+//   console.log('this is print after return') unreachable code after the return 
 }
 Greeting("Good Morning");
+console.log('function console', Greeting())
 Greeting("Ashu");
 Greeting("Vinay");
+Greeting(50);
+Greeting(true);
+
 // value is the parameter and Good morning is the value of parameter
 
 // function call with multiple parameter value
-const GreetingFun = (name, msg, temp, t) => {
+const GreetingFun = (name, msg, temp, t, weekName) => {
   console.log("value in arrow function", name, msg, temp, t);
-  console.log(`Hello, ${name}, ${msg} ${temp} ${name}`, t);
+  console.log(`Hello, ${name}, ${msg} ${temp} ${name}`, t, weekName);
 };
 GreetingFun("Ashu", "Good Morning", "thank you");
-GreetingFun("Vinay", "Good evening", "thank to you", "test");
+GreetingFun("Vinay", "Good evening", "thanks to you", "test", 'Sunday');
+

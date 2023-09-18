@@ -29,10 +29,24 @@ let avatar = "";
 console.log("avatar", avatar);
 // Variable declaration --
 /*  variable store the data in memory --
+
 variable declare keyword
 1. var (global scope, and redeclare also with same name variable)
 2. let  (function scope/ local scope, redeclare but by using another variable name)
 3. const (local scope, not redeclare)
+*/
+
+// KEYWORD IN JAVASCRIPT
+/*
+1. let (to declare local scope variable)
+2. var (to declare global scope variable)
+3. const (to declare local scope variable)
+4. function (to define a function)
+5. if   (to check condition)
+6. for  (this is used in loop)
+7. return (to return function)
+8. try (error handling)
+
 */
 
 // hoisting in js ----
