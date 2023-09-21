@@ -187,3 +187,31 @@ switch (templeName) {
       templeName
     );
 }
+
+// if ... else ...if ... else   condition ----- // el..if condition
+// nested if else condition
+
+let phNo = 987564,
+  mob = 654532,
+  tel = 5541254;
+if (phNo > mob) {
+  console.log("phone number", phNo);
+} else if (tel > mob) {
+  console.log("tel number", tel);
+} else {
+  console.log("mob no", mob);
+}
+
+// find a greater number among three numbers
+let num1 = 50,
+  num2 = 10,
+  num3 = 40;
+if (num1 > num2) {
+  console.log("num1 is big number", num1);
+} else if (num2 > num3) {
+  console.log("num2 is big number", num2);
+} else if (num3 > num1) {
+  console.log("num3 is big number", num3);
+} else {
+  console.log("small number/ big number");
+}

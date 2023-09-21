@@ -7,6 +7,7 @@ Operator Type
 2. logical Operator
 3. Assignment Operator
 4. Relational Operator
+5. Ternery Operator
 */
 
 // Arthmetic Operator
@@ -81,3 +82,12 @@ var1 = 50;
 var3 = 50;
 console.log("check variable value", var1 <= var3); // true
 
+// Ternery Operator ---
+
+// condition ? statment1 : statment2
+// if condition is true then its goes to the first statement "statement1" otherwise it goes to the 
+// second statement "statement2"
+
+// example -> 
+let aVar = 500, bVar = 60;
+console.log('ternery operator console',  aVar > bVar ? `A var is big ${aVar}` : 'aVar is small')
