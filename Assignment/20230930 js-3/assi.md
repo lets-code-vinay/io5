@@ -74,6 +74,8 @@
     program to obtain the reversed number and to determine whether the original and reversed numbers are equal or not.
     **(Hint: Use the modulus operator ‘%’)**
 
+    12345  > 54321
+
 19. If cost price and selling price of an item are input through the
     keyboard, write a program to determine whether the seller has made profit or incurred loss. Also determine how much profit he
     made or loss he incurred.

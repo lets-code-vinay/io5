@@ -103,19 +103,18 @@ console.log(`10--pi,  -- ${Math.PI}`);
 //If lengths of three sides of a triangle are input
 // through the keyboard, write a program to find the area of the triangle.
 
-// const s1 = prompt("Enter side one");
-// const s2 = prompt("Enter side two");
-// const s3 = prompt("Enter side three");
+const s1 = prompt("Enter side one");
+const s2 = prompt("Enter side two");
+const s3 = prompt("Enter side three");
 
-// //'s' is the semi-perimeter of the triangle given by s = (a + b + c)/2.
-// // calculated using the formula A = √s(s-a)(s-b)(s-c),
+//'s' is the semi-perimeter of the triangle given by s = (a + b + c)/2.
+// calculated using the formula A = √s(s-a)(s-b)(s-c),
 
-// const s = (Number(s1) + Number(s2) + Number(s3)) / 2;
-// console.log("Semi Perimeter of", Number(s1), Number(s2), Number(s3), "is", s);
+const s = (Number(s1) + Number(s2) + Number(s3)) / 2;
+console.log("Semi Perimeter of", Number(s1), Number(s2), Number(s3), "is", s);
 
-// const area = Math.sqrt(s * (s - s1) * (s - s2) * (s - s3));
-// console.log("area", area.toFixed(2));.
+const area = Math.sqrt(s * (s - s1) * (s - s2) * (s - s3));
+console.log("area", area.toFixed(2));
 
 // if a five-digit number is input through the keyboard,
 //     program to reverse the number.
-
