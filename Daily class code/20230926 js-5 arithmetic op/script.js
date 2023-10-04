@@ -114,6 +114,7 @@ decrementOrder("80");
 function decrementByNum(num, val) {
   num -= val; //
   // num = 20 - 0;
+  // num = num - 0
 
   console.log(`The increment by number is ${num}`);
 }
