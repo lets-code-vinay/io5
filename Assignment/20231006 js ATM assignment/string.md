@@ -6,6 +6,8 @@
 
    _3.1_ become _$3.10_
 
+   _4500_ become _4500Rs._
+
 2. Complete the solution so that it reverses the string passed into it.
 
    1. ‘world’ => ‘dlrow’
