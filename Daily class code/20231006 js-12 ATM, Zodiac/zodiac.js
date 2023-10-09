@@ -81,4 +81,4 @@ function getYourZodiac(name) {
   }
 }
 
-getYourZodiac("Shekhar");
+getYourZodiac("Sapna");
