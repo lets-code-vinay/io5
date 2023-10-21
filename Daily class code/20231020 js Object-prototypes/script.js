@@ -221,7 +221,6 @@ const poke = {
     { name: "wartortle", url: "https://pokeapi.co/api/v2/pokemon/8/" },
     { name: "blastoise", url: "https://pokeapi.co/api/v2/pokemon/9/" },
     { name: "caterpie", url: "https://pokeapi.co/api/v2/pokemon/10/" },
-
     { name: "diglett", url: "https://pokeapi.co/api/v2/pokemon/50/" },
     { name: "dugtrio", url: "https://pokeapi.co/api/v2/pokemon/51/" },
     { name: "meowth", url: "https://pokeapi.co/api/v2/pokemon/52/" },
