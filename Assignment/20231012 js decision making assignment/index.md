@@ -19,8 +19,7 @@ Write a program to output whether the person should be
 insured or not, his/her premium rate and maximum amount
 for which he/she can be insured.
 
-2.  (e)
-    A certain grade of steel is graded according to the following
+2.  A certain grade of steel is graded according to the following
     conditions:
     (i) Hardness must be greater than 50
     (ii) Carbon content must be less than 0.7
