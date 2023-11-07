@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>ATM</title>
+  </head>
+  <body>
+    <div class="main">
+      <header class="header">
+        <span>name</span>
+        <span>logo</span>
+        <span>time</span>
+      </header>
+
+      <!-- ---- chnage pin section--- -->
+      <div class="pin-section display-none">
+        <div class="check-pin">
+          <input
+            type="number"
+            maxlength="4"
+            minlength="4"
+            value=""
+            class="pin old-pin"
+            id="old-pin"
+            placeholder="Enter old pin"
+          />
+          <button id="match-old-pin" onclick="matchPins()">Match Pin</button>
+        </div>
+        <input
+          type="number"
+          maxlength="4"
+          minlength="4"
+          value=""
+          class="pin new-pin display-none"
+          id="new-pin"
+          placeholder="Enter new pin"
+        />
+        <input
+          type="submit"
+          value="Change Pin"
+          class="pin-btn display-none"
+          id="change-pin-btn"
+          onclick="changePins()"
+        />
+      </div>
+
+      <!-- ---- Withdraw section--- -->
+      <div class="withdraw-section display-none">
+        <div class="check-pin">
+          <input
+            type="number"
+            maxlength="4"
+            minlength="4"
+            value=""
+            class="pin old-pin"
+            id="old-pin"
+            placeholder="Enter your pin"
+          />
+          <button id="match-old-pin" onclick="matchPinsWithdraw()">
+            Validate Pin
+          </button>
+        </div>
+
+        <input
+          type="number"
+          value=""
+          class="pin new-pin display-none"
+          id="new-pin"
+          placeholder="Enter your amount"
+        />
+
+        <input
+          type="submit"
+          value="Withdraw"
+          class="withdraw-btn display-none"
+          id="withdraw-btn"
+          onclick="withdraw()"
+        />
+      </div>
+
+      <div class="btn-container">
+        <h1 class="title">Please select a service</h1>
+        <button class="btn" id="withdraw" onclick="withdrawAmount()">
+          Withdraw
+        </button>
+        <button class="btn" id="deposit" onclick="depositAmount()">
+          Deposit
+        </button>
+        <button class="btn" id="transfer" onclick="transferAmount()">
+          Transfer
+        </button>
+        <button class="btn" id="enquiry" onclick="balanceEnquiry()">
+          Balance Enquiry
+        </button>
+        <button class="btn" id="change-pin" onclick="changePin()">
+          Change Pin
+        </button>
+        <button class="btn exit" id="exit" onclick="exit()" disabled>
+          Exit
+        </button>
+      </div>
+    </div>
+    <script src="./atm.js"></script>
+  </body>
+</html>
