@@ -107,13 +107,24 @@
   display: block;
 }
 
-.pin-btn {
+.pin-btn,
+.withdraw-btn,
+.deposit-btn {
   font-size: 20px;
   width: 150px;
   border-radius: 5px;
   background: brown;
   color: wheat;
   height: 45px;
+}
+
+.pin-btn-container,
+.withdraw-btn-section,
+.deposit-btn-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
 }
 
 input::-webkit-outer-spin-button,
@@ -130,7 +141,9 @@ input[type="number"] {
   color: white;
 }
 
-.withdraw-section {
+.withdraw-section,
+.deposit-section,
+.balance-section {
   height: 200px;
   border: 1px solid white;
   border-radius: 10px;
@@ -141,4 +154,8 @@ input[type="number"] {
   justify-content: center;
   width: 50%;
   margin: auto;
+}
+
+.balance {
+  color: white;
 }
