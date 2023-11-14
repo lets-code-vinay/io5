@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Calculator</title>
+  </head>
+  <style>
+    .main {
+      background-color: red;
+      color: white;
+      border: 2px double black;
+      width: 20%;
+      margin: 5% auto 0;
+      height: 200px;
+      border-radius: 20px;
+    }
+    #dial,
+    #mins {
+      color: rgb(87, 59, 7);
+      font-size: 80px;
+      height: 100px;
+      width: fit-content;
+      margin: 2% auto;
+      padding: 5% 0;
+    }
+    .btn-cont {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <!-- <input type="submit" id="stop-blast" value="Defuse" onclick="defuse()" /> -->
+    <!-- <input
+      type="submit"
+      id="stop-guest"
+      value="Stop Guest"
+      onclick="stopGuest()"
+    /> -->
+
+    <div class="main">
+      <span id="mins">0 </span
+      ><span id="dial">:<span id="seconds">00</span></span>
+      <div class="btn-cont">
+        <input type="submit" value="Start" onclick="startTimer()" />
+        <input type="submit" value="Stop" onclick="stopTimer()" />
+        <input type="submit" value="Reset" onclick="resetTimer()" />
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
