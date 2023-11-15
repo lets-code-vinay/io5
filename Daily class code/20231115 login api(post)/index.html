@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login Page with Background Image Example</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div id="bg"></div>
+
+    <form>
+      <div class="form-field">
+        <input
+          type="email"
+          placeholder="Email / Username"
+          id="email"
+          required
+        />
+      </div>
+
+      <div class="form-field">
+        <input type="password" placeholder="Password" id="password" required />
+      </div>
+
+      <div class="form-field">
+        <button class="btn" type="button" id="loginBtn" onclick="handleLogin()">
+          Log in
+        </button>
+      </div>
+    </form>
+    <!-- partial -->
+    <script src="./script.js"></script>
+  </body>
+</html>
