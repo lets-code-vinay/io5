@@ -17,6 +17,9 @@ body {
   top: 5px;
   z-index: 10;
 }
+.add-cart-btn {
+  margin-right: 10px;
+}
 
 .product-container {
   display: flex;

@@ -36,10 +36,9 @@ const handleLogin = async () => {
 
   const data = await response.json();
   localStorage.setItem("userData", JSON.stringify(data));
-  console.log("data", data);
+  console.log("data", data, response?.status);
 
   if (response?.status == 200) {
     window.location.href = `http://127.0.0.1:5500/Daily%20class%20code/20231115%20login%20api(post)/user.html`;
   }
 };
-
