@@ -10,7 +10,7 @@ userDataFromLocal = JSON.parse(userDataFromLocal);
 
 userSection.innerHTML = `
             <button type="button" 
-                class="btn btn-primary position-relative"
+                class="btn btn-primary position-relative add-cart-btn"
                 onclick="getCartProducts()"
                 >
               <i class="fa-solid fa-cart-shopping"></i>
@@ -36,6 +36,9 @@ navbar.append(userSection);
 
 let productApi = `https://dummyjson.com/products`;
 
+// asynchronous == async
+// JS is a asynchronous and single threaded language
+
 const fetchProducts = async () => {
   const apiResponse = await fetch(productApi);
   console.log("apiResponse", apiResponse);
@@ -48,14 +51,12 @@ const fetchProducts = async () => {
     const div = document.createElement("div");
     div.classList.add("row");
     div.classList.add("row-cols-1");
-    div.classList.add("row-cols-1");
     div.classList.add("row-cols-xs-1");
     div.classList.add("row-cols-sm-1");
     div.classList.add("row-cols-lg-4");
     div.classList.add("g-3");
 
     div.innerHTML = `
-  
     <div class="col hp">
       <div class="card h-100 shadow-sm product-card">
         <a href="#">
@@ -126,16 +127,19 @@ fetchProducts();
 /**
  * @description Handling add to cart
  */
-const addToCart = (cart) => {
-  console.log("add to cart", cart);
+const addToCart = (singleProduct) => {
+  // console.log("add to singleProduct", singleProduct);
   cartCount = cartCount + 1;
   const getCount = document.getElementById("count");
   getCount.innerText = cartCount;
 
-  cartArray.push(cart);
+  cartArray.push(singleProduct);
+  localStorage.setItem("cartItems", JSON.stringify(cartArray));
 };
 
-console.log("cartArray", cartArray);
 const getCartProducts = () => {
+  console.log("cartArray", cartArray);
   console.log("clicked on cart icon");
+
+  window.location.href = `http://127.0.0.1:5500/Daily%20class%20code/20231115%20login%20api(post)/cart.html`;
 };
