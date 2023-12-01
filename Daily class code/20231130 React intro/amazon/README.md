@@ -1,6 +1,6 @@
 **This is just for learning purpose**
 
-1. *To run this project*
- **Run following command**
+1. _To run this project_
+   **Run following command**
 
- *npm start*
+_npm start_
