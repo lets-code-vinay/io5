@@ -6,6 +6,7 @@ import About from "./Pages/About/index.jsx";
 import Contact from "./Pages/Contact";
 import Products from "./Pages/Products";
 import Login from "./Pages/Login";
+import Trips from "./Pages/Trips";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about-us" element={<About />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/trips" element={<Trips />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>

@@ -2,7 +2,25 @@ import React from "react";
 import "./style.css";
 
 function Login() {
-  console.log("hello login page");
+  const [isLoginClicked, setLoginClick] = React.useState(false);
+  const [userData, setUserData] = React.useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChangeEmail = (e) => {
+    console.log("email clicking", e.target.value);
+    setUserData({ ...userData, email: e.target.value });
+  };
+
+  function handleChangePW(event) {
+    setUserData({ ...userData, password: event.target.value });
+  }
+
+  const handleLoginClick = () => {
+    console.log(userData?.email, userData?.password);
+    setLoginClick(true);
+  };
 
   return (
     <React.Fragment>
@@ -12,7 +30,10 @@ function Login() {
             type="email"
             placeholder="Email / Username"
             id="email"
-            required
+            // required
+            name="email"
+            value={userData?.email}
+            onChange={(event) => handleChangeEmail(event)}
           />
         </div>
 
@@ -22,15 +43,32 @@ function Login() {
             placeholder="Password"
             id="password"
             required
+            onChange={(e) => handleChangePW(e)}
+            value={userData?.password}
+            name="password"
           />
         </div>
 
         <div className="form-field">
-          <button className="btn" type="button" id="loginBtn">
+          <button
+            onClick={handleLoginClick}
+            className="btn"
+            type="button"
+            id="loginBtn"
+          >
             Log in
           </button>
         </div>
       </form>
+
+      <h3>
+        You have entered Email:{" "}
+        <strong>{isLoginClicked && userData?.email}</strong>
+      </h3>
+      <h3>
+        You have entered Password:{" "}
+        <strong>{isLoginClicked ? userData?.password : ""}</strong>
+      </h3>
     </React.Fragment>
   );
 }

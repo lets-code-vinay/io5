@@ -3,7 +3,8 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ImageSliders from "../../components/ImageSliders";
 
-function HomePage() {
+const HomePage = () => {
+  
   return (
     <React.Fragment>
       <Header />
@@ -11,6 +12,6 @@ function HomePage() {
       <Footer />
     </React.Fragment>
   );
-}
+};
 
 export default HomePage;
