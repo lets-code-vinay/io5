@@ -4,10 +4,11 @@ import Footer from "../../components/Footer";
 import ImageSliders from "../../components/ImageSliders";
 
 const HomePage = () => {
-  
+  const currentPage = "Homepage";
+
   return (
     <React.Fragment>
-      <Header />
+      <Header currPageName={currentPage} />
       <ImageSliders />
       <Footer />
     </React.Fragment>

@@ -2,18 +2,16 @@ import React from "react";
 import image from "../../Assets/images/river.jpeg";
 import "./style.css";
 
-const ProductCard = () => {
+const ProductCard = (props) => {
+  console.log("props", props);
+  const { price, description, mainImage, title } = props || {};
   return (
     <>
       <a className="product-card" href="#dolce-gabbana-cropped">
-        <img className="product-card__image" src={image} />
-        <p className="product-card__brand">Sunny</p>
-        <p className="product-card__description">
-          This is random Description just for testing purpose
-        </p>
-        <p className="product-card__price">
-          ${(Math.random() * 1000).toFixed(0)}
-        </p>
+        <img className="product-card__image" src={mainImage} />
+        <p className="product-card__brand">{title}</p>
+        <p className="product-card__description">{description}</p>
+        <p className="product-card__price">{price}</p>
         <button className="product-card__btn-wishlist">
           <svg viewBox="0 0 18 16" xmlns="http://www.w3.org/2000/svg">
             <path

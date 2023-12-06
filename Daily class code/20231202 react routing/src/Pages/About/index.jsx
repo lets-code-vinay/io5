@@ -3,9 +3,11 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 function About() {
+  const currentPage = "About";
+
   return (
     <React.Fragment>
-      <Header />
+      <Header currPageName={currentPage} />
 
       <h1>About page</h1>
       <Footer />

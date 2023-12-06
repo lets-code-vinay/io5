@@ -6,14 +6,54 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import "./style.css";
 import Button from "react-bootstrap/esm/Button";
+import { ArrowRight } from "react-bootstrap-icons";
 
-function Header() {
+const monthsStr = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+function Header(props) {
+  const { currPageName = "Nothing" } = props || {};
+
   const [count, setCount] = useState(0);
+  const [sec, setSec] = useState(new Date().getSeconds());
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("userData"))
+  );
+
+  console.log("userData--", user);
+
+  const date = new Date().getDate();
+  const month = new Date().getMonth();
+  const year = new Date().getFullYear();
+  const hours = new Date().getHours();
+  const mins = new Date().getMinutes();
 
   const removeCount = () => {
     if (count == 0) return;
     setCount(count - 1);
   };
+
+  const addCount = () => {
+    setCount(count + 1);
+    document.title = `${count + 1}`;
+  };
+
+  setInterval(() => {
+    setSec(new Date().getSeconds());
+    setUser(JSON.parse(localStorage.getItem("userData")));
+  }, 1000);
 
   return (
     <React.Fragment>
@@ -40,12 +80,25 @@ function Header() {
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link className="count">
-                <Button onClick={() => setCount(count + 1)}>+</Button>
+                <Button onClick={() => addCount()}>+</Button>
                 count: {count}
                 <Button onClick={removeCount}>-</Button>
               </Nav.Link>
             </Nav>
+            <Nav.Link href="/login">
+              <Button variant="dark">
+                <ArrowRight />
+              </Button>
+            </Nav.Link>
+            <img />
+            vinay maurya
+            {!user?.email && (
+              <Nav.Link href="/login">
+                <Button variant="dark">Login</Button>
+              </Nav.Link>
+            )}
           </Navbar.Collapse>
+          {date}/{monthsStr.at(month)}/{year}: {hours}:{mins}:{sec}
         </Container>
       </Navbar>
     </React.Fragment>

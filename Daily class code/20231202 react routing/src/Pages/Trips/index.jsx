@@ -3,9 +3,10 @@ import Header from "../../components/Header";
 
 class Trips extends Component {
   render() {
+    const currentPage = "Trips";
     return (
       <>
-        <Header />
+        <Header currPageName={currentPage} />
         <h1>This is Trip page inside class component</h1>
       </>
     );

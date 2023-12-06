@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 #bg {
   /* background-image: url("img/background.jpg"); */
-  background-image: url("../../Assets/images/background.jpg");
+  /* background-image: url("../../Assets/images/background.jpg"); */
   position: fixed;
   left: 0;
   top: 0;
@@ -10,12 +10,12 @@
   background-size: cover;
   filter: blur(5px);
 }
-
 form {
   width: 350px;
   position: relative;
-  background-color: red;
+  background-color: burlywood;
   padding: 2%;
+  border-radius: 15px;
 }
 form .form-field::before {
   font-size: 20px;
@@ -29,13 +29,13 @@ form .form-field::before {
   background-repeat: no-repeat;
 }
 form .form-field:nth-child(1)::before {
-  background-image: url("../../Assets/icons/user-icon.png");
+  /* background-image: url("../../Assets/icons/user-icon.png"); */
   width: 20px;
   height: 20px;
   top: 15px;
 }
 form .form-field:nth-child(2)::before {
-  background-image: url("../../Assets/icons/lock-icon.png");
+  /* background-image: url("../../Assets/icons/lock-icon.png"); */
   width: 16px;
   height: 16px;
 }
@@ -79,4 +79,22 @@ form .btn {
   border-radius: 4px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   font-size: 17px;
+}
+.main-form {
+  margin: auto;
+  margin-top: 11%;
+  background-color: #4a4a4a;
+}
+#h3 {
+  padding-left: 25%;
+  padding-bottom: 2%;
+  color: rgb(244, 244, 207);
+}
+.btn-1 {
+  width: 9vw;
+}
+.you {
+  margin-left: 15%;
+  margin-top: 3%;
+  color: rgb(70, 156, 232);
 }

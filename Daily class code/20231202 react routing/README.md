@@ -39,3 +39,34 @@ _npm start_
    const [abc, setAbc]= useState(default value);
    const/let
    [1. currentValue, 2. Function to update value]
+
+**useEffect()**
+
+1.  To provide some side Effect
+2.  It is Equivalent to 4 lifeCycles of class-component
+3.  Mount, update, unmount
+4.  When to use,
+    when we want to mount any component, update component, unmount component
+    To Fetch API, Rerender component
+5.  useEffect(() => {},[])
+6.  React.useEffect(() => {
+    // Logic
+    },[dependencies])
+7.  Empty Square braces runs useEffect only once
+8.  Square braces with [props/state] reruns useEffect (rerender components)
+9.  return statement unmount components
+10. - To deal with API
+    - 1.  API - https://dummyjson.com/auth/login
+    - 2.  axios - To deal with api we need Axios
+    - 3.  API is asynchronous and returns Promise
+    - 4.  Resolve Promise -
+    -      a: .then(),
+    -      b:  new Promise()
+    -      c:  async/await
+    - 5.  try/catch block
+    - 6.  API http- method
+    -      a. GET
+    -      b. POSt
+    -      c. PUT/Patch
+    -      d. DELETE
+    - 7.  Response Status: 200 OK, 404 Not found
