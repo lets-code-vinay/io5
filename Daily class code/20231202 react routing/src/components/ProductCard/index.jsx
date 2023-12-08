@@ -1,17 +1,37 @@
 import React from "react";
 import image from "../../Assets/images/river.jpeg";
 import "./style.css";
+import Button from "react-bootstrap/esm/Button";
 
 const ProductCard = (props) => {
-  console.log("props", props);
   const { price, description, mainImage, title } = props || {};
+
+  const handleAddToCart = () => {
+    console.log("add cart clicked");
+  };
+
+  const goToProductPage = () => {
+    console.log("got goToProductPage");
+  };
+
   return (
     <>
-      <a className="product-card" href="#dolce-gabbana-cropped">
+      <div className="product-card" onClick={goToProductPage}>
         <img className="product-card__image" src={mainImage} />
         <p className="product-card__brand">{title}</p>
-        <p className="product-card__description">{description}</p>
+        <p className="product-card__description" title={description}>
+          {description}
+        </p>
         <p className="product-card__price">{price}</p>
+        <div className="btn-container">
+          <Button variant="danger" onClick={handleAddToCart}>
+            Add To Cart
+          </Button>
+          <Button variant="success" onClick={handleAddToCart}>
+            Buy Now
+          </Button>
+        </div>
+
         <button className="product-card__btn-wishlist">
           <svg viewBox="0 0 18 16" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -20,7 +40,7 @@ const ProductCard = (props) => {
             />
           </svg>
         </button>
-      </a>
+      </div>
     </>
   );
 };

@@ -11,8 +11,6 @@ function Products() {
   const [allProducts, setAllProducts] = useState([]);
   const [showLoader, setLoader] = useState(false);
 
-  const currentPage = "Product";
-
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -41,7 +39,7 @@ function Products() {
 
   return (
     <React.Fragment>
-      <Header currPageName={currentPage} />
+      <Header currPageName={"Product"} />
       <div className="product-container">
         {showLoader && <Loader />}
 

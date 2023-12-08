@@ -8,16 +8,16 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
   const [isLoading, setLoading] = React.useState(false);
-  const [formData, setFormData] = React.useState({
+  const [userData, setUserData] = React.useState({
     email: "",
     password: "",
   });
 
   const handleChangeEmail = (e) => {
-    setFormData({ ...formData, email: e.target.value });
+    setUserData({ ...userData, email: e.target.value });
   };
   function handleChangePW(event) {
-    setFormData({ ...formData, password: event.target.value });
+    setUserData({ ...userData, password: event.target.value });
   }
 
   /**
@@ -29,8 +29,8 @@ function Login() {
       const api = "https://dummyjson.com/auth/login";
 
       // const response = axios.post(api, {
-      //   username: formData?.email,
-      //   password:formData?.password,
+      //   username: userData?.email,
+      //   password: userData?.password,
       // });
 
       const response = await axios.post(api, {
@@ -40,7 +40,7 @@ function Login() {
 
       const { data = {}, status } = response || {};
 
-      if (status == 200) {
+      if (status == 200 || status == 202) {
         localStorage.setItem("userData", JSON.stringify(data));
         setLoading(false);
         navigate("/home-page");
@@ -64,7 +64,7 @@ function Login() {
             id="email"
             // required
             name="email"
-            value={formData?.email}
+            value={userData?.email}
             onChange={(event) => handleChangeEmail(event)}
           />
         </div>
@@ -75,7 +75,7 @@ function Login() {
             id="password"
             required
             onChange={(e) => handleChangePW(e)}
-            value={formData?.password}
+            value={userData?.password}
             name="password"
           />
         </div>
@@ -88,16 +88,16 @@ function Login() {
             title="This is title for checking"
             variant="secondary"
             disabled={
-              formData?.email.length < 6 || formData?.password.length < 6
+              userData?.email.length < 6 || userData?.password.length < 6
             }
           >
             Log in
           </Button>
         </div>
-        {(formData?.email.length < 6 || formData?.password.length < 6) && (
+        {(userData?.email.length < 6 || userData?.password.length < 6) && (
           <p style={{ color: "red" }}>
             Please Enter valid
-            {formData?.email.length < 6 ? " Email" : " Password"}
+            {userData?.email.length < 6 ? " Email" : " Password"}
           </p>
         )}
       </form>

@@ -3,10 +3,10 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Link } from "react-router-dom";
 import "./style.css";
 import Button from "react-bootstrap/esm/Button";
-import { ArrowRight } from "react-bootstrap-icons";
+import { useNavigate } from "react-router-dom";
+import { PiShoppingCartBold } from "react-icons/pi";
 
 const monthsStr = [
   "January",
@@ -24,15 +24,13 @@ const monthsStr = [
 ];
 
 function Header(props) {
-  const { currPageName = "Nothing" } = props || {};
-
+  const { currPageName = "" } = props || {};
+  const navigate = useNavigate();
   const [count, setCount] = useState(0);
   const [sec, setSec] = useState(new Date().getSeconds());
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("userData"))
   );
-
-  console.log("userData--", user);
 
   const date = new Date().getDate();
   const month = new Date().getMonth();
@@ -41,7 +39,7 @@ function Header(props) {
   const mins = new Date().getMinutes();
 
   const removeCount = () => {
-    if (count == 0) return;
+    if (count === 0) return;
     setCount(count - 1);
   };
 
@@ -54,6 +52,11 @@ function Header(props) {
     setSec(new Date().getSeconds());
     setUser(JSON.parse(localStorage.getItem("userData")));
   }, 1000);
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
 
   return (
     <React.Fragment>
@@ -79,26 +82,47 @@ function Header(props) {
                   Headphones
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link className="count">
+              {/* <Nav.Link className="count">
                 <Button onClick={() => addCount()}>+</Button>
                 count: {count}
                 <Button onClick={removeCount}>-</Button>
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
-            <Nav.Link href="/login">
-              <Button variant="dark">
-                <ArrowRight />
-              </Button>
-            </Nav.Link>
-            <img />
-            vinay maurya
+            {currPageName == "Product" && (
+              <Nav.Link href="/login">
+                <Button variant="dark">
+                  <PiShoppingCartBold />
+                  12
+                </Button>
+              </Nav.Link>
+            )}
+            {Boolean(user) && (
+              <div className="user-details">
+                <img
+                  src={user?.image}
+                  alt={user?.username}
+                  style={{ width: "40px" }}
+                />
+                <Nav.Link>
+                  <p className="user-name">
+                    {user?.firstName} {user?.lastName}
+                  </p>
+                </Nav.Link>
+              </div>
+            )}
             {!user?.email && (
               <Nav.Link href="/login">
                 <Button variant="dark">Login</Button>
               </Nav.Link>
             )}
+            {user?.email && (
+              <Button variant="success" onClick={handleLogout}>
+                Logout
+              </Button>
+            )}
           </Navbar.Collapse>
-          {date}/{monthsStr.at(month)}/{year}: {hours}:{mins}:{sec}
+          {currPageName == "Homepage" &&
+            `${date}/${monthsStr.at(month)}/${year}: ${hours}:${mins}:${sec}`}
         </Container>
       </Navbar>
     </React.Fragment>

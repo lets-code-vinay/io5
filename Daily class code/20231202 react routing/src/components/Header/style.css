@@ -6,3 +6,18 @@
 .count {
   font-weight: 900 !important;
 }
+
+.user-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+  align-items: center;
+}
+
+.user-name {
+  text-align: center;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
