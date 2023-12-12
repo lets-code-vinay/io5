@@ -1,18 +1,17 @@
 import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import ContactForm from "../../components/ContactForm";
 
-function About() {
-  const currentPage = "About";
-
+function Contact() {
   return (
     <React.Fragment>
-      <Header currPageName={currentPage} />
+      <Header />
 
-      <h1>About page</h1>
+      <ContactForm />
       <Footer />
     </React.Fragment>
   );
 }
 
-export default About;
+export default Contact;

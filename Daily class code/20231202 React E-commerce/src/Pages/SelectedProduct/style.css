@@ -1,0 +1,50 @@
+.sel-pro-cont {
+  background-color: white;
+  display: flex;
+  width: 100%;
+}
+
+.sel-pro-cont .image-container {
+  width: 50%;
+  height: 636px;
+  border: 1px solid red;
+  border-radius: 5px;
+  margin: 1%;
+  padding: 1%;
+}
+
+.sel-pro-cont .pro-details {
+  width: 50%;
+  height: 636px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  margin: 1%;
+  padding: 1%;
+}
+
+.image-section {
+  display: flex;
+}
+.vertical-images {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  overflow-y: auto;
+  height: 420px;
+  overflow-x: hidden;
+}
+.small-image {
+  width: 100px;
+  margin: 2% 0;
+  border-radius: 2px;
+}
+
+.horizontal-images {
+  width: 80%;
+}
+
+.sel-pro-cont .btn-container {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}

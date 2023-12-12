@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import image from "../../Assets/images/river.jpeg";
 import "./style.css";
 import Button from "react-bootstrap/esm/Button";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = (props) => {
-  const { price, description, mainImage, title } = props || {};
+  const { price, description, mainImage, title, onChildData } = props || {};
+  const navigate = useNavigate();
 
-  const handleAddToCart = () => {
-    console.log("add cart clicked");
+  const [addedInCart, setAddInCart] = useState(false);
+  const localData = localStorage.getItem("cartData");
+  const previousLocalData = localData && JSON.parse(localData);
+
+  const handleAddToCart = (event, props) => {
+    console.log("add cart clicked", props);
+    onChildData(props, previousLocalData);
+    setAddInCart(true);
   };
 
   const goToProductPage = () => {
     console.log("got goToProductPage");
+    navigate(`/product`, { state: JSON.stringify(props) });
   };
 
   return (
@@ -24,9 +33,14 @@ const ProductCard = (props) => {
         </p>
         <p className="product-card__price">{price}</p>
         <div className="btn-container">
-          <Button variant="danger" onClick={handleAddToCart}>
-            Add To Cart
-          </Button>
+          {!addedInCart ? (
+            <Button variant="danger" onClick={(e) => handleAddToCart(e, props)}>
+              Add To Cart
+            </Button>
+          ) : (
+            <p>Already in Cart</p>
+          )}
+
           <Button variant="success" onClick={handleAddToCart}>
             Buy Now
           </Button>

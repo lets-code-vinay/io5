@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { PiShoppingCartBold } from "react-icons/pi";
+import { json, useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/esm/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./style.css";
-import Button from "react-bootstrap/esm/Button";
-import { useNavigate } from "react-router-dom";
-import { PiShoppingCartBold } from "react-icons/pi";
 
 const monthsStr = [
   "January",
@@ -24,9 +24,15 @@ const monthsStr = [
 ];
 
 function Header(props) {
-  const { currPageName = "" } = props || {};
+  const {
+    currPageName,
+    isCartEnabled = false,
+    cartCounting,
+    cartData = [],
+  } = props || {};
+
   const navigate = useNavigate();
-  const [count, setCount] = useState(0);
+
   const [sec, setSec] = useState(new Date().getSeconds());
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("userData"))
@@ -38,26 +44,27 @@ function Header(props) {
   const hours = new Date().getHours();
   const mins = new Date().getMinutes();
 
-  const removeCount = () => {
-    if (count === 0) return;
-    setCount(count - 1);
-  };
-
-  const addCount = () => {
-    setCount(count + 1);
-    document.title = `${count + 1}`;
-  };
-
-  setInterval(() => {
-    setSec(new Date().getSeconds());
-    setUser(JSON.parse(localStorage.getItem("userData")));
-  }, 1000);
+  // setInterval(() => {
+  //   setSec(new Date().getSeconds());
+  //   setUser(JSON.parse(localStorage.getItem("userData")));
+  // }, 1000);
 
   const handleLogout = () => {
     localStorage.clear();
     navigate("/login");
   };
 
+  console.log("props in header", props);
+  const handleCartClick = () => {
+    console.log("cart icon has been clciked", cartData);
+
+    // navigate("/cart", { state: { data: props?.cartData } });
+    navigate("/cart");
+  };
+  const localStorageCartCounting = localStorage.getItem("cartData");
+
+  const countingData = JSON.parse(localStorageCartCounting);
+ 
   return (
     <React.Fragment>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -88,11 +95,15 @@ function Header(props) {
                 <Button onClick={removeCount}>-</Button>
               </Nav.Link> */}
             </Nav>
-            {currPageName == "Product" && (
-              <Nav.Link href="/login">
-                <Button variant="dark">
+            {isCartEnabled && (
+              <Nav.Link>
+                <Button variant="dark" onClick={handleCartClick}>
                   <PiShoppingCartBold />
-                  12
+                  {countingData?.length > 0 ? (
+                    countingData?.length
+                  ) : (
+                    <>{cartCounting > 0 && cartCounting}</>
+                  )}
                 </Button>
               </Nav.Link>
             )}

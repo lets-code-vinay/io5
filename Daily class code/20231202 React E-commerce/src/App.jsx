@@ -7,6 +7,8 @@ import Contact from "./Pages/Contact";
 import Products from "./Pages/Products";
 import Login from "./Pages/Login";
 import Trips from "./Pages/Trips";
+import Cart from "./Pages/Cart";
+import SelectedProduct from "./Pages/SelectedProduct";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/products" element={<Products />} />
           <Route path="/trips" element={<Trips />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/product" element={<SelectedProduct />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>

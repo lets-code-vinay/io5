@@ -1,0 +1,111 @@
+.cart-section {
+  display: flex;
+  width: 80%;
+  margin: 1% auto;
+  border-radius: 6px;
+  border: 1px solid blue;
+  background: #f0f3f7;
+}
+.cart-section .product-section {
+  width: 70%;
+  margin: 2%;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+.cart-section .amount-section {
+  width: 30%;
+  border: 1px solid blue;
+  margin: 2%;
+  padding: 1%;
+  height: fit-content;
+  border-radius: 5px;
+  background-color: white;
+}
+.cart-section .product-card {
+  margin: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 2px 2px 5px 0px rgba(0, 64, 128, 0.1);
+  width: 98%;
+  height: 180px !important;
+  cursor: pointer;
+}
+
+.cart-section .product-card:hover {
+  box-shadow: 2px 2px 5px 0px rgba(1, 28, 54, 0.5);
+  /* border-color: rgba(1, 28, 54); */
+}
+
+.cart-section .product-card__image {
+  max-width: 100%;
+  height: 212px;
+  min-height: 212px;
+  max-height: 212px;
+}
+
+.cart-section .product-card__description,
+.cart-section .product-card__price,
+.cart-section .product-card__brand {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+}
+
+.cart-section .product-card__brand {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.cart-section .product-card__description {
+  font-weight: normal;
+  width: 300px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 50px;
+}
+
+.cart-section .product-card__price {
+  font-weight: bold;
+}
+
+.cart-section .product-card__btn-wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border: none;
+  background-color: white;
+  padding: 12px 10px 10px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 64, 128, 0.1);
+}
+
+.cart-section .product-card__btn-wishlist svg {
+  fill: lightgrey;
+  vertical-align: top;
+}
+
+.cart-section .btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto 10px;
+}
+
+.dis-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.strike {
+  text-decoration: line-through;
+}
