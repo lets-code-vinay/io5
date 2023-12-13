@@ -1,52 +1,99 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import "./style.css";
 import Button from "react-bootstrap/esm/Button";
+import axios from "axios";
+import Loader from "../../components/Loader";
+import dummy from "../../Assets/images/dummy.png";
+import ReactImageMagnify from "react-image-magnify";
 
 const SelectedProduct = () => {
   const location = useLocation();
-  console.log("location", JSON.parse(location?.state));
+  const data = JSON.parse(location?.state);
+  const { id } = data || {};
 
+  const [SingleProductData, setProductData] = useState({});
+  const [isLoading, setLoading] = useState(false);
+  const [mainProImage, setMainProImage] = useState(dummy);
+
+  useEffect(() => {
+    getProData();
+  }, []); // mount
+
+  const getProData = async () => {
+    try {
+      setLoading(true);
+      const api = `https://dummyjson.com/products/${id}`;
+      const response = await axios.get(api);
+      const { data, status } = response || {};
+
+      if (status == 200) {
+        setProductData(data);
+        setMainProImage(data?.thumbnail);
+      }
+      setLoading(false);
+    } catch (err) {
+      console.error("There is an error in single Product API", err);
+      setLoading(false);
+    }
+  };
+
+  /**
+   * @description Changing thumbnail(main image) on hover
+   * @param {Object} event
+   * @param {String} image
+   */
+  const handleImageOnHover = (event, image) => {
+    setMainProImage(image);
+  };
+
+  const { images = [] } = SingleProductData || {};
   return (
     <>
+      {console.log("html", SingleProductData)}
       <Header isCartEnabled={true} />
+      {isLoading && <Loader />}
+
       <div className="sel-pro-cont">
         <div className="image-container">
           <div className="image-section">
             <div className="vertical-images">
-              <img
-                className="small-image"
-                src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/5/u/g/-original-imagtqqd3k563gpg.jpeg?q=70"
-              />
-              <img
-                className="small-image"
-                src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/k/o/7/-original-imagsbypgzkjmgeg.jpeg?q=70"
-              />
-              <img
-                className="small-image"
-                src="https://rukminim2.flixcart.com/image/128/128/xif0q/mobile/3/q/u/galaxy-flip5-sm-f731bliains-samsung-original-imagru5pn2h79fhk.jpeg?q=70"
-              />
-              <img
-                className="small-image"
-                src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/m/2/m/galaxy-flip5-sm-f731bliains-samsung-original-imagru5ppffxcaaz.jpeg?q=70"
-              />
-              <img
-                className="small-image"
-                src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/a/p/4/galaxy-flip5-sm-f731bliains-samsung-original-imagru5pwkz8z9zj.jpeg?q=70"
-              />
-              <img
-                className="small-image"
-                src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/8/7/f/galaxy-flip5-sm-f731bliains-samsung-original-imagru5pwdzrsgqw.jpeg?q=70"
-              />
-              <img
-                className="small-image"
-                src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/y/a/n/galaxy-flip5-sm-f731bliains-samsung-original-imagru5pscnusd6r.jpeg?q=70"
-              />
+              {images.map((image, index) => {
+                return (
+                  <img
+                    key={index}
+                    className="small-image"
+                    src={image}
+                    onMouseOver={(e) => handleImageOnHover(e, image)}
+                  />
+                );
+              })}
             </div>
             <div className="highlighted-images">
-              <img src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/e/j/8/galaxy-flip5-sm-f731bzaeins-samsung-original-imagru5pc2hhgpzg.jpeg?q=70" />
+              <ReactImageMagnify
+                className="thumbnail"
+                {...{
+                  smallImage: {
+                    alt: "abcd",
+                    isFluidWidth: true,
+                    src: mainProImage,
+                  },
+                  largeImage: {
+                    width: 1000,
+                    height: 680,
+                    src: mainProImage,
+                  },
+                  enlargedImageContainerStyle: {
+                    zIndex: "1500",
+                  },
+                  enlargedImageContainerDimensions: {
+                    width: "100%",
+                    height: "100%",
+                  },
+                }}
+              />
             </div>
           </div>
           <div className="btn-container">
@@ -55,7 +102,9 @@ const SelectedProduct = () => {
           </div>
         </div>
 
-        <div className="pro-details"></div>
+        <div className="pro-details">
+          {/* <img className="thumbnail" src={mainProImage} /> */}
+        </div>
       </div>
       <Footer />
     </>

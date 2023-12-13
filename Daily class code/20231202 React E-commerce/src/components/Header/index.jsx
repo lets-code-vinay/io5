@@ -54,17 +54,13 @@ function Header(props) {
     navigate("/login");
   };
 
-  console.log("props in header", props);
   const handleCartClick = () => {
-    console.log("cart icon has been clciked", cartData);
-
-    // navigate("/cart", { state: { data: props?.cartData } });
     navigate("/cart");
   };
   const localStorageCartCounting = localStorage.getItem("cartData");
 
   const countingData = JSON.parse(localStorageCartCounting);
- 
+
   return (
     <React.Fragment>
       <Navbar expand="lg" className="bg-body-tertiary">

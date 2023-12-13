@@ -16,7 +16,6 @@ const Cart = (props) => {
   const selectedCartData =
     localStorageCartData &&
     JSON?.parse(localStorageCartData ? localStorageCartData : []);
-  console.log("selectedCartData", selectedCartData, location);
 
   useEffect(() => {
     let tot = 0; // 1529

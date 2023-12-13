@@ -23,9 +23,7 @@ function Products() {
       const api = `https://dummyjson.com/products`;
 
       const res = await axios.get(api);
-      console.log("res", res);
       const { data: { products = [] } = {} } = res || {};
-      console.log("products", products);
       setAllProducts(products);
 
       if (res?.status == 200) {
@@ -40,9 +38,7 @@ function Products() {
   // const test1 = localStorage.getItem("cartData");
   // const testData = test1 && JSON.parse(test1);
 
-  // console.log("testData", testData);
   const getDataFromChild = (selectedProduct, previousData) => {
-    console.log("getDataFromChild", selectedProduct);
     // setCartData([...cartData, selectedProduct]);
     setCartData((cartData) => [...cartData, selectedProduct]);
 
