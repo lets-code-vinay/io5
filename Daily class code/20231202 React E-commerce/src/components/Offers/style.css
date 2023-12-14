@@ -1,0 +1,7 @@
+.offer-images-container {
+  display: flex;
+}
+
+.offer-image {
+  border: 1px solid black;
+}

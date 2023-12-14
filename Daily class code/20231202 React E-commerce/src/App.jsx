@@ -12,7 +12,7 @@ import SelectedProduct from "./Pages/SelectedProduct";
 
 function App() {
   return (
-    <React.Fragment>
+    <div className="main-page">
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -27,7 +27,7 @@ function App() {
           <Route path="/product" element={<SelectedProduct />} />
         </Routes>
       </BrowserRouter>
-    </React.Fragment>
+    </div>
   );
 }
 

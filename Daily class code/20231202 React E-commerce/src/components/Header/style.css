@@ -1,3 +1,8 @@
+.nav-bar {
+  background-color: rgb(254, 254, 255);
+  margin-bottom: 10px;
+}
+
 .links {
   text-decoration: none;
   color: #8a578b;

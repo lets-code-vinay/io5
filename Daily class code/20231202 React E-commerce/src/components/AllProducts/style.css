@@ -1,0 +1,29 @@
+.main-product-container {
+  width: 100%;
+  margin: 1% auto;
+  overflow: scroll;
+}
+.main-product-container .product-border {
+  width: 230px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 5px;
+  flex-grow: 1;
+  margin: 5px;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.main-product-container .pro-image {
+  width: 100%;
+  border-radius: 5px;
+  min-height: 200px;
+  max-height: 200px;
+}
+
+.main-product-container .child {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

@@ -63,7 +63,7 @@ function Header(props) {
 
   return (
     <React.Fragment>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="nav-bar">
         <Container fluid>
           <Navbar.Brand href="/">Students</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
