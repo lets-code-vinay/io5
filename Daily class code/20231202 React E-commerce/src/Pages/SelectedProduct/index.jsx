@@ -163,22 +163,6 @@ const SelectedProduct = () => {
             PNB Credit Cards, up to ₹{(Math.random() * 1000).toFixed(0)}, on
             orders of ₹{(Math.random() * 10000).toFixed(0)} and aboveT&C
           </p>
-          {/* CAMPUS 
-CRUNCH Running Shoes For Men  (Black)
-
-₹699 ₹89922% off
-i
-4.2
-Coupons for you
-
-Special PriceGet extra ₹40 off on 50 item(s) (price inclusive of cashback/coupon)T&C
-
-
-Bank Offer10% Instant Discount on PNB Credit Cards, up to ₹1500, on orders of ₹5,000 and aboveT&C
-
-Bank Offer10% off on Bank of Baroda Credit Card Txns, up to ₹1,500 on orders of ₹5,000 and aboveT&C
-
-Bank Offer10% off on Bank of Baroda Credit Card EMI Txns, up to ₹2,000 on orders of ₹5,000 and aboveT&C */}
         </div>
       </div>
       <Footer />
