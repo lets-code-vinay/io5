@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ProductCard from "../../components/ProductCard";
@@ -8,19 +9,30 @@ import Loader from "../../components/Loader";
 
 // ------axios ----
 function Products() {
+  const location = useLocation();
+
   const [allProducts, setAllProducts] = useState([]);
   const [showLoader, setLoader] = useState(false);
-
   const [cartData, setCartData] = useState([]);
+  const { type = "", value = "" } = location?.state || {};
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [type, value]);
 
+  /**
+   * @description Fetching product
+   */
   const fetchProducts = async () => {
     try {
       setLoader(true);
-      const api = `https://dummyjson.com/products`;
+
+      let api = "";
+      if (type == "search") {
+        api = `https://dummyjson.com/products/search?q=${value}`;
+      } else {
+        api = `https://dummyjson.com/products`;
+      }
 
       const res = await axios.get(api);
       const { data: { products = [] } = {} } = res || {};

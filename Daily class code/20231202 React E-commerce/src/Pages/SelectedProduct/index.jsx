@@ -8,11 +8,14 @@ import axios from "axios";
 import Loader from "../../components/Loader";
 import dummy from "../../Assets/images/dummy.png";
 import ReactImageMagnify from "react-image-magnify";
+import { FaStar, FaTag } from "react-icons/fa";
+import { HiMiniTicket } from "react-icons/hi2";
 
 const SelectedProduct = () => {
   const location = useLocation();
-  const data = JSON.parse(location?.state);
-  const { id } = data || {};
+  // const data = JSON.parse(location?.state);
+  console.log("data selected", location?.state);
+  const { type, value } = location?.state || {};
 
   const [SingleProductData, setProductData] = useState({});
   const [isLoading, setLoading] = useState(false);
@@ -20,12 +23,17 @@ const SelectedProduct = () => {
 
   useEffect(() => {
     getProData();
-  }, []); // mount
+  }, [value, type]); // mount
 
   const getProData = async () => {
     try {
       setLoading(true);
-      const api = `https://dummyjson.com/products/${id}`;
+      let api = "";
+
+      if (type == "id") {
+        api = `https://dummyjson.com/products/${value}`;
+      }
+
       const response = await axios.get(api);
       const { data, status } = response || {};
 
@@ -49,7 +57,13 @@ const SelectedProduct = () => {
     setMainProImage(image);
   };
 
-  const { images = [] } = SingleProductData || {};
+  const {
+    images = [],
+    brand = "",
+    title = "",
+    price = 0,
+    rating = 0,
+  } = SingleProductData || {};
   return (
     <>
       {console.log("html", SingleProductData)}
@@ -103,7 +117,68 @@ const SelectedProduct = () => {
         </div>
 
         <div className="pro-details">
-          {/* <img className="thumbnail" src={mainProImage} /> */}
+          <h4>{brand}</h4>
+          <h5>{title}</h5>
+          <p>Special price</p>
+          <p>
+            ₹{price} &nbsp;
+            <del>
+              ₹{Number(price) + Number((Math.random() * 10).toFixed(0))} &nbsp;
+            </del>
+            {(Math.random() * 10).toFixed(0)}% off
+          </p>
+          <div className="rating-section">
+            <Button>
+              {rating}
+              <FaStar />
+            </Button>
+            {(Math.random() * 1000).toFixed(0)} ratings and{" "}
+            {(Math.random() * 100).toFixed(0)} reviews
+          </div>
+
+          <h5>Coupons for you</h5>
+          <p>
+            <HiMiniTicket />
+            Special PriceGet extra ₹{(Math.random() * 10).toFixed(0)} off on
+            {(Math.random() * 100).toFixed(0)} item(s) (price inclusive of
+            cashback/coupon)T&C
+          </p>
+
+          <h5>Available offers</h5>
+          <p>
+            <FaTag />
+            Bank Offer {(Math.random() * 10).toFixed(0)}% Instant Discount on
+            PNB Credit Cards, up to ₹{(Math.random() * 1000).toFixed(0)}, on
+            orders of ₹{(Math.random() * 10000).toFixed(0)} and aboveT&C
+          </p>
+          <p>
+            <FaTag />
+            Bank Offer {(Math.random() * 10).toFixed(0)}% Instant Discount on
+            PNB Credit Cards, up to ₹{(Math.random() * 1000).toFixed(0)}, on
+            orders of ₹{(Math.random() * 10000).toFixed(0)} and aboveT&C
+          </p>
+          <p>
+            <FaTag />
+            Bank Offer {(Math.random() * 10).toFixed(0)}% Instant Discount on
+            PNB Credit Cards, up to ₹{(Math.random() * 1000).toFixed(0)}, on
+            orders of ₹{(Math.random() * 10000).toFixed(0)} and aboveT&C
+          </p>
+          {/* CAMPUS 
+CRUNCH Running Shoes For Men  (Black)
+
+₹699 ₹89922% off
+i
+4.2
+Coupons for you
+
+Special PriceGet extra ₹40 off on 50 item(s) (price inclusive of cashback/coupon)T&C
+
+
+Bank Offer10% Instant Discount on PNB Credit Cards, up to ₹1500, on orders of ₹5,000 and aboveT&C
+
+Bank Offer10% off on Bank of Baroda Credit Card Txns, up to ₹1,500 on orders of ₹5,000 and aboveT&C
+
+Bank Offer10% off on Bank of Baroda Credit Card EMI Txns, up to ₹2,000 on orders of ₹5,000 and aboveT&C */}
         </div>
       </div>
       <Footer />

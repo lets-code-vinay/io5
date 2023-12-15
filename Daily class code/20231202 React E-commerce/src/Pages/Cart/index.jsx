@@ -40,14 +40,22 @@ const Cart = (props) => {
                   src={cartData?.mainImage}
                 />
                 <div>
-                  <p className="product-card__brand">{cartData?.brand}</p>
-                  <p className="product-card__description">
-                    {cartData?.description}
+                  <div className="bra-des">
+                    <p className="product-card__brand">
+                      {cartData?.brand} &nbsp;{" "}
+                    </p>
+                    <p className="product-card__description">
+                      {cartData?.description} &nbsp;
+                    </p>
+                  </div>
+                  <p className="product-card__price">
+                    {" "}
+                    &#8377; {cartData?.price}
                   </p>
-                  <p className="product-card__price">{cartData?.price}</p>
                   <div className="btn-container">
-                    <Button>Rating: {cartData?.rating}</Button>
+                    {/* <Button>Rating: {cartData?.rating}</Button> */}
                     <Button variant="success">Buy Now</Button>
+                    <Button variant="danger">Remove</Button>
                   </div>
 
                   <button className="product-card__btn-wishlist">

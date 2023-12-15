@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import dummy from "../../Assets/images/dummy.png";
 import "./style.css";
 import Loader from "../Loader";
@@ -6,6 +7,8 @@ import axios from "axios";
 
 const AllProducts = (props) => {
   const { api } = props || {};
+
+  const navigate = useNavigate();
 
   const [isLoading, setLoading] = useState(false);
   const [productData, setProductData] = useState([]);
@@ -32,6 +35,11 @@ const AllProducts = (props) => {
     }
   }, []);
 
+  const handleProduct = (e, product) => {
+    console.log("produyct---<>", product);
+    navigate("/product", { state: { type: "id", value: product?.id } });
+  };
+
   return (
     <>
       {isLoading && <Loader />}
@@ -40,14 +48,20 @@ const AllProducts = (props) => {
         <div className="child">
           {productData.map((product, index) => {
             return (
-              <div className="product-border" key={index}>
+              <div
+                className="product-border"
+                key={index}
+                onClick={(e) => handleProduct(e, product)}
+              >
                 <img
                   className="pro-image"
                   src={product?.thumbnail ? product?.thumbnail : dummy}
                   alt="pro-image"
                 />
-                <p>{product?.title}</p>
-                <strong>Incl of offers</strong>
+                <p className="title">{product?.title}</p>
+                <p className="title">
+                  <strong>Incl of offers</strong>
+                </p>
               </div>
             );
           })}

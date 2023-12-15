@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { PiShoppingCartBold } from "react-icons/pi";
-import { json, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/esm/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { IoSearchOutline } from "react-icons/io5";
 import "./style.css";
 
 const monthsStr = [
@@ -37,6 +40,7 @@ function Header(props) {
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("userData"))
   );
+  const [searchProduct, setSearchProduct] = useState("");
 
   const date = new Date().getDate();
   const month = new Date().getMonth();
@@ -57,6 +61,25 @@ function Header(props) {
   const handleCartClick = () => {
     navigate("/cart");
   };
+
+  /**
+   * @description Getting values from search input box
+   * @param {Object} event
+   */
+  const handleSearch = (event) => {
+    setSearchProduct(event.target.value);
+  };
+
+  /**
+   * @description When user searches any product
+   */
+  const handleSearchProduct = () => {
+    if (!searchProduct) return;
+
+    console.log("handle search button click", searchProduct);
+    navigate("/products", { state: { type: "search", value: searchProduct } });
+  };
+
   const localStorageCartCounting = localStorage.getItem("cartData");
 
   const countingData = JSON.parse(localStorageCartCounting);
@@ -85,12 +108,28 @@ function Header(props) {
                   Headphones
                 </NavDropdown.Item>
               </NavDropdown>
-              {/* <Nav.Link className="count">
-                <Button onClick={() => addCount()}>+</Button>
-                count: {count}
-                <Button onClick={removeCount}>-</Button>
-              </Nav.Link> */}
             </Nav>
+
+            <InputGroup className="search-field">
+              <InputGroup.Text id="basic-addon1">
+                <IoSearchOutline />
+              </InputGroup.Text>
+              <Form.Control
+                placeholder="Search for products, Brands and more"
+                aria-label="Search for products, Brands and more"
+                aria-describedby="basic-addon1"
+                value={searchProduct}
+                onChange={(e) => handleSearch(e)}
+              />
+              <Button
+                variant="dark"
+                disabled={!searchProduct}
+                onClick={handleSearchProduct}
+              >
+                Search
+              </Button>
+            </InputGroup>
+
             {isCartEnabled && (
               <Nav.Link>
                 <Button variant="dark" onClick={handleCartClick}>
@@ -128,8 +167,8 @@ function Header(props) {
               </Button>
             )}
           </Navbar.Collapse>
-          {currPageName == "Homepage" &&
-            `${date}/${monthsStr.at(month)}/${year}: ${hours}:${mins}:${sec}`}
+          {/* {currPageName == "Homepage" &&
+            `${date}/${monthsStr.at(month)}/${year}: ${hours}:${mins}:${sec}`} */}
         </Container>
       </Navbar>
     </React.Fragment>

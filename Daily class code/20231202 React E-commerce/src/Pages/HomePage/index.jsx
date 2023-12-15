@@ -24,7 +24,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Header currPageName={"Homepage"} />
+      <Header currPageName={"Homepage"} isCartEnabled={true} />
       <div className="homepage">
         <ImageSliders />
         <AllProducts api={apiAllProducts} />
@@ -33,6 +33,7 @@ const HomePage = () => {
         <Offers offerImages={offerImages2} />
         <AllProducts api={thirdApi} />
         <AllProducts api={fourthApi} />
+        <Offers offerImages={offerImages} />
       </div>
       <Footer />
     </>

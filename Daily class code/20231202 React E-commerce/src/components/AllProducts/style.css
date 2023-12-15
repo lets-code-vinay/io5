@@ -12,6 +12,8 @@
   margin: 5px;
   min-height: 300px;
   max-height: 300px;
+  background-color: white;
+  cursor: pointer;
 }
 
 .main-product-container .pro-image {
@@ -26,4 +28,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.main-product-container .title {
+  text-align: center;
+  margin: 5px auto;
 }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import image from "../../Assets/images/river.jpeg";
 import "./style.css";
 import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +21,7 @@ const ProductCard = (props) => {
    * @description Go to Product detail page
    */
   const goToProductPage = () => {
-    navigate(`/product`, { state: JSON.stringify(props) });
+    navigate(`/product`, { state: { type: "id", value: props?.id } });
   };
 
   return (
