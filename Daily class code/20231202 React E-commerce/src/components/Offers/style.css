@@ -3,5 +3,9 @@
 }
 
 .offer-image {
-  border: 1px solid black;
+  margin: 0.5%;
+  border-radius: 5px;
+  min-height: 240px;
+  max-height: 240px;
+  width: 33%;
 }

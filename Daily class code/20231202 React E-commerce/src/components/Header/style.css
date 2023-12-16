@@ -1,8 +1,25 @@
 .nav-bar {
-  background-color: rgb(254, 254, 255);
+  background-color: #2975f0;
+  color: white;
   margin-bottom: 10px;
+  position: sticky !important;
+  z-index: 2;
+  top: 0%;
+  width: 100%;
+  margin: auto;
 }
 
+.me-auto {
+  color: white !important;
+}
+
+.me-auto .nav-item {
+  color: white !important;
+}
+
+#basic-nav-dropdown {
+  color: white !important;
+}
 .links {
   text-decoration: none;
   color: #8a578b;
@@ -28,6 +45,22 @@
 }
 
 .nav-bar .search-field {
-  width: 50%;
+  width: 45%;
   margin: auto;
+}
+
+.cart-icon-cont {
+  margin-right: 10px;
+}
+.cart-counts {
+  position: absolute;
+  top: 14%;
+  left: 73%;
+  background-color: red;
+  color: yellow;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  text-align: center;
 }

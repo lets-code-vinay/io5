@@ -2,6 +2,8 @@
   width: 100%;
   margin: 1% auto;
   overflow: scroll;
+  display: flex;
+  background: white;
 }
 .main-product-container .product-border {
   width: 230px;

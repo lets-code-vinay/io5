@@ -9,49 +9,18 @@ import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/esm/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { IoSearchOutline } from "react-icons/io5";
+import logo from "../../Assets/logo/fk-logo.png";
 import "./style.css";
 
-const monthsStr = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
 function Header(props) {
-  const {
-    currPageName,
-    isCartEnabled = false,
-    cartCounting,
-    cartData = [],
-  } = props || {};
+  const { isCartEnabled = false } = props || {};
 
   const navigate = useNavigate();
 
-  const [sec, setSec] = useState(new Date().getSeconds());
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("userData"))
   );
   const [searchProduct, setSearchProduct] = useState("");
-
-  const date = new Date().getDate();
-  const month = new Date().getMonth();
-  const year = new Date().getFullYear();
-  const hours = new Date().getHours();
-  const mins = new Date().getMinutes();
-
-  // setInterval(() => {
-  //   setSec(new Date().getSeconds());
-  //   setUser(JSON.parse(localStorage.getItem("userData")));
-  // }, 1000);
 
   const handleLogout = () => {
     localStorage.clear();
@@ -84,30 +53,67 @@ function Header(props) {
 
   const countingData = JSON.parse(localStorageCartCounting);
 
+  const handleSelectProd = (e, dropDownType) => {
+    console.log("dropDownType", dropDownType);
+    navigate("/products", { state: { type: "search", value: dropDownType } });
+  };
+
+  const handleProductPage = () => {
+    navigate("/products", { state: { type: "", value: "" } });
+  };
+
   return (
     <React.Fragment>
       <Navbar expand="lg" className="nav-bar">
-        <Container fluid>
-          <Navbar.Brand href="/">Students</Navbar.Brand>
+        <Container className="nav-fixed">
+          <Navbar.Brand href="/">
+            <img src={logo} alt="logo" width={"100px"} />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/home-page">Home</Nav.Link>
-              <Nav.Link href="/about-us">About</Nav.Link>
-              <Nav.Link href="/contact-us">Contact</Nav.Link>
-              <Nav.Link href="/trips">Trips</Nav.Link>
-              <Nav.Link href="/products">Product</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Mobile</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Laptops</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Electronics
+              <Nav.Link className="nav-item" href="/home-page">
+                Home
+              </Nav.Link>
+
+              <Nav.Link
+                className="nav-item"
+                href="/products"
+                onClick={() => handleProductPage()}
+              >
+                Product
+              </Nav.Link>
+              <NavDropdown title="Quick Search" id="basic-nav-dropdown">
+                <NavDropdown.Item onClick={(e) => handleSelectProd(e, "phone")}>
+                  Phone
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={(e) => handleSelectProd(e, "laptop")}
+                >
+                  Laptops
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={(e) => handleSelectProd(e, "macbook")}
+                >
+                  Mackbook
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Headphones
+                <NavDropdown.Item onClick={(e) => handleSelectProd(e, "skin")}>
+                  Skin Care
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={(e) => handleSelectProd(e, "book")}>
+                  Book
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={(e) => handleSelectProd(e, "daal")}>
+                  Daal
                 </NavDropdown.Item>
               </NavDropdown>
+              <Nav.Link className="nav-item" href="/about-us">
+                About
+              </Nav.Link>
+              <Nav.Link className="nav-item" href="/contact-us">
+                Contact
+              </Nav.Link>
             </Nav>
 
             <InputGroup className="search-field">
@@ -132,14 +138,12 @@ function Header(props) {
 
             {isCartEnabled && (
               <Nav.Link>
-                <Button variant="dark" onClick={handleCartClick}>
+                <div onClick={handleCartClick} className="cart-icon-cont">
                   <PiShoppingCartBold />
-                  {countingData?.length > 0 ? (
-                    countingData?.length
-                  ) : (
-                    <>{cartCounting > 0 && cartCounting}</>
+                  {countingData?.length > 0 && (
+                    <p className="cart-counts">{countingData?.length}</p>
                   )}
-                </Button>
+                </div>
               </Nav.Link>
             )}
             {Boolean(user) && (
@@ -150,9 +154,7 @@ function Header(props) {
                   style={{ width: "40px" }}
                 />
                 <Nav.Link>
-                  <p className="user-name">
-                    {user?.firstName} {user?.lastName}
-                  </p>
+                  <p className="user-name">{user?.firstName}</p>
                 </Nav.Link>
               </div>
             )}
@@ -167,8 +169,6 @@ function Header(props) {
               </Button>
             )}
           </Navbar.Collapse>
-          {/* {currPageName == "Homepage" &&
-            `${date}/${monthsStr.at(month)}/${year}: ${hours}:${mins}:${sec}`} */}
         </Container>
       </Navbar>
     </React.Fragment>

@@ -6,8 +6,8 @@ import ProductCard from "../../components/ProductCard";
 import axios from "axios";
 import "./style.css";
 import Loader from "../../components/Loader";
+import NotFound from "../../components/NotFound";
 
-// ------axios ----
 function Products() {
   const location = useLocation();
 
@@ -87,9 +87,12 @@ function Products() {
                 title={product?.title}
                 onChildData={getDataFromChild}
                 {...product}
+                key={index}
               />
             );
           })}
+
+        {!showLoader && allProducts.length == 0 && <NotFound />}
       </div>
       <Footer />
     </React.Fragment>

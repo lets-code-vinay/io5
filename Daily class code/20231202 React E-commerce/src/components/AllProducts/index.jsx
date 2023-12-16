@@ -44,7 +44,10 @@ const AllProducts = (props) => {
     <>
       {isLoading && <Loader />}
 
-      <div className="main-product-container">
+      <div
+        className="main-product-container"
+        style={{ justifyContent: productData.length > 6 ? "start" : "center" }}
+      >
         <div className="child">
           {productData.map((product, index) => {
             return (

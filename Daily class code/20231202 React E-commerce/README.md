@@ -70,3 +70,10 @@ _npm start_
     -      c. PUT/Patch
     -      d. DELETE
     - 7.  Response Status: 200 OK, 404 Not found
+
+    ### To live website
+
+    ### We need two things
+
+    1. Domain e.g. .com, .in, .co.in, .gov
+    2. Hosting --> To host your code
