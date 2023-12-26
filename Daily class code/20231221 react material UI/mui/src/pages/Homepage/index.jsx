@@ -1,18 +1,16 @@
-import React from 'react';
-import ToDo from '../../components/ToDo';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-
+import React from "react";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import ToDoPage from "../../components/ToDoPage";
 
 const Homepage = () => {
-    return(
-        <>
-        <Header />
-        <ToDo />
-        <Footer />
+  return (
+    <>
+      <Header />
+      <ToDoPage />
+      <Footer />
+    </>
+  );
+};
 
-        </>
-    )
-}
-
-export default Homepage
+export default Homepage;

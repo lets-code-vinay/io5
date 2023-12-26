@@ -1,0 +1,25 @@
+.card {
+  margin: 1%;
+}
+
+.card .to-do-list:hover {
+  background-color: beige;
+}
+
+.card .to-do-list:hover .icons {
+  display: inline-block;
+}
+
+.card .icons {
+  display: none;
+}
+
+.todo-text .MuiTextField-root {
+  width: 90%;
+  margin: 2% 5%;
+}
+
+.card .btn-size {
+  width: 90%;
+  margin: 2% 5%;
+}

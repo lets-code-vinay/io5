@@ -1,0 +1,13 @@
+.header-container {
+  background-color: red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
