@@ -1,0 +1,12 @@
+.footer {
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  background-color: #c5c5c5 !important;
+}
+.footer .footer-paper {
+  padding: 16px;
+  margin: 0;
+  text-align: center;
+  background-color: #c5c5c5;
+}

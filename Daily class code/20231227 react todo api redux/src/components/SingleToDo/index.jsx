@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import axios from "axios";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
@@ -25,15 +27,17 @@ import EditIcon from "@mui/icons-material/Edit";
 import DoneIcon from "@mui/icons-material/Done";
 
 import "./style.css";
+import { SET_SELECTED_TODO, SET_ALL_TODO } from "../../redux/toDo/type";
+import { setAllToDos, setSelectedToDo } from "../../redux/toDo/actions";
 
 const defaultToDo = {
   id: 0,
-  title: "",
-  time: "0:00",
-  isCompleted: false,
+  todo: "",
+  completed: false,
 };
 
 const SingleToDo = () => {
+  const dispatch = useDispatch();
   const [toDos, setToDos] = useState(defaultToDo);
   const [updateToDo, setUpdateToDo] = useState();
 
@@ -41,7 +45,7 @@ const SingleToDo = () => {
   const [isEditID, setEdit] = useState(null);
 
   /**
-   * @description Handeling ToDo and Time input field
+   * @description Handeling ToDo input field
    * @param {Object} e
    * @param {String} fieldType
    * @returns
@@ -49,10 +53,7 @@ const SingleToDo = () => {
   const handleToDos = (e, fieldType) => {
     switch (fieldType) {
       case "toDo":
-        setToDos({ ...toDos, title: e?.target?.value });
-        return;
-      case "time":
-        setToDos({ ...toDos, time: e?.target?.value });
+        setToDos({ ...toDos, todo: e?.target?.value });
         return;
       default:
         setToDos({ ...toDos });
@@ -66,12 +67,12 @@ const SingleToDo = () => {
   const handleAdd = () => {
     const newTodo = {
       ...toDos,
-      title: toDos.title,
-      time: toDos.time,
+      todo: toDos.todo,
       id: listArray.length + 1,
     };
-    console.log(newTodo);
+    // console.log(newTodo);
     setListArray([...listArray, newTodo]);
+    dispatch(setAllToDos(SET_ALL_TODO, [...listArray, newTodo]));
 
     setToDos(defaultToDo);
   };
@@ -79,20 +80,26 @@ const SingleToDo = () => {
   const handleDeleteToDo = (e, id) => {
     const newList = listArray.filter((list) => list?.id !== id);
     setListArray(newList);
+    dispatch(setAllToDos(SET_ALL_TODO, newList));
   };
 
   const handleComplete = (e, id) => {
-    console.log("enter done");
     const newList = listArray.map((list) => {
       if (list?.id === id) {
-        return { ...list, isCompleted: true };
+        dispatch(
+          setSelectedToDo(SET_SELECTED_TODO, {
+            ...list,
+            completed: !list?.completed,
+          })
+        );
+
+        return { ...list, completed: !list?.completed };
       }
       return list;
     });
     setListArray(newList);
+    dispatch(setAllToDos(SET_ALL_TODO, newList));
   };
-
-  console.log("list===", listArray);
 
   const handleEdit = (e, selectedToDo) => {
     setUpdateToDo(selectedToDo);
@@ -104,21 +111,21 @@ const SingleToDo = () => {
 
     const newList = listArray.map((list) => {
       if (updateToDo?.id == list?.id) {
+        dispatch(setSelectedToDo(SET_SELECTED_TODO, updateToDo));
         return updateToDo;
       }
       return list;
     });
     setListArray(newList);
+    dispatch(setAllToDos(SET_ALL_TODO, newList));
+
     setEdit(false);
   };
 
   const updateToDos = (e, fieldType, selectedToDo) => {
     switch (fieldType) {
       case "toDo":
-        setUpdateToDo({ ...updateToDo, title: e?.target?.value });
-        return;
-      case "time":
-        setUpdateToDo({ ...updateToDo, time: e?.target?.value });
+        setUpdateToDo({ ...updateToDo, todo: e?.target?.value });
         return;
       default:
         setUpdateToDo({ ...updateToDo });
@@ -126,6 +133,32 @@ const SingleToDo = () => {
     }
   };
   // CRUD -- Create, Read, Update, delete
+
+  const getAllToDos = async () => {
+    try {
+      // set loader true
+      const api = "https://dummyjson.com/todos";
+
+      const resposne = await axios.get(api);
+      const { data, status } = resposne || {};
+      const { total, limit, todos } = data || {};
+
+      console.log("resposne", todos);
+      if (status == 200) {
+        setListArray([...listArray, ...todos]);
+        dispatch(setAllToDos(SET_ALL_TODO, [...listArray, ...todos]));
+      }
+      // setLoader false
+    } catch (err) {
+      console.error("Error in ToDo list fetching", err);
+      // setLoader false
+    }
+  };
+
+  const handleSelectedTodo = (e, selectedToDo) => {
+    console.log("selectedToDo", selectedToDo);
+    dispatch(setSelectedToDo(SET_SELECTED_TODO, selectedToDo));
+  };
 
   return (
     <>
@@ -150,14 +183,7 @@ const SingleToDo = () => {
             label="Add Todo"
             variant="outlined"
             onChange={(e) => handleToDos(e, "toDo")}
-            value={toDos?.title}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Add Time"
-            variant="outlined"
-            onChange={(e) => handleToDos(e, "time")}
-            value={toDos?.time}
+            value={toDos?.todo}
           />
 
           <Button variant="contained" className="btn-size" onClick={handleAdd}>
@@ -165,7 +191,10 @@ const SingleToDo = () => {
           </Button>
         </Box>
 
-        <CardContent>
+        <CardContent className="todo-lists">
+          <Typography variant="body2">
+            Total ToDo: {listArray.length}
+          </Typography>
           {listArray.map((ele, index) => {
             return (
               <div key={`${index}-${ele?.id}`}>
@@ -176,16 +205,8 @@ const SingleToDo = () => {
                       label="Add Todo"
                       variant="outlined"
                       onChange={(e) => updateToDos(e, "toDo", ele)}
-                      value={isEditID ? updateToDo?.title : ele?.title}
+                      value={isEditID ? updateToDo?.todo : ele?.todo}
                     />
-                    <TextField
-                      id="outlined-basic"
-                      label="Add Time"
-                      variant="outlined"
-                      onChange={(e) => updateToDos(e, "time", ele)}
-                      value={isEditID ? updateToDo?.time : ele?.time}
-                    />
-
                     <Button
                       variant="contained"
                       className="btn-size"
@@ -196,7 +217,11 @@ const SingleToDo = () => {
                     </Button>
                   </Box>
                 ) : (
-                  <List dense={true} className="to-do-list">
+                  <List
+                    dense={true}
+                    className="to-do-list"
+                    onClick={(e) => handleSelectedTodo(e, ele)}
+                  >
                     <ListItem
                       secondaryAction={
                         <>
@@ -236,14 +261,12 @@ const SingleToDo = () => {
                         primary={
                           <Typography
                             style={{
-                              textDecoration:
-                                ele?.isCompleted && "line-through",
+                              textDecoration: ele?.completed && "line-through",
                             }}
                           >
-                            {ele?.title}
+                            {ele?.todo}
                           </Typography>
                         }
-                        secondary={ele?.time}
                       />
                     </ListItem>
                   </List>
@@ -259,6 +282,9 @@ const SingleToDo = () => {
           <IconButton disabled aria-label="share">
             <ShareIcon />
           </IconButton>
+          <Button variant="contained" color="info" onClick={getAllToDos}>
+            Get All ToDos
+          </Button>
         </CardActions>
       </Card>
     </>

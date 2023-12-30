@@ -1,0 +1,2 @@
+export const SET_ALL_TODO = "SET_ALL_TODO";
+export const SET_SELECTED_TODO = "SET_SELECTED_TODO";
